@@ -1,0 +1,372 @@
+================================================================================
+  GENIX DRIVE — INTERACTIVE DEMO WALKTHROUGH
+  Feature Context Document
+================================================================================
+
+OVERVIEW
+--------
+The Interactive Demo Walkthrough (/demo-walkthrough) is a 43-step guided tour
+of the Genix Drive mobile app. It is split into 7 feature sections, each
+covering a core capability of the platform. The demo is designed to be used on
+the marketing website to educate prospective users before they download the app.
+
+Navigation:
+  - Tap / click anywhere on the phone image  →  advance to the next step
+  - "Previous" button in the instruction card →  go back one step
+  - "Next" button                             →  advance (alternative to tapping image)
+  - Progress dots (5)                         →  visual indicator of current section
+  - "Restart" button on the final step        →  return to step 1
+
+Implementation files:
+  src/pages/website/DemoWalkthrough.tsx   — component (all 43 steps)
+  public/demo/step01.png … step43.png     — phone mockup screenshots
+  src/routes/index.tsx                    — route: /demo-walkthrough
+
+
+================================================================================
+  SECTION 1 — DASHBOARD  (Steps 1–2)
+================================================================================
+
+PURPOSE
+  Introduces the user to the main dashboard and the time-filter ribbon.
+
+STEPS
+  Step 1 — Welcome to Genix Drive
+    Screen : Dashboard with drive score (60) and "30 Days" tab highlighted
+    Action : Tap the "30 Days" filter tab
+    Message: By default a 7-day filter is applied. Tap 30 days to see the
+             statistics for the last 30 days.
+
+  Step 2 — Great!
+    Screen : Dashboard with drive score (40) and "365 Days" tab highlighted
+    Action : Tap the "365 Days" filter tab
+    Message: Now tap 365 days to view data for the entire year. Notice how
+             the statistics change as you select different filters.
+
+KEY CONCEPT
+  The time-filter ribbon (7 Days / 30 Days / 365 Days) is available throughout
+  the app on all stats screens; this is the user's first introduction to it.
+
+
+================================================================================
+  SECTION 2 — SCORE & INSIGHTS  (Steps 3–10)
+================================================================================
+
+PURPOSE
+  Shows users how to navigate into the detailed driving score breakdown and
+  interpret the various charts and statistics.
+
+STEPS
+  Step 3 — INSIGHTS: Click the score circle
+    Screen : Dashboard with "20" drive score circle highlighted (red border)
+    Action : Tap the score circle to open the inner Score page
+
+  Step 4 — INSIGHTS: Your Score overview
+    Screen : "Your Score" page with line graph
+    Message: Filter at the top lets you select 7 / 30 / 365 days. The line
+             graph compares your score against the average of other users.
+
+  Step 5 — INSIGHTS: First pie chart
+    Screen : "Your Score" scrolled down; first pie chart (327.22) highlighted
+    Action : Tap the first pie chart
+    Message: Click the first pie chart on your dashboard; the inner page
+             will appear.
+
+  Step 6 — INSIGHTS: Drive Time chart
+    Screen : Drive Time chart (peak / off-peak / night hours breakdown)
+    Message: Great! Look at the chart — driving hours divided into peak,
+             off-peak, and night hours. Select range from the ribbon on top.
+
+  Step 7 — INSIGHTS: Stats beside first pie chart
+    Screen : Back on "Your Score"; stats 327.22 / 55.23 highlighted
+    Action : Tap the stats beside the first pie chart
+    Message: Go back, then click the stats located beside the first pie chart.
+
+  Step 8 — INSIGHTS: Distance graph
+    Screen : Distance graph showing distance vs other drivers
+    Message: Graph shows distance covered by a number of drivers. The dotted
+             line shows where you fall. Numeric values show how much you have
+             traveled vs other users.
+
+  Step 9 — INSIGHTS: Last pie chart
+    Screen : Back on "Your Score"; "403" pie chart (last) highlighted
+    Action : Tap the last pie chart
+    Message: Go back to main insight screen, then click the last pie chart —
+             the events screen will appear.
+
+  Step 10 — INSIGHTS: Events screen
+    Screen : Acceleration / Braking / Cornering events breakdown
+    Message: Chart shows the number of events during the selected period and
+             compares them against the average of other users.
+
+KEY CONCEPTS
+  - Three pie chart categories: Drive Time, Distance, Events
+  - Each opens a dedicated drill-down screen
+  - All screens support the 7 / 30 / 365 day filter
+
+
+================================================================================
+  SECTION 3 — CONNECTIONS: COMPANIONS & FRIENDS  (Steps 11–18)
+================================================================================
+
+PURPOSE
+  Walks the user through adding family members and friends to track their
+  locations and driving on a shared map.
+
+STEPS
+  Step 11 — ADD A CONNECTION: Navigate to Connections
+    Screen : Map + Companions & Friends page; bottom nav "Companions" highlighted
+    Action : Tap the Connections icon in the app's bottom navigation
+
+  Step 12 — ADD A CONNECTION: Companions tab
+    Screen : Companions & Friends page; "Companions" tab highlighted
+    Action : Tap the Companion tab at the bottom of the section
+    Message: A new screen displays the list of your existing connections.
+
+  Step 13 — ADD A CONNECTION: Add a Companion
+    Screen : "Add a Companion" search screen
+    Message: Tap "Add a Companion", type the name in the search bar, and
+             select the desired companion from the results.
+
+  Step 14 — ADD A CONNECTION: Companion request confirmation
+    Screen : Request confirmation dialog
+    Message: Once selected, a confirmation screen appears. Tap to send the
+             request.
+
+  Step 15 — ADD A CONNECTION: Friends tab
+    Screen : Back on Companions & Friends; "Friends" tab highlighted
+    Action : Tap the Friends tab
+    Message: The screen displays the list of your friends.
+
+  Step 16 — ADD A CONNECTION: Add a Friend
+    Screen : "Add a Friend" search screen
+    Message: Tap "Add a Friend", enter the name in the search bar, select
+             the friend from the results.
+
+  Step 17 — ADD A CONNECTION: Friend request confirmation
+    Screen : Request confirmation dialog
+    Message: Finally, a confirmation screen appears. Tap to send — your
+             friend request will be sent successfully.
+
+  Step 18 — ADD A CONNECTION: Live location on map
+    Screen : Map screen with friend/companion pin visible
+    Message: Once the request is accepted, they appear on the Map screen.
+             You can view their live location directly on the map.
+
+KEY CONCEPTS
+  - Companions and Friends are separate lists (different privacy/sharing levels)
+  - Accepted connections appear as pins on the shared map
+  - Live location sharing begins once the request is accepted
+
+
+================================================================================
+  SECTION 4 — POINTS OF INTEREST (POI)  (Steps 19–27)
+================================================================================
+
+PURPOSE
+  Teaches users how to create named locations (POIs) associated with
+  companions, with configurable entry/exit monitoring.
+
+STEPS
+  Step 19 — ADD A POI: Navigate to Places via Menu
+    Screen : Side-menu open; "Places" item highlighted
+    Action : Tap the top-left menu icon → select Places
+    Message: Next, tap on My Places to see all saved locations.
+
+  Step 20 — ADD A POI: My Places list
+    Screen : "My Places" list with saved locations
+    Message: Tap any place from the list to open the map view with a pin icon.
+
+  Step 21 — ADD A POI: Add a Place button
+    Screen : Map view with purple "Add New Place" button highlighted at top
+    Action : Tap "Add New Place"
+    Message: You can search for a location and set the radius for your place.
+
+  Step 22 — ADD A POI: Radius circle
+    Screen : Map showing a circular radius overlay for the new POI
+    Message: A popup will appear asking for the details needed to create the
+             point of interest (POI).
+
+  Step 23 — ADD A POI: Add Companion to POI
+    Screen : "Add Place" modal — Add Companions field
+    Message: First, add the companion you want associated with this POI.
+
+  Step 24 — ADD A POI: Name & icon
+    Screen : "Add Place" modal — Name and icon fields filled
+    Message: Enter a name for the POI and select an icon to represent it
+             on the map.
+
+  Step 25 — ADD A POI: Activity type
+    Screen : "Add Place" modal — activity type selector (Exit / Enter / Both)
+    Message: Choose the type of activity: Exit, Enter, or Both, to monitor
+             when your companion interacts with this location.
+
+  Step 26 — ADD A POI: Confirm
+    Screen : "Add Place" modal — all fields complete, Confirm button visible
+    Message: Finally, tap Confirm.
+
+  Step 27 — ADD A POI: POI on map
+    Screen : Map displaying the new POI with the selected icon
+    Message: The map will display your new POI with the selected icon,
+             showing its exact location.
+
+KEY CONCEPTS
+  - POIs are always linked to a specific companion
+  - Three monitoring modes: Enter, Exit, or Both
+  - The radius defines the geofence boundary for trigger events
+  - POIs appear as custom icons on the shared map
+
+
+================================================================================
+  SECTION 5 — TRIPS  (Steps 28–30)
+================================================================================
+
+PURPOSE
+  Shows users how to review their driving history, both as a quick summary
+  on the dashboard and as a detailed per-trip breakdown.
+
+STEPS
+  Step 28 — TRIPS: Recent Trips on Dashboard
+    Screen : Dashboard scrolled down; "Recent Trips" card highlighted
+    Message: Scroll down on the Dashboard to see the Recent Trips section.
+             Swipe right to browse through up to five recent trips.
+
+  Step 29 — TRIPS: Past Trips list
+    Screen : "Past Trips" screen with date-filtered trip list
+    Message: Full list of complete trips for the selected date range. Change
+             the date filter to see trips in a specific period. Tap the first
+             trip to see details.
+
+  Step 30 — TRIPS: Trip Details screen
+    Screen : Trip detail view with map, score, and event markers
+    Message: View the trip map, total distance covered, driving score, and
+             all events that occurred. Tap event icons on the map to see the
+             exact location where each event occurred.
+
+KEY CONCEPTS
+  - Recent Trips widget on dashboard shows the 5 most recent trips
+  - Full history available via Past Trips with date-range filtering
+  - Each trip stores: route map, distance, score, and driving events
+
+
+================================================================================
+  SECTION 6 — GENIX MEET  (Steps 31–41)
+================================================================================
+
+PURPOSE
+  Demonstrates the social meetup feature — scheduling group meetups, inviting
+  participants, real-time location tracking during the meetup, and a race mode.
+
+STEPS
+  Step 31 — GENIX MEET: Open Meets from Menu
+    Screen : Side-menu open; "Genix Meet" item highlighted
+    Action : Tap menu icon → open Meets section
+
+  Step 32 — GENIX MEET: Upcoming Meets
+    Screen : GenixMeet — Upcoming tab
+    Message: View all meets scheduled in the future.
+
+  Step 33 — GENIX MEET: In Progress tab
+    Screen : GenixMeet — "In Progress" tab highlighted
+    Action : Tap "In Progress" tab
+    Message: Shows list of meets currently in progress.
+
+  Step 34 — GENIX MEET: Completed tab
+    Screen : GenixMeet — "Completed" tab highlighted
+    Action : Tap "Completed" tab
+    Message: Displays all completed meets. Navigate freely between
+             Upcoming, In Progress, and Completed.
+
+  Step 35 — GENIX MEET: Create New Meetup form
+    Screen : "New Meetup" creation form
+    Message: Tap "Create New Meetup" to see the list of details required
+             to set up your meetup.
+
+  Step 36 — GENIX MEET: Select Location
+    Screen : "Select Location" map screen
+    Message: Drag on the map to choose the meetup location.
+
+  Step 37 — GENIX MEET: Select Participants
+    Screen : Participants list screen
+    Message: A list of potential participants you can invite to the meetup.
+
+  Step 38 — GENIX MEET: Send Invites
+    Screen : "Meetup Mapper Invite" confirmation popup
+    Message: Tap "Send Invite" — participants will be notified on their end.
+
+  Step 39 — GENIX MEET: Chat Screen
+    Screen : In-meetup chat screen with message history
+    Message: Message participants, share updates, or coordinate during
+             the meetup.
+
+  Step 40 — GENIX MEET: Map view
+    Screen : Meetup Map tab showing real-time participant locations
+    Action : Tap the Map icon/tab
+    Message: Shows real-time locations of all participants on the map.
+
+  Step 41 — GENIX MEET: Race mode
+    Screen : Meetup Race tab with participant rankings
+    Action : Tap the Race option/tab
+    Message: The Race Screen shows participant positions in the race or
+             activity. See who is leading in real-time.
+
+KEY CONCEPTS
+  - Three meetup states: Upcoming / In Progress / Completed
+  - Meetup setup flow: Name → Location → Participants → Send Invite
+  - During a meetup: Chat, Map (live locations), and Race tabs are available
+  - Race mode shows a real-time leaderboard of participants
+
+
+================================================================================
+  SECTION 7 — REWARDS  (Steps 42–43)
+================================================================================
+
+PURPOSE
+  Introduces the rewards/loyalty system where users earn points from safe
+  driving and redeem them for real-world prizes.
+
+STEPS
+  Step 42 — REWARDS: Available Rewards
+    Screen : Rewards screen — "Available" tab with food/product rewards
+    Message: First screen displays all Available Rewards you can claim.
+             Swipe or scroll to see the variety of rewards you can earn.
+
+  Step 43 — REWARDS: Purchased Rewards
+    Screen : Rewards screen — "Purchased" tab highlighted
+    Action : Tap the "Purchased" tab
+    Message: Shows all rewards you have already claimed or purchased,
+             so you can keep track of your collection.
+
+KEY CONCEPTS
+  - Rewards are earned through safe driving behavior and high drive scores
+  - Available tab = claimable rewards
+  - Purchased tab = collection of already-claimed rewards
+
+
+================================================================================
+  TECHNICAL NOTES
+================================================================================
+
+Component     : src/pages/website/DemoWalkthrough.tsx
+Route         : /demo-walkthrough  (public, under WebsiteLayout)
+Total steps   : 43
+Image assets  : public/demo/step01.png … step43.png
+
+Progress dots mapping (5 dots → 7 sections):
+  Dot 1 (filled at steps 1–2)    Dashboard
+  Dot 2 (filled at steps 3–10)   Score & Insights
+  Dot 3 (filled at steps 11–18)  Connections
+  Dot 4 (filled at steps 19–30)  POI + Trips
+  Dot 5 (filled at steps 31–43)  Genix Meet + Rewards
+
+Red-border hotspot overlay:
+  Used on steps where a specific UI element is highlighted in the design.
+  The border is a visual guide only (pointerEvents: none). Clicking anywhere
+  on the phone image advances to the next step — no precise targeting needed.
+
+Responsive layout:
+  Mobile   : stacked (phone image top, instruction card bottom)
+  Desktop  : two-column grid (phone left, instruction card right)
+  Phone image uses clamp(180px, 55vw, 380px) for fluid sizing across devices.
+
+================================================================================

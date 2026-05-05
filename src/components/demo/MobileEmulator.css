@@ -1,0 +1,110 @@
+.mobile-emulator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.phone-frame {
+  width: 315px;
+  max-width: none;
+  background: #1a1a1a;
+  border-radius: 52px;
+  padding: 12px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 30px 60px -10px rgba(0, 0, 0, 0.45),
+    0 10px 30px -5px rgba(0, 0, 0, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 0.07);
+  position: relative;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 26px;
+  background: #0a0a0a;
+  border-radius: 20px;
+  z-index: 30;
+}
+
+.phone-screen {
+  width: 100%;
+  aspect-ratio: 375 / 812;
+  background: #fff;
+  border-radius: 42px;
+  overflow: hidden;
+}
+
+.phone-screen-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 1025px) {
+  .phone-frame {
+    max-width: 315px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-emulator-wrapper {
+    padding: 0.75rem;
+  }
+  .phone-frame {
+    width: 315px;
+    max-width: none;
+    padding: 10px;
+    border-radius: 48px;
+  }
+  .phone-screen {
+    border-radius: 38px;
+  }
+  .phone-notch {
+    width: 80px;
+    height: 24px;
+    top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-emulator-wrapper {
+    padding: 0.5rem;
+  }
+  .phone-frame {
+    width: 315px;
+    max-width: none;
+    padding: 9px;
+    border-radius: 44px;
+  }
+  .phone-screen {
+    border-radius: 35px;
+  }
+  .phone-notch {
+    width: 75px;
+    height: 22px;
+    top: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-frame {
+    width: 315px;
+    max-width: none;
+    padding: 8px;
+    border-radius: 40px;
+  }
+  .phone-screen {
+    border-radius: 32px;
+  }
+  .phone-notch {
+    width: 68px;
+    height: 20px;
+    top: 12px;
+  }
+}

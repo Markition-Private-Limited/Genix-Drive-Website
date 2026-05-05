@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.interactive-demo-app {
+  min-height: 100vh;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.interactive-demo-header {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3.5rem) 1rem 0;
+}
+
+.interactive-demo-title {
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin: 0 auto;
+  color: #1d1d1f;
+  line-height: 1.25;
+  max-width: 500px;
+}
+
+.interactive-demo-main {
+  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.interactive-demo-content {
+  display: flex;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.interactive-emulator-section {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.interactive-guidance-section {
+  flex: 1 1 380px;
+  min-width: 0;
+  max-width: 500px;
+}
+
+.interactive-demo-footer {
+  display: flex;
+  justify-content: center;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 1rem clamp(2rem, 4vw, 3rem);
+}
+
+.interactive-download-btn {
+  background: #7dc856;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.interactive-download-btn:hover {
+  background: #6db848;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .interactive-demo-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .interactive-demo-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .interactive-emulator-section {
+    max-width: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+  .interactive-guidance-section {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .interactive-demo-content {
+    gap: 1.5rem;
+  }
+}
