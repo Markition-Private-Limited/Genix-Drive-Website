@@ -80,7 +80,7 @@ const SignupFlow = () => {
                     step 2
                   </SubHeading>
                   <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
-                    Order a Device
+                    Order Your Device
                   </SubHeading>
                   <Paragraph
                     size="sm"
@@ -88,10 +88,11 @@ const SignupFlow = () => {
                     weight="light"
                     className="leading-5 text"
                   >
-                    Order the GenixDrive device to unlock live vehicle
-                    monitoring, real-time safety alerts, and advanced driving
-                    insights. Install it, connect to the app, and start
-                    monitoring instantly.
+                    Once you’ve signed up to GenixDrive, visit the{" "}
+                    <strong className="font-bold">“Order a Device”</strong>{" "}
+                    section from the menu , confirm your request to order the
+                    device and select a preferred date and time for device
+                    installation.
                   </Paragraph>
                   <img
                     src={step3}
@@ -111,7 +112,7 @@ const SignupFlow = () => {
                     step 3
                   </SubHeading>
                   <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
-                    Device Installation
+                    Easy Installation
                   </SubHeading>
                   <Paragraph
                     size="sm"
@@ -119,10 +120,7 @@ const SignupFlow = () => {
                     weight="light"
                     className="leading-5 text"
                   >
-                    Once your order is confirmed, a certified GenixDrive
-                    technician will visit your location to professionally
-                    install the device in your car. We ensure a seamless setup
-                    so you’re ready to hit the road safely.
+                    After confirmation, our representative will call to schedule your installation. A certified Genix Drive technician will then ensure a safe, damage-free setup at your location.
                   </Paragraph>
                   <img
                     src={step2}
@@ -241,18 +239,16 @@ const Switch = ({ onClick }: Props) => {
     <div className="flex items-center justify-center">
       <div className="relative inline-flex items-center w-[420px] h-14 rounded-full border border-black/10 bg-white shadow-sm p-1">
         <div
-          className={`absolute inset-y-1 left-1 w-1/2 rounded-full bg-primary transition-transform duration-300 ${
-            mode === "with" ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute inset-y-1 left-1 w-1/2 rounded-full bg-primary transition-transform duration-300 ${mode === "with" ? "translate-x-0" : "translate-x-full"
+            }`}
         />
         <button
           type="button"
           onClick={() => {
             (setMode("with"), onClick("with"));
           }}
-          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${
-            mode === "with" ? "text-white" : "text-black"
-          }`}
+          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "with" ? "text-white" : "text-black"
+            }`}
         >
           WITH DEVICE
         </button>
@@ -261,9 +257,8 @@ const Switch = ({ onClick }: Props) => {
           onClick={() => {
             (setMode("without"), onClick("without"));
           }}
-          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${
-            mode === "without" ? "text-white" : "text-black"
-          }`}
+          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "without" ? "text-white" : "text-black"
+            }`}
         >
           WITHOUT DEVICE
         </button>

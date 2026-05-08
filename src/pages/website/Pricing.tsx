@@ -17,7 +17,7 @@ import heart from "../../assets/icons/heart.jpeg";
 const Pricing = () => {
   return (
     <div className="pricing">
-      <div className="banner relative">
+      {/* <div className="banner relative">
         <img src={frame} alt="Pricing banner" className="w-full" />
         <SubHeading
           weight="medium"
@@ -29,10 +29,10 @@ const Pricing = () => {
             for <span className="text-light-green">Every Driver</span>
           </p>
         </SubHeading>
-      </div>
+      </div> */}
 
       {/* PRICE CARDS SECTION */}
-      <section className="bg-white price-cards px-[56px] py-[120px]  padding-50">
+      <section className="bg-white price-cards px-[56px] py-[60px]  padding-50">
         <SectionHeading
           className="relative paratExt !mb-[97px]"
           paraText="Choose a plan that fits your driving lifestyle and enjoy all the
@@ -56,60 +56,118 @@ const Pricing = () => {
         </SectionHeading>
 
         {/* cARDS */}
-        <div>
-          <div className="card-container w-full md:w-[400px] relative bg-light-green p-5 px-10 rounded-2xl block m-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[950px] mx-auto">
+          {/* FREE PLAN */}
+          <div className="card-container w-full relative bg-primary p-10 rounded-3xl text-white flex flex-col h-full shadow-xl">
             <div className="text-right">
-              <div className="price bg-gray-700 inline-block p-2 rounded-full mb-4 ">
+              <div className="price bg-white/20 backdrop-blur-md inline-block p-2 px-4 rounded-full mb-4">
+                <span className="text-white text-sm font-medium">$0/month</span>
+              </div>
+            </div>
+
+            <SubHeading weight="semibold" size="4xl" color="white" className="mb-5 !text-white">
+              Free Plan
+            </SubHeading>
+            <SubHeading weight="semibold" size="xl" color="white" className="mb-2 !text-white">
+              GenixAlpha
+            </SubHeading>
+            <Paragraph
+              size="base"
+              color="white"
+              weight="medium"
+              className="leading-5 !text-white opacity-90 mb-8"
+            >
+              Perfect for new users who want to explore GenixDrive’s core
+              features before upgrading.
+            </Paragraph>
+
+            <div className="benefits mb-10 flex-grow">
+              <SubHeading weight="semibold" size="xl" color="white" className="mb-5 !text-white">
+                Includes :
+              </SubHeading>
+
+              <div className="flex flex-col gap-4">
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} className="text-white" /> <span>Driving Score</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} className="text-white" /> <span>7-Day Trip Tracking</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} className="text-white" />{" "}
+                  <span className="leading-tight">Basic Device Integration (one-time setup: $100)</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-auto">
+              <Button
+                size="lg"
+                isFullBtn={true}
+                className="!rounded-full w-full bg-white !text-primary hover:bg-gray-100 border-none py-4 font-bold"
+              >
+                Start for free
+              </Button>
+            </div>
+          </div>
+
+          {/* PREMIUM PLAN */}
+          <div className="card-container w-full relative bg-light-green p-10 rounded-3xl flex flex-col h-full shadow-xl">
+            <div className="text-right">
+              <div className="price bg-gray-700 inline-block p-2 px-4 rounded-full mb-4">
                 <span className="text-white text-sm">$19.99/month</span>
               </div>
             </div>
 
-            <SubHeading weight="medium" size="4xl" className="mb-5">
+            <SubHeading weight="semibold" size="4xl" className="mb-5">
               Premium Plan
             </SubHeading>
-            <SubHeading weight="medium" size="xl" className="mb-2">
+            <SubHeading weight="semibold" size="xl" className="mb-2">
               GenixPrime
             </SubHeading>
             <Paragraph
               size="base"
               color="default"
               weight="medium"
-              className="leading-5"
+              className="leading-5 mb-8"
             >
               For those who want complete control, safety, and rewards in one
               place.
             </Paragraph>
 
-            <div className="benefits mt-10 mb-5">
-              <SubHeading weight="medium" size="xl" className="mb-5">
+            <div className="benefits mb-10 flex-grow">
+              <SubHeading weight="semibold" size="xl" className="mb-5">
                 Includes :
               </SubHeading>
 
-              <p className="flex items-center gap-4  mb-4">
-                <CircleCheck size={18} /> <span>30-Day Trip Tracking</span>
-              </p>
-              <p className="flex items-center gap-4 mb-4">
-                <CircleCheck size={18} /> <span>Real-Time Driving Alerts</span>
-              </p>
-              <p className="flex items-center gap-4 mb-4">
-                <CircleCheck size={18} />{" "}
-                <span>Route History & Live Location</span>
-              </p>
-              <p className="flex items-center gap-4 mb-4">
-                <CircleCheck size={18} />{" "}
-                <span>Driver Rewards & Emergency Response</span>
-              </p>
-              <p className="flex items-center gap-4">
-                <CircleCheck size={18} />{" "}
-                <span>Event Planning & Monitoring</span>
-              </p>
+              <div className="flex flex-col gap-4">
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} /> <span>30-Day Trip Tracking</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} /> <span>Real-Time Driving Alerts</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} />{" "}
+                  <span>Route History & Live Location</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} />{" "}
+                  <span>Driver Rewards & Emergency Response</span>
+                </p>
+                <p className="flex items-center gap-4">
+                  <CircleCheck size={20} />{" "}
+                  <span>Event Planning & Monitoring</span>
+                </p>
+              </div>
             </div>
-            <div className="text-center">
+
+            <div className="text-center mt-auto">
               <Button
                 size="lg"
                 variant={"dark"}
                 isFullBtn={true}
-                className="!rounded-full w-full"
+                className="!rounded-full w-full py-4 font-bold"
               >
                 $19.99/month
               </Button>

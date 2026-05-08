@@ -8,9 +8,9 @@ import Paragraph from "../../components/sharedui/Paragraph";
 import StoreActionsButtons from "../../components/web/StoreActionsButtons";
 import SectionHeading from "../../components/web/SectionHeading";
 
-import ab1 from "../../assets/keyfeatureB.jpg";
-import ab2 from "../../assets/ff.png";
-import ab3 from "../../assets/ff3.jpg";
+import ab1 from "../../assets/f1.png";
+import ab2 from "../../assets/f2.png";
+import ab3 from "../../assets/f3.png";
 import ab4 from "../../assets/ff44.png";
 
 import riskfree from "../../assets/featursabot/1.png";
@@ -74,9 +74,7 @@ const Features = () => {
           </SubHeading>
 
           <Paragraph className="featuerHerText" size="sm">
-            Stay close to what matters most — your loved ones. With AiGenix
-            Social & Family Connect, you can track, share, and ensure your
-            family’s safety in real time, no matter where life takes you.
+            Stay close to what matters most — your loved ones. With Genixdrive, you can track, share, and ensure your family’s safety in real time, no matter where life takes you.
           </Paragraph>
 
           <StoreActionsButtons />
@@ -100,11 +98,10 @@ const Features = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <SectionHeading
-          className="mb-10"
+          className="mb-10 uppercase !w-full"
           paraText="GenixDrive by AiGenix (Private) Limited is a smart telematics solution designed to make driving safer and more intelligent. It monitors driving habits, provides safety scores."
         >
-          SOCIAL AND FAMILY CONNECT
-          <p className="text-secondary">- KEY HIGHLIGHTS</p>
+          SOCIAL AND FAMILY CONNECT <p className="text-secondary inline">- KEY HIGHLIGHTS</p>
         </SectionHeading>
 
         {/* ......... */}
@@ -121,8 +118,8 @@ const Features = () => {
               src={ab1}
               alt=""
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full  p-5  z-10">
+            <div className="absolute top-0 left-0 w-full h-full bg-black/0 z-10"></div>
+            {/* <div className="absolute bottom-0 left-0 w-full  p-5  z-10">
               <SubHeading size="lg" color="white" weight="medium">
                 Real-Time School Tracking for Parents
               </SubHeading>
@@ -136,7 +133,7 @@ const Features = () => {
                 time through GenixDrive, ensuring peace of mind and safety every
                 step of the way.
               </Paragraph>
-            </div>
+            </div> */}
           </div>
           <div className="md:col-span-2 p-5 md:p-10 bg-secondary rounded-2xl flex items-center justify-center">
             <div>
@@ -191,12 +188,7 @@ const Features = () => {
                 weight="medium"
                 className="leading-5 aboutcontainertext"
               >
-                Heading to meet a friend? Or want to make sure they get home
-                safely? With GenixDrive, you can add a friend and track their
-                location for up to 8 hours. This short-term connection is
-                perfect for one-time trips, outings, or times when safety
-                reassurance matters most. After the time expires, tracking ends
-                automatically — giving peace of mind while respecting privacy.
+                Not every check-in needs to be permanent. Add any contact and follow their journey for a limited window of time — ideal for one-time trips or making sure someone you care about arrived safely. Simple, respectful, and exactly what you need in the moment.
               </Paragraph>
             </div>
           </div>
@@ -223,8 +215,8 @@ const Features = () => {
               src={ab3}
               alt=""
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full  p-5  z-10">
+            <div className="absolute top-0 left-0 w-full h-full bg-black/0 z-10"></div>
+            {/* <div className="absolute bottom-0 left-0 w-full  p-5  z-10">
               <SubHeading size="lg" color="white" weight="medium">
                 Real-Time School Tracking for Parents
               </SubHeading>
@@ -238,7 +230,7 @@ const Features = () => {
                 time through GenixDrive, ensuring peace of mind and safety every
                 step of the way.
               </Paragraph>
-            </div>
+            </div> */}
           </div>
           <div className="md:col-span-2 p-5 md:p-10 bg-secondary rounded-2xl flex items-center justify-center" id="deviceMonitoring">
             <div>
@@ -248,7 +240,7 @@ const Features = () => {
                 weight="medium"
                 className="mb-4"
               >
-                3. Family Safety at the Core
+                3. Smart Location Check-ins
               </SubHeading>
               <Paragraph
                 size="sm"
@@ -256,13 +248,7 @@ const Features = () => {
                 weight="medium"
                 className="leading-5 aboutcontainertext !text-white"
               >
-                GenixDrive is a smart telematics solution developed by AiGenix
-                (Private) Limited, a technology-driven company based in Karachi,
-                Pakistan. Designed for both mobile and in-vehicle devices,
-                GenixDrive tracks and analyzes driving behavior to generate
-                clear safety scores. From speed and braking to cornering and
-                acceleration, it provides drivers with meaningful insights into
-                how responsibly they drive.
+                GenixDrive allows you to define important locations for your loved ones—like home, school, or the office—and stay automatically updated without the need for constant check-ins. By creating custom Points of Interest, you’ll receive notification whenever someone arrives or leaves a designated location, giving you peace of mind while allowing everyone to go about their day uninterrupted.
               </Paragraph>
             </div>
           </div>
@@ -318,8 +304,7 @@ const Features = () => {
               color="dark"
               className="mainheading mb-[70px]"
             >
-              Smarter <span className="text-secondary">Connections</span> &
-              Alerts
+              Smart <span className="text-secondary">Location Updates</span> & Safety Insights
             </SubHeading>
             <div className="featureabout">
               <p className="flex items-center gap-4 mb-5">
@@ -333,8 +318,7 @@ const Features = () => {
                     weight="medium"
                     className="leading-8 featureabouttext"
                   >
-                    Coordinate meet-ups with friends or family directly through
-                    the app.
+                    Coordinate meet-ups with friends or family directly through the app.
                   </Paragraph>
                 </div>
               </p>
@@ -349,8 +333,7 @@ const Features = () => {
                     weight="medium"
                     className="leading-8 featureabouttext"
                   >
-                    Receive place-based alerts when someone arrives or leaves a
-                    specific location.
+                    Receive place-based notifications when someone arrives at or leaves a specific location.
                   </Paragraph>
                 </div>
               </p>
@@ -365,8 +348,7 @@ const Features = () => {
                     weight="medium"
                     className="leading-8 featureabouttext !text-black"
                   >
-                    Get instant notifications for critical driving events that
-                    may affect your loved ones.
+                    Enhance family safety by analyzing driving behavior of your connection.
                   </Paragraph>
                 </div>
               </p>
@@ -406,9 +388,8 @@ const Features = () => {
               >
                 {/* <span className="absolute left-6 top-6 w-6 h-1 bg-primary rounded-full"></span> */}
                 <span
-                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${
-                    active ? " text-secondary" : " text-gray-900"
-                  }`}
+                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${active ? " text-secondary" : " text-gray-900"
+                    }`}
                 >
                   {active ? "-" : "+"}
                 </span>

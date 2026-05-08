@@ -4,7 +4,8 @@ import ReadytoDrive from "../../components/web/ReadytoDrive";
 import { useNavigate } from "react-router-dom";
 
 import demoMobile from "../../assets/demoMobile.png";
-import demoDesktop from "../../assets/demoDEsktopt1.png";
+import demoDesktop from "../../assets/demoDesktop111.png";
+
 import { motion } from "framer-motion";
 
 // import frame from "../../assets/7th sec copy.png";
@@ -56,8 +57,8 @@ const Demo = () => {
             rewards — GenixDrive is your complete driving companion.
           </Paragraph>
 
-          <Button variant="primary" size="lg" className="mt-8" onClick={() => navigate("/interactive-demo")}>
-            GET STARTED
+          <Button variant="primary" size="lg" className="mt-8 whitespace-nowrap" onClick={() => navigate("/interactive-demo")}>
+            Experience the Demo
           </Button>
         </motion.div>
         <motion.div

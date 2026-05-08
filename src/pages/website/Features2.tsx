@@ -11,7 +11,7 @@ import SectionHeading from "../../components/web/SectionHeading";
 import kf1 from "../../assets/features/33kf2.png";
 import kf2 from "../../assets/features/3kf2.png";
 import kf3 from "../../assets/features/33kf3.png";
-import kf4 from "../../assets/features/3kf4.png";
+import kf4 from "../../assets/features/3k4.png";
 import FeatureSplitCard from "../../components/web/FeatureGridContainer";
 import riskfree from "../../assets/featursabot/3.png";
 
@@ -98,11 +98,10 @@ const Features2 = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <SectionHeading
-          className="mb-10"
+          className="mb-10 uppercase !w-full"
           paraText="GenixDrive by AiGenix (Private) Limited is a smart telematics solution designed to make driving safer and more intelligent. It monitors driving habits, provides safety scores."
         >
-          Driving Insights
-          <p className="text-secondary">- KEY HIGHLIGHTS</p>
+          Driving Insights <p className="text-secondary inline">- KEY HIGHLIGHTS</p>
         </SectionHeading>
 
         {/* ......... */}
@@ -138,7 +137,7 @@ const Features2 = () => {
         <FeatureSplitCard
           title="4. Insights for Every Vehicle"
           image={kf4}
-          description="Safety should never depend on the type of vehicle you’re using. GenixDrive works with both motorcycles and cars, tailoring its analysis to give accurate safety feedback for each trip. Whether two wheels or four, you’ll always know how safe your driving really is."
+          description="Safety should never depend on the type of vehicle you are using. With GenixDrive, every trip is analyzed to ensure accurate and reliable safety feedback, tailored to real driving behavior. GenixDrive helps you understand how safely you are driving by providing clear insights."
           reverse
           containerBg="bg-light-green"
           textColor="text-dark"
@@ -260,9 +259,8 @@ const Features2 = () => {
               >
                 {/* <span className="absolute left-6 top-6 w-6 h-1 bg-primary rounded-full"></span> */}
                 <span
-                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${
-                    active ? " text-secondary" : " text-gray-900"
-                  }`}
+                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${active ? " text-secondary" : " text-gray-900"
+                    }`}
                 >
                   {active ? "-" : "+"}
                 </span>

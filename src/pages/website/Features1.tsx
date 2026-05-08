@@ -8,10 +8,10 @@ import Paragraph from "../../components/sharedui/Paragraph";
 import StoreActionsButtons from "../../components/web/StoreActionsButtons";
 import SectionHeading from "../../components/web/SectionHeading";
 
-import kf1 from "../../assets/features/22kf1.png";
+import kf1 from "../../assets/features/2kkf1.png";
 import kf2 from "../../assets/features/2kf2.png";
-import kf3 from "../../assets/features/22kf3.png";
-import kf4 from "../../assets/features/kf444.png";
+import kf3 from "../../assets/features/2k3.png";
+import kf4 from "../../assets/features/2k4.png";
 import FeatureSplitCard from "../../components/web/FeatureGridContainer";
 
 import riskfree from "../../assets/featursabot/2.png";
@@ -74,13 +74,11 @@ const Features1 = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <SubHeading size="4xl" className="mb-3 mainheading">
-            Safety &<p className="text-secondary inline">Protection</p>
+            Safety & <p className="text-secondary inline">Protection</p>
           </SubHeading>
 
           <Paragraph size="sm" className="featuerHerText">
-            Your safety is our top priority. With GenixDrive, every journey is
-            protected — from real-time tracking to instant alerts, we ensure you
-            and your loved ones are safe wherever the road takes you.
+            Your safety is our top priority. With GenixDrive, every journey is monitored in realtime and driving behavior insights, helping ensure safety for you and your loved ones wherever the road takes you.
           </Paragraph>
 
           <StoreActionsButtons />
@@ -96,11 +94,10 @@ const Features1 = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <SectionHeading
-          className="mb-10 uppercase"
+          className="mb-10 uppercase !w-full"
           paraText="GenixDrive by AiGenix (Private) Limited is a smart telematics solution designed to make driving safer and more intelligent. It monitors driving habits, provides safety scores."
         >
-          Safety & Protection
-          <p className="text-secondary">- KEY HIGHLIGHTS</p>
+          Safety & Protection <p className="text-secondary inline">- KEY HIGHLIGHTS</p>
         </SectionHeading>
 
         {/* ......... */}
@@ -119,13 +116,9 @@ const Features1 = () => {
         {/* .............. */}
         <FeatureSplitCard
           id="Gooog"
-          title="2. Speed & Driving Alerts"
+          title="2. Smarter Safety Insights After Every Drive"
           image={kf2}
-          description="GenixDrive actively monitors driving behavior and sends instant
-                alerts in case of over-speeding, harsh braking, or risky
-                maneuvers. Parents can keep an eye on teen drivers, while
-                families gain peace of mind knowing their loved ones are driving
-                responsibly."
+          description="Each trip is assigned a Safety Score based on how you drive—specifically focusing on acceleration, speeding, braking, and cornering. These insights help you understand your driving style so you can improve your road safety over time."
           reverse
           containerBg="bg-light-green"
           textColor="text-dark"
@@ -146,12 +139,9 @@ const Features1 = () => {
 
         {/* .............. */}
         <FeatureSplitCard
-          title=" 4. Anti-Theft Protection"
+          title=" 4. Device-Based Safety Monitoring"
           image={kf4}
-          description=" Your vehicle deserves protection too. With GenixDrive’s
-                anti-theft tools, you’ll be alerted to unusual movements or
-                unauthorized activity. It adds an extra layer of security,
-                helping you protect one of your most valuable assets."
+          description="GenixDrive supports driving safety monitoring through the in-vehicle device, ensuring every trip is tracked with accuracy and consistency. It analyzes key driving behaviors to promote safer driving habits. By translating raw driving data into meaningful insights, GenixDrive helps improve driving awareness and enhance overall road safety for every trip."
           reverse
           containerBg="bg-light-green"
           textColor="text-dark"
@@ -256,9 +246,8 @@ const Features1 = () => {
               >
                 {/* <span className="absolute left-6 top-6 w-6 h-1 bg-primary rounded-full"></span> */}
                 <span
-                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${
-                    active ? " text-secondary" : " text-gray-900"
-                  }`}
+                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${active ? " text-secondary" : " text-gray-900"
+                    }`}
                 >
                   {active ? "-" : "+"}
                 </span>

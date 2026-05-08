@@ -51,10 +51,8 @@ export const screens = [
       <>
         <p>Now that you're logged in, your dashboard appears.</p>
         <p>Here is your driving score to tell you how good you have been driving!</p>
-        <br />
         <p>By default, a 7-day filter is applied.</p>
         <p>Now, look at the ribbon at the top of the screen.</p>
-        <br />
         <p>Tap on <strong>30 days</strong> to see the statistics for the last 30 days.</p>
       </>
     ),

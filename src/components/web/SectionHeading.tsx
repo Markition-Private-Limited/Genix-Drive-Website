@@ -7,7 +7,7 @@ interface SectionHeadingProps {
   className?: string;
 }
 const SectionHeading = ({
-  paraText,
+  // paraText,
   children,
   className = "",
 }: SectionHeadingProps) => {
@@ -19,14 +19,14 @@ const SectionHeading = ({
         {children}
       </SubHeading>
 
-      <Paragraph
+      {/* <Paragraph
         size="base"
         color="default"
         weight="medium"
         className="leading-5"
       >
         {paraText}
-      </Paragraph>
+      </Paragraph> */}
     </div>
   );
 };

@@ -7,14 +7,15 @@ import SignupFlow from "../../components/web/SignupFlow";
 import ReadytoDrive from "../../components/web/ReadytoDrive";
 import SectionHeading from "../../components/web/SectionHeading";
 import cric from "../../assets/circ.png";
-import user from "../../assets/bloguser.png";
+import user1 from "../../assets/bloguser1.png";
+import user2 from "../../assets/bloguser2.png";
 
-import blog1 from "../../assets/blogs/1.jpg";
+import blog1 from "../../assets/blogs/1.png";
 import blog2 from "../../assets/blogs/2.png";
 import SubHeading from "../../components/sharedui/SubHeading";
 import Paragraph from "../../components/sharedui/Paragraph";
 import { useNavigate } from "react-router-dom";
-import { Timer } from "lucide-react";
+// import { Timer } from "lucide-react";
 
 const Home = () => {
   const BlogsRecords = [
@@ -24,11 +25,11 @@ const Home = () => {
       title:
         "How GenixDrive is Redefining Family Safety and Smarter Driving in Pakistan",
       description:
-        "We have received multiple questions about how we achieve efficiency during the development process of AlignUI Design System. So, I thought it would be a good idea to share the six most significant tools and resources we used in creating our design system. Let’s dive in!",
+        "Discover how GenixDrive uses advanced AI technology to monitor driving habits, ensuring your family's safety on the road. From real-time insights to smart risk prevention, we are bringing a new era of secure and efficient driving to Pakistan.",
       user: {
-        userName: "Onur Eren",
-        userImg: user,
-        date: "@createonur",
+        userName: "Muhammad Sohaib",
+        userImg: user1,
+        date: "2026-02-10",
         readTime: "4 min read",
       },
     },
@@ -39,8 +40,8 @@ const Home = () => {
       description:
         "At first, it was just an idea of Erşad. Then we combined our skills and shaped AlignUI Design System over approximately 250 days. When I look back, I see nothing but hard work and dedication. That's the main reason why I wanted to write this blog, to inspire and inform.",
       user: {
-        userName: "Onur Eren",
-        userImg: user,
+        userName: "Umar Riaz",
+        userImg: user2,
         date: "2026-02-08",
         readTime: "5 min read",
       },
@@ -90,9 +91,9 @@ const Home = () => {
                   />
                 </div>
                 <div className="blog-deta">
-                  <strong className="text-primary leading-5 mb-3 block blog-category">
+                  {/* <strong className="text-primary leading-5 mb-3 block blog-category">
                     {blog.category}
-                  </strong>
+                  </strong> */}
                   <SubHeading className="mb-5" size="2xl">
                     {blog.title}
                   </SubHeading>
@@ -126,9 +127,9 @@ const Home = () => {
                         </Paragraph>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 flex items-center gap-1 justify-center">
+                    {/* <p className="text-xs text-gray-600 flex items-center gap-1 justify-center">
                       <Timer size={16} /> {blog.user.readTime}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

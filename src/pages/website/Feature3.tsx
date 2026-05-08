@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import frame from "../../assets/featursabot/b33.png";
+import frame from "../../assets/featursabot/banner3.png";
 import frameMobile from "../../assets/FrameMobile.png";
 
 import SubHeading from "../../components/sharedui/SubHeading";
@@ -11,8 +11,8 @@ import SectionHeading from "../../components/web/SectionHeading";
 import kf1 from "../../assets/features/4kf1.png";
 import kf2 from "../../assets/features/4ff22.png";
 // import kf2 from "../../assets/features/4kf2.png";
-import kf3 from "../../assets/features/4kf2.png";
-import kf4 from "../../assets/features/ak47.png";
+import kf3 from "../../assets/features/4k3.png";
+import kf4 from "../../assets/features/4k4.png";
 // import kf4 from "../../assets/features/4kf4.png";
 import FeatureSplitCard from "../../components/web/FeatureGridContainer";
 
@@ -100,11 +100,10 @@ const Feature3 = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <SectionHeading
-          className="mb-10 uppercase"
+          className="mb-10 uppercase !w-full"
           paraText="GenixDrive by AiGenix (Private) Limited is a smart telematics solution designed to make driving safer and more intelligent. It monitors driving habits, provides safety scores."
         >
-          Gamification & Rewards
-          <p className="text-secondary">- KEY HIGHLIGHTS</p>
+          Gamification & Rewards <p className="text-secondary inline">- KEY HIGHLIGHTS</p>
         </SectionHeading>
 
         {/* ......... */}
@@ -260,9 +259,8 @@ const Feature3 = () => {
               >
                 {/* <span className="absolute left-6 top-6 w-6 h-1 bg-primary rounded-full"></span> */}
                 <span
-                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${
-                    active ? " text-secondary" : " text-gray-900"
-                  }`}
+                  className={`inline-flex absolute text-4xl items-center justify-center w-8 h-8 rounded-full ${active ? " text-secondary" : " text-gray-900"
+                    }`}
                 >
                   {active ? "-" : "+"}
                 </span>

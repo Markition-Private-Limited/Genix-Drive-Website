@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import './TextGuidancePanel.css'
 
 function TextGuidancePanel({
@@ -11,8 +12,24 @@ function TextGuidancePanel({
   isFlowEnd,
   onNextFlow,
   globalStep,
+  showDownloadBtn,
+  allFlows = [],
+  onFlowChange
 }) {
   const isFirst = globalStep === 0
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <div className="text-guidance-panel">
@@ -28,7 +45,47 @@ function TextGuidancePanel({
               />
             ))}
           </div>
-          {flowName && (
+          {flowName && allFlows.length > 0 ? (
+            <div className="custom-flow-dropdown" ref={dropdownRef}>
+              <button 
+                className="flow-selector-trigger"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                aria-haspopup="listbox"
+                aria-expanded={isDropdownOpen}
+              >
+                {flowName}
+                <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+              </button>
+              
+              {isDropdownOpen && (
+                <ul className="flow-dropdown-list">
+                  {allFlows.map(flow => (
+                    <li 
+                      key={flow} 
+                      className={`flow-dropdown-item ${flow === flowName ? 'active' : ''}`}
+                      onClick={() => {
+                        onFlowChange(flow)
+                        setIsDropdownOpen(false)
+                      }}
+                    >
+                      {flow}
+                      {flow === flowName && (
+                        <span className="active-check">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6 9 17l-5-5"/>
+                          </svg>
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ) : flowName && (
             <span className="flow-name-badge">{flowName}</span>
           )}
         </div>
@@ -45,41 +102,54 @@ function TextGuidancePanel({
 
       {/* Actions */}
       <div className="guidance-actions">
-        <button
-          className="nav-btn prev-btn"
-          onClick={onPrevious}
-          disabled={isFirst}
-          aria-label="Previous step"
-        >
-          ← Back
-        </button>
-
-        {isFlowEnd ? (
-          <button
-            className="nav-btn next-flow-btn"
-            onClick={onNextFlow}
-            aria-label="Next flow"
-          >
-            Next Flow →
-          </button>
-        ) : flowName === 'Finish' ? (
-          <button
-            className="nav-btn next-btn"
-            onClick={() => window.location.href = "/admin/signup"}
-            aria-label="Sign Up"
-          >
-            Sign Up
-          </button>
-        ) : (
-          <button
-            className="nav-btn next-btn"
-            onClick={onNext}
-            disabled={false}
-            aria-label="Next step"
-          >
-            Next →
-          </button>
+        {showDownloadBtn && (
+          <div className="guidance-download-container">
+            <button
+              className="interactive-download-btn"
+              onClick={() => window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank")}
+            >
+              DOWNLOAD APP
+            </button>
+          </div>
         )}
+
+        <div className="nav-buttons-group">
+          <button
+            className="nav-btn prev-btn"
+            onClick={onPrevious}
+            disabled={isFirst}
+            aria-label="Previous step"
+          >
+            ← Back
+          </button>
+
+          {isFlowEnd ? (
+            <button
+              className="nav-btn next-flow-btn"
+              onClick={onNextFlow}
+              aria-label="Next flow"
+            >
+              Next →
+            </button>
+          ) : flowName === 'Finish' ? (
+            <button
+              className="nav-btn next-btn"
+              onClick={() => window.location.href = "/admin/signup"}
+              aria-label="Sign Up"
+            >
+              Sign Up
+            </button>
+          ) : (
+            <button
+              className="nav-btn next-btn"
+              onClick={onNext}
+              disabled={false}
+              aria-label="Next step"
+            >
+              Next →
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )

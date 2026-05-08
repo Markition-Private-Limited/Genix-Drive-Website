@@ -1,6 +1,6 @@
 import SubHeading from "../sharedui/SubHeading";
 import Paragraph from "../sharedui/Paragraph";
-import { Linkedin ,Facebook, Instagram } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 import logo from "../../assets/logo.png";
 import StoreActionsButtons from "./StoreActionsButtons";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const Footer = () => {
           <Paragraph
             size="base"
             color="white"
-            className="max-w-xs text-justify"
+            className="max-w-xs"
           >
             GenixDrive is your trusted driving companion — built to keep you,
             your family, and your vehicle safe on every journey. Stay connected,
@@ -56,7 +56,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li>
               <a
-                onClick={() => navigate("")}
+                onClick={() => { navigate(""); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="hover:opacity-90 cursor-pointer"
               >
                 Home
@@ -64,7 +64,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                onClick={() => navigate("../about")}
+                onClick={() => { navigate("../about"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="hover:opacity-90 cursor-pointer"
               >
                 About
@@ -77,7 +77,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                onClick={() => navigate("../pricing")}
+                onClick={() => { navigate("../pricing"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="hover:opacity-90 cursor-pointer"
               >
                 Pricing
@@ -85,7 +85,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                onClick={() => navigate("../blogs")}
+                onClick={() => { navigate("../blogs"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="hover:opacity-90 cursor-pointer"
               >
                 Blogs
@@ -106,7 +106,7 @@ const Footer = () => {
             <li>
               <a
                 className="hover:opacity-90 cursor-pointer"
-                onClick={() => navigate("../features")}
+                onClick={() => { navigate("../features"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 Social & Family Connect
               </a>
@@ -114,7 +114,7 @@ const Footer = () => {
             <li>
               <a
                 className="hover:opacity-90 cursor-pointer"
-                onClick={() => navigate("../features1")}
+                onClick={() => { navigate("../features1"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 Safety & Protection
               </a>
@@ -122,7 +122,7 @@ const Footer = () => {
             <li>
               <a
                 className="hover:opacity-90 cursor-pointer"
-                onClick={() => navigate("../features2")}
+                onClick={() => { navigate("../features2"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 Driving Insights
               </a>
@@ -130,7 +130,7 @@ const Footer = () => {
             <li>
               <a
                 className="hover:opacity-90 cursor-pointer"
-                onClick={() => navigate("../features3")}
+                onClick={() => { navigate("../features3"); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               >
                 Gamification & Rewards
               </a>

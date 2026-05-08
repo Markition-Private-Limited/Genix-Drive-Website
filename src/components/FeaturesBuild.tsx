@@ -1,12 +1,12 @@
 import doodle from "../assets/Doodle.png";
 
 import feature1 from "../assets/fs/f11.png";
-import feature2 from "../assets/features/2.png";
+import feature2 from "../assets/features/22.png";
 import feature3 from "../assets/fs/3.png";
-import feature4 from "../assets/fs/4.png";
+import feature4 from "../assets/fs/44.png";
 import feature5 from "../assets/fs/f5.png";
 import feature6 from "../assets/fs/61.png";
-import feature7 from "../assets/fs/71.png";
+import feature7 from "../assets/fs/77.png";
 import feature8 from "../assets/fs/f8.png";
 import path from "../assets/path.png";
 import grystr from "../assets/grystr.png";
@@ -85,12 +85,12 @@ const FeaturesBuild = () => {
         {/* Feature2 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
           <div className="relative order-0 md:order-1 lg:order-0">
-            <div className=" w-full h-[220px]  md:w-[539px] md:h-[440px] bg-white/50 rounded-2xl"></div>
-            <div className="rounded-2xl w-full h-[220px] absolute top-4 left-4 md:w-[539px] md:h-[440px] overflow-hidden ">
+            <div className=" w-full h-[220px]  md:w-[539px] md:h-[440px] bg-transparent md-bg-white/50 rounded-2xl"></div>
+            <div className="rounded-2xl w-full h-[220px]  absolute top-0 left-0 md:w-[539px] md:h-[440px] overflow-hidden ">
               <img
                 src={feature2}
                 alt="Drive & Earn"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-contain rounded-xl"
               />
             </div>
           </div>
@@ -101,18 +101,17 @@ const FeaturesBuild = () => {
               weight="bold"
               size="3xl"
             >
-              Gamification &<p>Rewards</p>
+              Gamification & <p>Rewards</p>
             </SubHeading>
 
             <Paragraph size="sm" color="white">
               <span className="block">
-                Always alert. Always watching out for you. Always putting your
-                safety first.
+                GenixDrive turns smart driving into a challenge you’ll want to win—earn points for every safe move you make and unlock exciting rewards like vouchers and gift cards.
               </span>
-              <span className="block">
+              {/* <span className="block">
                 GenixDrive becomes your smart digital companion, watching over
                 every mile with consistent protection.
-              </span>
+              </span> */}
             </Paragraph>
             <Button
               onClick={() => {
@@ -138,13 +137,12 @@ const FeaturesBuild = () => {
 
             <Paragraph size="sm" color="white">
               <span className="block">
-                Always alert. Always watching out for you. Always putting your
-                safety first.
+                Always watching out for you and putting your safety first, GenixDrive uses driving insights and behavior analysis to make every trip safer while monitoring your journey every mile of the way.
               </span>
-              <span className="block">
+              {/* <span className="block">
                 GenixDrive becomes your smart digital companion, watching over
                 every mile with constant protection.
-              </span>
+              </span> */}
             </Paragraph>
             <Button
               onClick={() => {
@@ -292,9 +290,7 @@ const FeaturesBuild = () => {
               Smart Vehicle Care
             </SubHeading>
             <Paragraph size="sm" color="white">
-              Take care of your vehicle with smart telematics features.
-              GenixDrive helps you monitor usage, monitor performance, and keep
-              your car safer and smarter on the road.
+              GenixDrive keeps you connected to your vehicle through intelligent monitoring and driving insights. It analyzes real-time driving behavior to help you understand vehicle usage and reduce risky driving patterns, improving both safety and performance.
             </Paragraph>
             <Button
               onClick={() => {

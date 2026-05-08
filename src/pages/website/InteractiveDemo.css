@@ -48,32 +48,6 @@
   max-width: 500px;
 }
 
-.interactive-demo-footer {
-  display: flex;
-  justify-content: center;
-  padding: clamp(1.5rem, 3vw, 2.5rem) 1rem clamp(2rem, 4vw, 3rem);
-}
-
-.interactive-download-btn {
-  background: #7dc856;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 6px;
-  padding: 0.7rem 1.8rem;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
-}
-
-.interactive-download-btn:hover {
-  background: #6db848;
-  transform: translateY(-1px);
-}
-
 @media (max-width: 1024px) {
   .interactive-demo-content {
     gap: 2rem;

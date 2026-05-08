@@ -7,6 +7,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
+import grnstr from "../assets/grnstr.png";
+import bluestr from "../assets/bluestr.png";
+import grystr from "../assets/grystr.png";
+
 const AboutSection = ({ bg }: { bg: string }) => {
   const navigate = useNavigate();
   return (
@@ -35,9 +39,19 @@ const AboutSection = ({ bg }: { bg: string }) => {
           }}
           transition={{ duration: 0.6 }}
         >
-          <SubHeading color="dark" weight="bold" size="4xl" className="mb-6">
-            What is GenixDrive?
-          </SubHeading>
+          <div className="relative inline-block mb-6">
+            <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: -18, left: -46, width: 30, opacity: 0.35 }} />
+            <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+              style={{ bottom: -12, right: -40, width: 24, opacity: 0.7 }} />
+            <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: -24, right: 32, width: 18, opacity: 0.5 }} />
+            <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: 18, left: -22, width: 12, opacity: 0.8 }} />
+            <SubHeading color="dark" weight="bold" size="4xl">
+              What is GenixDrive?
+            </SubHeading>
+          </div>
           <Paragraph
             color="default"
             weight="light"
@@ -55,7 +69,7 @@ const AboutSection = ({ bg }: { bg: string }) => {
           </Paragraph>
 
           <Button variant="primary" className="mt-[27px]" size="md" onClick={() => { navigate("../about"); window.scrollTo(0, 0); }}>
-            Learn MOre
+            Learn More
           </Button>
         </motion.div>
         <motion.div

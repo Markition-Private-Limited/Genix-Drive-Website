@@ -1,14 +1,21 @@
 import frame from "../../assets/fframe.png";
 import BlogBanner from "../../assets/blogbaner.jpg";
 import userPlaceHolder from "../../assets/userPlaceHolder.png";
+import user1 from "../../assets/bloguser1.png";
+import user2 from "../../assets/bloguser2.png";
+import user3 from "../../assets/bloguser3.png";
+import user4 from "../../assets/bloguser4.png";
+import user5 from "../../assets/bloguser5.png";
+import user6 from "../../assets/bloguser6.png";
+
 
 import { useNavigate } from "react-router-dom";
 
-import blog1 from "../../assets/blogs/1.jpg";
+import blog1 from "../../assets/blogs/1.png";
 import blog2 from "../../assets/blogs/2.png";
 import blog3 from "../../assets/blogs/3.jpg";
 import blog4 from "../../assets/blogs/4.jpg";
-import blog5 from "../../assets/blogs/5.jpg";
+import blog5 from "../../assets/blogs/5.png";
 import blog6 from "../../assets/blogs/6.jpg";
 import SubHeading from "../../components/sharedui/SubHeading";
 import Paragraph from "../../components/sharedui/Paragraph";
@@ -18,78 +25,78 @@ const BlogsRecords = [
   {
     blogImg: blog1,
     category: "Social & Family Connect",
-    title: "What Makes GenixDrive Different",
+    title: "How GenixDrive is Redefining Family Safety and Smarter Driving in Pakistan",
     description:
-      "Discover how telematics technology improves vehicle safety, efficiency, and real-time monitoring for modern drivers.",
+      "Discover how GenixDrive uses advanced AI technology to monitor driving habits, ensuring your family's safety on the road. From real-time insights to smart risk prevention, we are bringing a new era of secure and efficient driving to Pakistan.",
     user: {
-      userName: "Olivia Rhye",
+      userName: "Muhammad Sohaib",
       userImg:
-        "https://img.freepik.com/free-photo/front-view-business-woman-suit_23-2148603018.jpg?semt=ais_hybrid&w=740&q=80",
+        user1,
       date: "2026-02-10",
     },
   },
   {
     blogImg: blog2,
     category: "Safety & Protection",
-    title: "What Makes GenixDrive Different",
+    title: "what makes Genix Drive Different",
     description:
-      "Regular maintenance ensures long vehicle life. Learn simple steps to prevent breakdowns and reduce repair costs.",
+      "At first, it was just an idea of Erşad. Then we combined our skills and shaped AlignUI Design System over approximately 250 days. When I look back, I see nothing but hard work and dedication. That's the main reason why I wanted to write this blog, to inspire and inform.",
     user: {
-      userName: "Phoenix Baker",
+      userName: "Umar Riaz",
       userImg:
-        "https://img.freepik.com/free-photo/portrait-smiling-businesswoman-posing_23-2148603020.jpg?semt=ais_hybrid&w=740&q=80",
+        user2,
       date: "2026-02-08",
     },
   },
   {
     blogImg: blog3,
     category: "Driving Insights",
-    title: "What Makes GenixDrive Different",
+    title: "GPS Tracking: Keeping Families & Fleets Safe on Every Journey",
     description:
       "GPS tracking helps monitor vehicle location and ensures safety for families and fleet managers alike.",
     user: {
-      userName: "Lana Steiner",
+      userName: "Saad Rasheed",
       userImg:
-        "https://img.freepik.com/free-photo/portrait-smiling-businesswoman-posing_23-2148603021.jpg?semt=ais_hybrid&w=740&q=80",
+        user3,
       date: "2026-02-06",
     },
   },
   {
     blogImg: blog4,
     category: "Driving Insights",
-    title: "What Makes GenixDrive Different",
+    title: "AI-Powered Driving Insights: Smarter Alerts, Safer Roads",
     description:
       "AI-powered insights are transforming driving experiences with predictive analytics and smart alerts.",
     user: {
-      userName: "Alec Whitten",
+      userName: "Bilal Hassan",
       userImg:
-        "https://img.freepik.com/free-photo/portrait-smiling-businesswoman-posing_23-2148603022.jpg?semt=ais_hybrid&w=740&q=80",
+        user4,
       date: "2026-02-05",
     },
   },
   {
     blogImg: blog5,
     category: "Social & Family Connect",
-    title: "What Makes GenixDrive Different",
+    title: "Plan Smarter Road Trips with Connected Vehicle Data",
     description:
       "Use connected apps and vehicle data to plan efficient and enjoyable road trips with your loved ones.",
     user: {
-      userName: "Demi WIlkinson",
+      userName: "Farah Yousuf",
       userImg:
-        "https://img.freepik.com/free-photo/portrait-smiling-businesswoman-posing_23-2148603023.jpg?semt=ais_hybrid&w=740&q=80",
+        user5,
       date: "2026-02-03",
     },
   },
   {
     blogImg: blog6,
     category: "Gamification & Rewards",
-    title: "What Makes GenixDrive Different",
+    title: "Maximizing EV Battery Life with Smart Monitoring Tools",
     description:
       "Learn how monitoring tools help optimize battery usage and performance in modern electric vehicles.",
     user: {
-      userName: "Candice Wu",
+      userName: "Kinza Tariq",
       userImg:
-        "https://img.freepik.com/free-photo/portrait-smiling-businesswoman-posing_23-2148603024.jpg?semt=ais_hybrid&w=740&q=80",
+        user6,
       date: "2026-02-01",
     },
   },
@@ -100,7 +107,7 @@ const Blogs = () => {
   return (
     <div className="blogs">
       {/* BANNER */}
-      <div className="banner relative">
+      {/* <div className="banner relative">
         <img src={frame} alt="Pricing banner" className="w-full" />
         <SubHeading
           weight="medium"
@@ -111,10 +118,10 @@ const Blogs = () => {
             Our <span className="text-light-green">Blogs</span>
           </p>
         </SubHeading>
-      </div>
+      </div> */}
 
       {/* BLOGS SECTION */}
-      <section className="bg-white price-cards px-[56px] py-[120px] padding-50">
+      <section className="bg-white price-cards px-[56px] padding-50">
         <div className="col-span-3 p-5  bg-secondary  overflow-hidden z-10 relative h-[490px] mb-10 blog-banner-details">
           <img
             className="absolute top-0 left-0 w-full h-full object-cover"
@@ -143,7 +150,7 @@ const Blogs = () => {
               />
 
               <Paragraph color="white" size="sm" weight="bold">
-                Tracey Wilson
+                Musharib Awan
               </Paragraph>
               <Paragraph color="white" size="sm" className="text-gray-600">
                 Augest 20, 2022
@@ -166,9 +173,9 @@ const Blogs = () => {
                 />
               </div>
               <div className="blog-deta blogsrecords">
-                <strong className="text-primary leading-5 mb-3 block">
+                {/* <strong className="text-primary leading-5 mb-3 block">
                   {blog.category}
-                </strong>
+                </strong> */}
                 <SubHeading className="mb-5" size="2xl">
                   {blog.title}
                 </SubHeading>

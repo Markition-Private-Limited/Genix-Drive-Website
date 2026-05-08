@@ -100,6 +100,15 @@ function InteractiveDemo() {
     }
   };
 
+  const uniqueFlows: string[] = Array.from(new Set(screens.map((s: any) => s.flowName)));
+
+  const handleFlowChange = (flowName: string) => {
+    const firstStepIndex = screens.findIndex((s: any) => s.flowName === flowName);
+    if (firstStepIndex !== -1) {
+      setCurrentStep(firstStepIndex);
+    }
+  };
+
   return (
     <div className="interactive-demo-app">
       <header className="interactive-demo-header">
@@ -126,10 +135,10 @@ function InteractiveDemo() {
               isFlowEnd={currentScreen.isFlowEnd}
               onNextFlow={handleNextFlow}
               globalStep={currentStep}
+              showDownloadBtn={true}
+              allFlows={uniqueFlows as any}
+              onFlowChange={handleFlowChange}
             />
-            <footer className="interactive-demo-footer">
-        <button className="interactive-download-btn" onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en","_blank")}>DOWNLOAD APP</button>
-      </footer>
           </section>
           
         </div>

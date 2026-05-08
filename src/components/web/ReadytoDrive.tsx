@@ -32,9 +32,7 @@ const ReadytoDrive = () => {
             Ready to Drive <p>Smarter?</p>
           </SubHeading>
           <Paragraph color="white">
-            Ready to keep your loved ones safe? With GenixDrive, you can track
-            trips, receive instant alerts, and stay connected in real-time —
-            giving your family the peace of mind they deserve.
+            Experience the demo and see smarter driving in action. Discover our exclusive features designed to improve every journey and keep your loved ones safe.
           </Paragraph>
           <Button
             variant="outline"
