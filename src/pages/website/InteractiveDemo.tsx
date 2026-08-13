@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MobileEmulator from '../../components/demo/MobileEmulator';
 import TextGuidancePanel from '../../components/demo/TextGuidancePanel';
 import { screens } from '../../components/demo/screens/screensData';
+import { DemoContext } from '../../components/demo/DemoContext';
 
 // Preload all demo assets
 import flow1screen1Img from '../../assets/demo/flow1screen1.webp';
@@ -48,7 +49,7 @@ import './InteractiveDemo.css';
 
 function InteractiveDemo() {
   const [currentStep, setCurrentStep] = useState(0);
-  const currentScreen = screens[currentStep];
+  const currentScreen: any = screens[currentStep];
   const EmulatorContent = currentScreen.EmulatorContent as React.ComponentType<any>;
 
   const currentFlowScreens = screens.filter((s: any) => s.flowName === currentScreen.flowName);
@@ -82,10 +83,31 @@ function InteractiveDemo() {
   }, []);
 
   const handleNext = () => {
+    if (currentScreen.customNext !== undefined) {
+      setCurrentStep(currentScreen.customNext);
+      return;
+    }
     setCurrentStep((prev) => Math.min(prev + 1, lastIndexInFlow));
   };
 
+  const handleJumpTo = (stepIndex: number) => {
+    setCurrentStep(stepIndex);
+  };
+
+  useEffect(() => {
+    if (currentScreen.autoAdvanceAfter) {
+      const timer = setTimeout(() => {
+        handleNext();
+      }, currentScreen.autoAdvanceAfter);
+      return () => clearTimeout(timer);
+    }
+  }, [currentStep, currentScreen]);
+
   const handlePrevious = () => {
+    if (currentScreen.customPrev !== undefined) {
+      setCurrentStep(currentScreen.customPrev);
+      return;
+    }
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   };
 
@@ -100,7 +122,16 @@ function InteractiveDemo() {
     }
   };
 
-  const uniqueFlows: string[] = Array.from(new Set(screens.map((s: any) => s.flowName)));
+  const uniqueFlows: string[] = (() => {
+    const flows = Array.from(new Set(screens.filter((s: any) => !s.isHiddenFlow).map((s: any) => s.flowName)));
+    const dashboardIndex = flows.indexOf('Dashboard');
+    const markTripsIndex = flows.indexOf('Mark Trips');
+    if (dashboardIndex !== -1 && markTripsIndex !== -1 && markTripsIndex > dashboardIndex) {
+      flows.splice(markTripsIndex, 1);
+      flows.splice(dashboardIndex + 1, 0, 'Mark Trips');
+    }
+    return flows;
+  })();
 
   const handleFlowChange = (flowName: string) => {
     const firstStepIndex = screens.findIndex((s: any) => s.flowName === flowName);
@@ -118,9 +149,11 @@ function InteractiveDemo() {
       <main className="interactive-demo-main">
         <div className="interactive-demo-content">
           <section className="interactive-emulator-section">
-            <MobileEmulator onNext={handleNext} currentStep={currentStep}>
-              <EmulatorContent />
-            </MobileEmulator>
+            <DemoContext.Provider value={{ onFlowChange: handleFlowChange }}>
+              <MobileEmulator onNext={handleNext} currentStep={currentStep} onJumpTo={handleJumpTo}>
+                <EmulatorContent />
+              </MobileEmulator>
+            </DemoContext.Provider>
           </section>
 
           <section className="interactive-guidance-section">
@@ -140,11 +173,11 @@ function InteractiveDemo() {
               onFlowChange={handleFlowChange}
             />
           </section>
-          
+
         </div>
       </main>
 
-      
+
     </div>
   );
 }

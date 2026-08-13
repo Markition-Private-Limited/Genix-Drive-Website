@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/GenixDrive_Logo/GenixDrive Logo (Black) - SVG.svg";
 
 const Footer = () => {
   return (

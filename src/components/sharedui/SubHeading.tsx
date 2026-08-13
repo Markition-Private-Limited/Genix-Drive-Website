@@ -1,6 +1,6 @@
 import React from "react";
 
-type Size = "lg" | "xl" | "2xl" | "3xl" | "4xl";
+type Size = "base" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 
 type Weight = "medium" | "semibold" | "bold" | "extrabold" | "black";
 
@@ -14,11 +14,13 @@ interface SubHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 }
 
 const sizeMap: Record<Size, string> = {
-  lg: "text-lg",
-  xl: "text-xl",
-  "2xl": "text-2xl",
-  "3xl": "text-3xl",
-  "4xl": "text-4xl",
+  base: "text-sm lg:text-base",
+  md: "text-base",
+  lg: "text-base lg:text-lg",
+  xl: "text-lg lg:text-xl",
+  "2xl": "text-xl lg:text-2xl",
+  "3xl": "text-2xl lg:text-3xl",
+  "4xl": "text-3xl lg:text-4xl",
 };
 
 const weightMap: Record<Weight, string> = {

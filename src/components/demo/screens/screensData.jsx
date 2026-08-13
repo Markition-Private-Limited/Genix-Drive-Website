@@ -41,6 +41,9 @@ import flow5Screen11Img from './flow5Screen11Image'
 import flow5Screen12Img from './flow5Screen12Image'
 import flow6Screen1Img from './flow6Screen1Image'
 import flow6Screen2Img from './flow6Screen2Image'
+import flow1aScreen1Img from './flow1aScreen1Image'
+import flow1aScreen2Img from './flow1aScreen2Image'
+import flow1aScreen3Img from './flow1aScreen3Image'
 
 export const screens = [
   {
@@ -49,11 +52,12 @@ export const screens = [
     title: 'Dashboard',
     instruction: (
       <>
-        <p>Now that you're logged in, your dashboard appears.</p>
-        <p>Here is your driving score to tell you how good you have been driving!</p>
+        <p>This is your dashboard, where you can view your driving score and see how safely you're driving. Your score is based on how you drive, when you drive, and how much you drive</p>
+        {/* <p>Now that you're logged in, your dashboard appears.</p>
+        <p>Here is your driving score to tell you how good you have been driving!</p> */}
         <p>By default, a 7-day filter is applied.</p>
-        <p>Now, look at the ribbon at the top of the screen.</p>
-        <p>Tap on <strong>30 days</strong> to see the statistics for the last 30 days.</p>
+        <p>Now, look at the ribbon at the top of the screen and tap on <strong>30 days</strong> to see the statistics for the last 30 days.</p>
+        <p>Or tap on the <strong>Mark Trips</strong> section to review recorded trips.</p>
       </>
     ),
     EmulatorContent: flow1Screen1Img,
@@ -171,6 +175,8 @@ export const screens = [
           <li>At the top, choose <strong>7 days</strong>, <strong>30 days</strong>, or <strong>365 days</strong> to see data for different time periods.</li>
           <li>The chart also compares your events with the <strong>average of other users</strong> so you can see how you're performing</li>
         </ul>
+        <br />
+        {/* <p>Now, go back to the <strong>main dashboard screen</strong>.</p> */}
       </>
     ),
     EmulatorContent: flow1Screen10Img,
@@ -251,7 +257,7 @@ export const screens = [
         <p>Finally, a confirmation screen will appear.</p>
         <p>Tap to <strong>send the request</strong>, and your friend request will be sent successfully.</p>
         <br />
-        <p>Once your friend or companion accepts the request, they will appear on the <strong>Map screen</strong>.You will be able to view their live location directly on the map.</p>
+        {/* <p>Once your friend or companion accepts the request, they will appear on the <strong>Map screen</strong>.You will be able to view their live location directly on the map.</p> */}
       </>
     ),
     EmulatorContent: flow2Screen6Img,
@@ -604,5 +610,41 @@ export const screens = [
       </>
     ),
     EmulatorContent: FinishScreen,
+  },
+  {
+    id: 45,
+    flowName: 'Mark Trips',
+    title: 'Mark Trips',
+    instruction: (
+      <>
+        <p>For each trip, you have two options: <strong>Mark as Driven</strong> or <strong>Not Driven</strong>.</p>
+        <p>Tap <strong>Mark as Driven</strong> to confirm the trip and move it to your Trips history.</p>
+      </>
+    ),
+    EmulatorContent: flow1aScreen1Img,
+    customPrev: 0,
+  },
+  {
+    id: 46,
+    flowName: 'Mark Trips',
+    title: 'Mark Trips',
+    instruction: (
+      <>
+        <p>If you select <strong>Not Driven by me</strong></p>
+      </>
+    ),
+    EmulatorContent: flow1aScreen2Img,
+  },
+  {
+    id: 47,
+    flowName: 'Mark Trips',
+    title: 'Mark Trips',
+    instruction: (
+      <>
+        <p>The trip will be removed from your trip list.</p>
+      </>
+    ),
+    EmulatorContent: flow1aScreen3Img,
+    customNext: 0,
   }
 ]

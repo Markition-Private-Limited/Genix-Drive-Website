@@ -1,12 +1,14 @@
-import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
-import topHeaderImg from '../../../assets/demo/top-header.webp';
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle, useContext } from 'react';
+import topHeaderImg from '../../../assets/demo/top-header.png';
 import bottomNavbarImg from '../../../assets/demo/bottom-navbar.webp';
 import styles from './BaseScreenImage.module.css';
 import LoadingSpinner from '../LoadingSpinner';
+import { DemoContext } from '../DemoContext';
 
 const BaseScreenImage = forwardRef(({ src, alt = "Screen", children, className = '', scrollTop = 0, isScrollable = true }, ref) => {
   const containerRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { onFlowChange } = useContext(DemoContext);
 
   useImperativeHandle(ref, () => ({
     scrollToTop: () => {
@@ -53,11 +55,39 @@ const BaseScreenImage = forwardRef(({ src, alt = "Screen", children, className =
 
       {isLoaded && children}
 
-      <img
-        src={bottomNavbarImg}
-        className={`${styles.screenNavbar} ${isLoaded ? styles.elementsVisible : ''}`}
-        alt="Navbar"
-      />
+      <div className={`${styles.navbarContainer} ${isLoaded ? styles.elementsVisible : ''}`}>
+        <img
+          src={bottomNavbarImg}
+          className={styles.screenNavbar}
+          alt="Navbar"
+        />
+        <div className={styles.navbarHotspots}>
+          <button
+            type="button"
+            className={styles.navbarHotspotButton}
+            title="Dashboard"
+            onClick={() => onFlowChange('Dashboard')}
+          />
+          <button
+            type="button"
+            className={styles.navbarHotspotButton}
+            title="Companion"
+            onClick={() => onFlowChange('Add a Connection')}
+          />
+          <button
+            type="button"
+            className={styles.navbarHotspotButton}
+            title="Rewards"
+            onClick={() => onFlowChange('Rewards')}
+          />
+          <button
+            type="button"
+            className={styles.navbarHotspotButton}
+            title="Trip"
+            onClick={() => onFlowChange('Trips')}
+          />
+        </div>
+      </div>
     </div>
   );
 });

@@ -7,14 +7,14 @@ function flow1Screen10Image({ onNext, currentStep }) {
 
   return (
     <BaseScreenImage src={flow1screen10Img} scrollTop={0}>
-      {isStep10 && (
+      {/* {isStep10 && (
         <button
           type="button"
           className={baseStyles.hotspotBase}
-          style={{ top: '5.5%', left: '3%', width: '12%', height: '6%', borderRadius: '50%' }}
+          style={{ top: '16.5%', left: '5%', width: '11.9%', height: '5.4%', borderRadius: '12%' }}
           onClick={onNext}
         />
-      )}
+      )} */}
     </BaseScreenImage>
   );
 }

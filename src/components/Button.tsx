@@ -11,8 +11,8 @@ type ButtonProps = {
 
 const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
   sm: "px-6 py-2.5 text-xs",
-  md: "px-8 py-3.5 text-sm",
-  lg: "px-10 py-4 text-base",
+  md: "px-6 py-3.5 text-sm",
+  lg: "px-8 py-4 text-base",
 };
 
 const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -35,9 +35,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const base = `${
-      isFullBtn ? "max-w-full" : "max-w-[200px]"
-    } inline-flex  text-[12px] items-center justify-center gap-2 rounded-lg font-bold uppercase tracking-wide transition-colors cursor-pointer font-cairo`;
+    const base = `${isFullBtn ? "max-w-full" : "max-w-[200px]"
+      } inline-flex  text-[12px] items-center justify-center gap-2 rounded-lg font-bold uppercase tracking-wide transition-colors cursor-pointer font-cairo`;
     const disabledClasses = disabled ? "opacity-60 cursor-not-allowed" : "";
     const classes = [
       base,

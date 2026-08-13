@@ -28,7 +28,7 @@ Implementation files:
 ================================================================================
 
 PURPOSE
-  Introduces the user to the main dashboard and the time-filter ribbon.
+  Introduces the user to the main  and the time-filter ribbon.
 
 STEPS
   Step 1 — Welcome to Genix Drive

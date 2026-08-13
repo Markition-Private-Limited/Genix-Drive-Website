@@ -14,53 +14,58 @@ import grystr from "../../assets/grystr.png";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 // const CARD_W    = 260;
-const CARD_W    = 240;
-const CARD_H    = 420;
+const CARD_W = 190;
+const CARD_H = 330;
 // const CARD_GAP  = 24;
-const CARD_GAP  = 10;
+const CARD_GAP = 15;
 const CARD_STEP = CARD_W + CARD_GAP;   // 284px between card left edges
-const SPEED       = 0.55;              // px per frame (~33 px/s at 60 fps)
-const CURVE       = 80;               // max vertical drop at viewport edges (px)
-const MAX_ROTATE  = 52;               // max rotateY at viewport edges (deg)
+const SPEED = 0.55;              // px per frame (~33 px/s at 60 fps)
+const CURVE = 60;               // max vertical drop at viewport edges (px)
+const MAX_ROTATE = 45;               // max rotateY at viewport edges (deg)
 
-const IMAGES      = [s1, s2, s3, s4, s5, s6];
-const LOOP_W      = CARD_STEP * IMAGES.length;   // one full copy width
-const ALL_IMAGES  = [...IMAGES, ...IMAGES];       // doubled for seamless loop
+const IMAGES = [s1, s2, s3, s4, s5, s6];
+const LOOP_W = CARD_STEP * IMAGES.length;   // one full copy width
+const ALL_IMAGES = [...IMAGES, ...IMAGES, ...IMAGES];       // tripled for seamless loop
 
 // ─── Component ────────────────────────────────────────────────────────────────
 const AboutCollageSlider = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const trackRef   = useRef<HTMLDivElement>(null);
-  const cardRefs   = useRef<(HTMLDivElement | null)[]>([]);
-  const rafRef     = useRef(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const rafRef = useRef(0);
 
   useEffect(() => {
-    let offset      = 0;
+    const getVOffset = () => (IMAGES.length * 1.5 * CARD_STEP - CARD_GAP / 2) - (document.documentElement.clientWidth / 2);
+    let offset = getVOffset();
     let sectionLeft = sectionRef.current?.getBoundingClientRect().left ?? 0;
 
     const onResize = () => {
       sectionLeft = sectionRef.current?.getBoundingClientRect().left ?? 0;
+      // Optionally reset offset on resize to keep it centered
+      // offset = getVOffset();
     };
     window.addEventListener("resize", onResize);
 
     const tick = () => {
       // Advance scroll
       offset += SPEED;
-      if (offset >= LOOP_W) offset -= LOOP_W;
+      // Loop within the middle set of the tripled array for seamless centering
+      if (offset >= LOOP_W * 2) offset -= LOOP_W;
+      if (offset < LOOP_W) offset += LOOP_W;
 
       // Move the track
       if (trackRef.current) {
-        trackRef.current.style.transform = `translateX(-${offset}px)`;
+        trackRef.current.style.transform = `translateX(${-offset}px)`;
       }
 
-      // Parabolic curve: y = CURVE * (normalised_dist_from_centre)²
-      // → 0 at viewport centre, CURVE at viewport edges
-      const vCentre = window.innerWidth / 2;
+      // Parabolic curve logic
+      const vCentre = document.documentElement.clientWidth / 2;
       cardRefs.current.forEach((card, i) => {
         if (!card) return;
-        const cx   = sectionLeft + i * CARD_STEP + CARD_W / 2 - offset;
-        const dist   = (cx - vCentre) / vCentre;
-        const rotY   = -dist * MAX_ROTATE;
+        // cx = global horizontal center of the card
+        const cx = sectionLeft + i * CARD_STEP + CARD_W / 2 - offset;
+        const dist = (cx - vCentre) / vCentre;
+        const rotY = -dist * MAX_ROTATE;
         const transY = CURVE * dist * dist;
         card.style.transform = `perspective(1000px) rotateY(${rotY}deg) translateY(${transY}px)`;
       });
@@ -81,8 +86,8 @@ const AboutCollageSlider = () => {
       className="relative overflow-hidden"
       style={{
         background: "#ffffff",
-        paddingTop: "5.5rem",
-        paddingBottom: "1rem",
+        paddingTop: "4rem",
+        paddingBottom: "0rem",
       }}
     >
       {/* Ambient glows */}
@@ -96,7 +101,7 @@ const AboutCollageSlider = () => {
       }} />
 
       {/* ── Heading ─────────────────────────────────────────────────────────── */}
-      <div className="relative z-10 text-center mb-14 px-6">
+      <div className="relative z-10 text-center mb-8 px-6">
         <div className="relative inline-block">
           <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
             style={{ top: -18, left: -46, width: 30, opacity: 0.8 }} />
@@ -111,7 +116,7 @@ const AboutCollageSlider = () => {
 
           <h2
             className="font-bold leading-tight tracking-tight text-black"
-            style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}
+            style={{ fontSize: "clamp(2rem, 4.2vw, 3.2rem)" }}
           >
             About{" "}
             <span style={{
@@ -125,7 +130,7 @@ const AboutCollageSlider = () => {
           </h2>
         </div>
 
-        <p className="mt-5 mx-auto leading-relaxed font-light text-gray-500"
+        <p className="mt-3 mx-auto leading-relaxed font-light text-gray-500"
           style={{ fontSize: "1.1rem", maxWidth: 560 }}>
           Smart, safe, and connected driving — every trip becomes an intelligent
           journey with AI‑powered insights that protect, reward, and guide you on the road.
@@ -191,7 +196,7 @@ const AboutCollageSlider = () => {
                     userSelect: "none",
                     objectFit: "cover",
                   }}
-                  // [0, 5].includes(i % IMAGES.length) ? "contain" : 
+                // [0, 5].includes(i % IMAGES.length) ? "contain" : 
                 />
                 {/* Subtle bottom vignette */}
                 <div className="absolute inset-0 pointer-events-none" style={{

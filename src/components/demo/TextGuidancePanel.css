@@ -322,4 +322,8 @@
   .guidance-actions {
     justify-content: flex-end;
   }
+
+  .btn-text {
+    display: none;
+  }
 }

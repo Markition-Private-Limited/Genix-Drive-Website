@@ -7,6 +7,10 @@ import step2 from "../../assets/deviceInstall.png";
 import step3 from "../../assets/signup/3.png";
 import step4 from "../../assets/signup/4.png";
 import cric from "../../assets/circ.png";
+import grnstr from "../../assets/grnstr.png";
+import grystr from "../../assets/grystr.png";
+import bluestr from "../../assets/bluestr.png";
+
 
 import SectionHeading from "./SectionHeading";
 
@@ -17,7 +21,7 @@ const SignupFlow = () => {
     setData(data);
   };
   return (
-    <section className="bg-white text-black font-cairo p-[70px] md:p-[135px] padding-50 ">
+    <section className="bg-white text-black font-cairo py-16 px-6 md:py-24 md:px-12 lg:py-16 lg:px-[100px] padding-50 ">
       <SectionHeading
         className="paratExt w-full md:w-[560px]"
         paraText="Get started in minutes download the app or use our optional device,
@@ -30,19 +34,27 @@ const SignupFlow = () => {
           <img
             src={cric}
             alt="circle"
-            className="absolute left-1/2 top-1/2 signdoodle -translate-1/2 w-[241px] h-[102px] "
+            className="absolute left-1/2 top-[62%] signdoodle -translate-1/2 w-[241px] h-[112px] rotate-[-5deg]"
           />
+          <img src={grnstr} alt="" className="hidden md:block absolute pointer-events-none select-none"
+            style={{ top: 15, left: -345, width: 38, opacity: 1 }} />
+          <img src={bluestr} alt="" className="hidden md:block absolute pointer-events-none select-none"
+            style={{ top: -5, left: -368, width: 18, opacity: 0.8 }} />
+          <img src={grnstr} alt="" className="hidden md:block absolute pointer-events-none select-none"
+            style={{ top: 15, left: 275, width: 38, opacity: 1 }} />
+          <img src={grystr} alt="" className="hidden md:block absolute pointer-events-none select-none"
+            style={{ top: 55, left: 315, width: 18, opacity: 0.8 }} />
         </div>
       </SectionHeading>
-      <div className="mt-[50px] max-w-8xl  m-auto">
+      <div className="mt-[30px] max-w-[1450px] m-auto">
         <Switch onClick={handleChildClick} />
 
-        <div className="steps sigup-flows flex items-center flex-wrap justify-center gap-10 mt-[76px]">
+        <div className="steps sigup-flows grid grid-cols-1 md:grid-cols-2 gap-10 mt-[40px] place-items-center">
           {data === "with" ? (
             <>
               {/* STEP1 */}
-              <div className="w-[400px] h-full  step-container relative p-10 rounded-2xl bg-surface-light border overflow-hidden">
-                <div className="step-details text-left">
+              <div className="w-full max-w-[450px] h-full justify-self-center md:justify-self-end step-container relative p-8 lg:p-10 rounded-2xl bg-surface-light border overflow-hidden">
+                <div className="step-details text-center md:text-left">
                   <SubHeading
                     size="2xl"
                     weight="black"
@@ -59,8 +71,8 @@ const SignupFlow = () => {
                     weight="light"
                     className="leading-5 text"
                   >
-                    First, download the GenixDrive app from the Google Play
-                    Store or App Store and sign up through email or phone
+                    First, download GenixDrive app from the Google Play
+                    Store or App Store and sign up through email or phone number.
                   </Paragraph>
                   <img
                     src={step1}
@@ -70,8 +82,67 @@ const SignupFlow = () => {
                 </div>
               </div>
               {/* STEP2 */}
-              <div className="w-[400px] h-full step-container relative p-10 rounded-2xl bg-surface-light border">
-                <div className="step-details text-left">
+              <div className="w-full max-w-[450px] justify-self-center md:justify-self-start step-container p-8 lg:p-10 relative rounded-2xl bg-surface-light border overflow-hidden">
+                <div className="step-details text-center md:text-left">
+                  <SubHeading
+                    size="2xl"
+                    weight="black"
+                    className="uppercase text-secondary mb-2 mainclass"
+                  >
+                    step 2
+                  </SubHeading>
+                  <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
+                    Start monitoring your score
+                  </SubHeading>
+                  <Paragraph
+                    size="sm"
+                    color="default"
+                    weight="light"
+                    className="leading-5 text"
+                  >
+                    Once you have logged in to your account and provided required permissions you will be able to record trips, your driving score will be visible within 24 hours after your first trip. In meantime, you can start adding connections and places to help monitor the safety of your loved ones.
+                  </Paragraph>
+                  <img
+                    src={step4}
+                    alt="step 4"
+                    className="w-full h-[200px]  mt-[20px] object-contain"
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* STEP1 */}
+              <div className="w-full max-w-[450px] h-full justify-self-center md:justify-self-end step-container relative p-8 lg:p-10 rounded-2xl bg-surface-light border overflow-hidden">
+                <div className="step-details text-center md:text-left">
+                  <SubHeading
+                    size="2xl"
+                    weight="black"
+                    className="uppercase text-secondary mb-2 mainclass"
+                  >
+                    step 1
+                  </SubHeading>
+                  <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
+                    Download the app & Sign up
+                  </SubHeading>
+                  <Paragraph
+                    size="sm"
+                    color="default"
+                    weight="light"
+                    className="leading-5 text"
+                  >
+                    First, download the GenixDrive app from the Google Play Store or App Store, sign up through email or phone number, and grant the required permissions.
+                  </Paragraph>
+                  <img
+                    src={step1}
+                    alt="step 1"
+                    className="w-full h-[200px] mt-[50px] object-contain"
+                  />
+                </div>
+              </div>
+              {/* STEP2 */}
+              <div className="w-full max-w-[450px] h-full justify-self-center md:justify-self-start step-container relative p-8 lg:p-10 rounded-2xl bg-surface-light border">
+                <div className="step-details text-center md:text-left">
                   <SubHeading
                     size="2xl"
                     weight="black"
@@ -102,8 +173,8 @@ const SignupFlow = () => {
                 </div>
               </div>
               {/* STEP3 */}
-              <div className="w-[400px]  step-container relative   p-10 rounded-2xl bg-surface-light border">
-                <div className="step-details text-left">
+              <div className="w-full max-w-[450px] justify-self-center md:justify-self-end step-container relative p-8 lg:p-10 rounded-2xl bg-surface-light border">
+                <div className="step-details text-center md:text-left">
                   <SubHeading
                     size="2xl"
                     weight="black"
@@ -120,7 +191,7 @@ const SignupFlow = () => {
                     weight="light"
                     className="leading-5 text"
                   >
-                    After confirmation, our representative will call to schedule your installation. A certified Genix Drive technician will then ensure a safe, damage-free setup at your location.
+                    After confirmation, our representative will call to schedule your installation. A certified technician will then ensure a safe, damage-free setup at your location.
                   </Paragraph>
                   <img
                     src={step2}
@@ -130,8 +201,8 @@ const SignupFlow = () => {
                 </div>
               </div>
               {/* STEP4 */}
-              <div className="w-[400px]  step-container p-10 relative rounded-2xl bg-surface-light border overflow-hidden">
-                <div className="step-details text-left">
+              <div className="w-full max-w-[450px] justify-self-center md:justify-self-start step-container p-8 lg:p-10 relative rounded-2xl bg-surface-light border overflow-hidden">
+                <div className="step-details text-center md:text-left">
                   <SubHeading
                     size="2xl"
                     weight="black"
@@ -148,68 +219,7 @@ const SignupFlow = () => {
                     weight="light"
                     className="leading-5 text"
                   >
-                    Once everything is set up, you can monitor driving behavior,
-                    receive safety alerts, and monitor your family’s safety.
-                  </Paragraph>
-                  <img
-                    src={step4}
-                    alt="step 4"
-                    className="w-full h-[200px]  mt-[50px] object-contain"
-                  />
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              {/* STEP1 */}
-              <div className="w-[400px] h-full  step-container relative p-10 rounded-2xl bg-surface-light border overflow-hidden">
-                <div className="step-details text-left">
-                  <SubHeading
-                    size="2xl"
-                    weight="black"
-                    className="uppercase text-secondary mb-2 mainclass"
-                  >
-                    step 1
-                  </SubHeading>
-                  <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
-                    Download the app & Sign up
-                  </SubHeading>
-                  <Paragraph
-                    size="sm"
-                    color="default"
-                    weight="light"
-                    className="leading-5 text"
-                  >
-                    First, download the GenixDrive app from the Google Play
-                    Store or App Store and sign up through email or phone
-                  </Paragraph>
-                  <img
-                    src={step1}
-                    alt="step 1"
-                    className="w-full h-[200px] mt-[50px] object-contain"
-                  />
-                </div>
-              </div>
-              {/* STEP4 */}
-              <div className="w-[400px]  step-container p-10 relative rounded-2xl bg-surface-light border overflow-hidden">
-                <div className="step-details text-left">
-                  <SubHeading
-                    size="2xl"
-                    weight="black"
-                    className="uppercase text-secondary mb-2 mainclass"
-                  >
-                    step 2
-                  </SubHeading>
-                  <SubHeading size="lg" weight="bold" className="mb-2 subcalss">
-                    Start monitoring your score
-                  </SubHeading>
-                  <Paragraph
-                    size="sm"
-                    color="default"
-                    weight="light"
-                    className="leading-5 text"
-                  >
-                    Once everything is set up, you can monitor driving behavior,
+                    Once everything is set up and device is activated, you can monitor driving behavior,
                     receive safety alerts, and monitor your family’s safety.
                   </Paragraph>
                   <img
@@ -250,7 +260,7 @@ const Switch = ({ onClick }: Props) => {
           className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "with" ? "text-white" : "text-black"
             }`}
         >
-          WITH DEVICE
+          WITHOUT DEVICE
         </button>
         <button
           type="button"
@@ -260,7 +270,7 @@ const Switch = ({ onClick }: Props) => {
           className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "without" ? "text-white" : "text-black"
             }`}
         >
-          WITHOUT DEVICE
+          WITH DEVICE
         </button>
       </div>
     </div>

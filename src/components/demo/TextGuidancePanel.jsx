@@ -120,7 +120,7 @@ function TextGuidancePanel({
             disabled={isFirst}
             aria-label="Previous step"
           >
-            ← Back
+            ← <span className="btn-text">Back</span>
           </button>
 
           {isFlowEnd ? (
@@ -129,7 +129,7 @@ function TextGuidancePanel({
               onClick={onNextFlow}
               aria-label="Next flow"
             >
-              Next →
+              <span className="btn-text">Next</span> →
             </button>
           ) : flowName === 'Finish' ? (
             <button
@@ -146,7 +146,7 @@ function TextGuidancePanel({
               disabled={false}
               aria-label="Next step"
             >
-              Next →
+              <span className="btn-text">Next</span> →
             </button>
           )}
         </div>

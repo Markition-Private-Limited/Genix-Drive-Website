@@ -1,6 +1,6 @@
-import { MapPin, Phone, Smartphone } from "lucide-react";
+import { MapPin, Phone, Smartphone, X } from "lucide-react"; // <-- X icon import kiya
 import { Link } from "react-router-dom";
-import AlertBanner from "../../components/sharedui/AlertBanner";
+// import AlertBanner from "../../components/sharedui/AlertBanner";
 import InfoCard from "../../components/sharedui/InfoCard";
 import Badge from "../../components/sharedui/Badge";
 import SimpleTable from "../../components/sharedui/SimpleTable";
@@ -12,6 +12,7 @@ import img4 from "../../assets/admin/4.png";
 import img3 from "../../assets/admin/3.png";
 import Paragraph from "../../components/sharedui/Paragraph";
 import DateTimeStep from "../../components/admin/DateTimeStep";
+
 const Dashboard = () => {
   const [isModal, setIsModal] = useState(false);
   const [step, setStep] = useState(1);
@@ -25,23 +26,24 @@ const Dashboard = () => {
       return () => clearTimeout(timer); // cleanup
     }
   }, [step]);
+
   return (
     <>
       <div className="">
         <div className="space-y-6">
-          <AlertBanner
+          {/* <AlertBanner
             message="Your last payment failed. Please update your billing info"
             actionLabel="PAY NOW"
             actionTo="/admin/settings"
-          />
+          /> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <InfoCard title="Vehicle Status">
               <div className="flex items-center gap-3">
-                <Badge variant="success">Connected</Badge>
+                <Badge variant="success">Active</Badge>
               </div>
               <p className="mt-3 text-xs text-gray-500">
-                Next Renewal: 15 March 2026
+                ***************
               </p>
             </InfoCard>
 
@@ -50,10 +52,10 @@ const Dashboard = () => {
               right={<MapPin className="w-5 h-5 text-gray-400" />}
             >
               <p className="font-medium text-gray-900">
-                Karachi Distribution Center
+                *****************
               </p>
               <p className="mt-1 text-xs text-gray-500">
-                Last update 5 mins ago
+                ***********
               </p>
             </InfoCard>
 
@@ -67,7 +69,7 @@ const Dashboard = () => {
                   />
                 </span>
                 <p className="font-medium tracking-wider">
-                  **** **** **** 4242
+                  **** **** **** ****
                 </p>
               </div>
             </InfoCard>
@@ -86,54 +88,63 @@ const Dashboard = () => {
               [
                 <span key="s1">Payment Confirmed</span>,
                 <span key="d1" className="text-gray-700">
-                  28 Oct • 02:17 PM
+                  ************
                 </span>,
                 <span key="st1">
-                  <Badge variant="success">Completed</Badge>
+                  <Badge variant="warning">Pending</Badge>
                 </span>,
               ],
               [
-                <span key="s2">Processing / Packaging</span>,
+                <span key="s2">Delivery & installation time confirmed</span>,
                 <span key="d2" className="text-gray-700">
-                  29 Oct • 10:10 AM
+                  ************
                 </span>,
                 <span key="st2">
-                  <Badge variant="success">Completed</Badge>
+                  <Badge variant="warning">Pending</Badge>
                 </span>,
               ],
               [
-                <span key="s3">Shipped</span>,
+                <span key="s3">Dispatched</span>,
                 <span key="d3" className="text-gray-700">
-                  30 Oct • 08:35 PM
+                  ************
                 </span>,
                 <span key="st3">
-                  <Badge variant="success">Completed</Badge>
+                  <Badge variant="warning">Pending</Badge>
+                </span>,
+              ],
+              [
+                <span key="s4">Delivered and installed</span>,
+                <span key="d4" className="text-gray-700">
+                  ************
+                </span>,
+                <span key="st4">
+                  <Badge variant="warning">Pending</Badge>
                 </span>,
               ],
             ]}
-            footer={
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  onClick={() => {
-                    setIsModal(true);
-                    setStep(1);
-                  }}
-                  className="!w-full"
-                  variant="secondary"
-                  size="md"
-                >
-                  Schedule Installation Now
-                </Button>
-                <Button
-                  className="!w-full"
-                  disabled
-                  variant="secondary"
-                  size="md"
-                >
-                  View Order Details
-                </Button>
-              </div>
-            }
+          // footer={
+          //   <div className="flex flex-wrap gap-3">
+          //     <Button
+          //       onClick={() => {
+          //         setIsModal(true);
+          //         setStep(1);
+          //       }}
+          //       className="!w-full"
+          //       variant="secondary"
+          //       size="md"
+          //     >
+          //       Schedule Installation Now
+          //     </Button>
+          //     <Button
+          //       className="!w-full"
+          //       disabled
+          //       variant="secondary"
+          //       size="md"
+          //     >
+          //       View Order Details
+          //     </Button>
+          //   </div>
+          // }
           />
         </div>
 
@@ -147,7 +158,7 @@ const Dashboard = () => {
                 <Badge variant="success">Active</Badge>
               </div>
               <p className="mt-3 text-xs text-gray-500">
-                Next Renewal: 15 March 2026
+                **************
               </p>
             </InfoCard>
             <InfoCard title="Quick Actions">
@@ -171,12 +182,22 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
       {/* modal */}
       {isModal && (
         <div className="fixed top-0 left-0 z-10 h-full w-full bg-gray-900/30 flex items-center justify-center">
+
           {/* step1 */}
           {step === 1 && (
-            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg">
+            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg relative"> {/* relative class add ki */}
+              {/* Cancel Button */}
+              <button
+                onClick={() => setIsModal(false)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               <SubHeading
                 className="text-center lato-font mb-[20px] text-[24px]"
                 weight="bold"
@@ -202,7 +223,7 @@ const Dashboard = () => {
                     <label htmlFor="">First Name</label>
                     <input
                       type="text"
-                      placeholder="For registration and official records."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
@@ -210,7 +231,7 @@ const Dashboard = () => {
                     <label htmlFor="">Last Name</label>
                     <input
                       type="text"
-                      placeholder="For registration and official records."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
@@ -220,7 +241,7 @@ const Dashboard = () => {
                     <label htmlFor="">Email</label>
                     <input
                       type="text"
-                      placeholder="For notifications."
+                      placeholder="Provide valid email address for updates"
                       className="admininput"
                     />
                   </div>
@@ -228,7 +249,7 @@ const Dashboard = () => {
                     <label htmlFor="">Phone Number</label>
                     <input
                       type="text"
-                      placeholder="FNumber with Active Whats app (For updates, delivery, or installation coordination.)"
+                      placeholder=" We will contact you on this number to confirm the installation if required"
                       className="admininput"
                     />
                   </div>
@@ -238,7 +259,7 @@ const Dashboard = () => {
                     <label htmlFor="">Address</label>
                     <input
                       type="text"
-                      placeholder="For device delivery or installation scheduling."
+                      placeholder="Provide complete address for device delivery and installation"
                       className="admininput"
                     />
                   </div>
@@ -260,46 +281,46 @@ const Dashboard = () => {
               <div className="mb-[30px]">
                 <div className="flex gap-5">
                   <div className="border rounded-lg border-gray-400 relative form-area ">
-                    <label htmlFor="">First Name</label>
+                    <label htmlFor="">License Plate</label>
                     <input
                       type="text"
-                      placeholder="For registration and official records."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
                   <div className="border rounded-lg border-gray-400 relative form-area">
-                    <label htmlFor="">Last Name</label>
+                    <label htmlFor="">Car Manufacturer</label>
                     <input
                       type="text"
-                      placeholder="For registration and official records."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
                 </div>
                 <div className="flex gap-5 mt-5">
                   <div className="border rounded-lg border-gray-400 relative form-area">
-                    <label htmlFor="">Email</label>
+                    <label htmlFor="">Car Model</label>
                     <input
                       type="text"
-                      placeholder="For notifications."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
                   <div className="border rounded-lg border-gray-400 relative form-area">
-                    <label htmlFor="">Phone Number</label>
+                    <label htmlFor="">Car Color</label>
                     <input
                       type="text"
-                      placeholder="FNumber with Active Whats app (For updates, delivery, or installation coordination.)"
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
                 </div>
                 <div className="flex gap-5 mt-5">
                   <div className="border rounded-lg flex-1 border-gray-400 relative form-area">
-                    <label htmlFor="">Address</label>
+                    <label htmlFor="">Year of Registration</label>
                     <input
                       type="text"
-                      placeholder="For device delivery or installation scheduling."
+                      placeholder=""
                       className="admininput"
                     />
                   </div>
@@ -316,8 +337,17 @@ const Dashboard = () => {
               </Button>
             </div>
           )}
+
           {step === 2 && (
-            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg">
+            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg relative"> {/* relative class add ki */}
+              {/* Cancel Button */}
+              <button
+                onClick={() => setIsModal(false)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               <DateTimeStep />
               {/* button */}
               <Button
@@ -329,8 +359,17 @@ const Dashboard = () => {
               </Button>
             </div>
           )}
+
           {step === 3 && (
-            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg text-center">
+            <div className="bg-white p-5 w-2/5 border border-gray-400 rounded-lg text-center relative"> {/* relative class add ki */}
+              {/* Cancel Button */}
+              <button
+                onClick={() => setIsModal(false)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               <img className="m-auto" src={img4} alt="" />
               <Paragraph>
                 You will receive a call from our customer service department to
@@ -339,6 +378,7 @@ const Dashboard = () => {
               <img className="m-auto" src={img3} alt="" />
             </div>
           )}
+
         </div>
       )}
     </>

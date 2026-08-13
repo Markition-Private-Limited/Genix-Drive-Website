@@ -5,7 +5,7 @@ import blueStr from "../assets/bluestr.png";
 import SubHeading from "./sharedui/SubHeading";
 import Paragraph from "./sharedui/Paragraph";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowRightIcon } from "lucide-react";
 
 const BenefitsSection = () => {
@@ -16,27 +16,27 @@ const BenefitsSection = () => {
       title: "Enhanced Safety & Peace of Mind",
       description:
         "With instant alerts, geo-fencing, and family location sharing, GenixDrive ensures drivers and loved ones stay protected on every journey.",
-      redirectURL: "features1",
+      redirectURL: "features-safety",
     },
     {
       image: img3,
       title: "Smarter Driving & Vehicle Management",
       description:
         "Driving insights, trip history, and smart telematics help users improve their driving habits, extend vehicle health, and make every ride more efficient and reliable.",
-      redirectURL: "features2",
+      redirectURL: "features-insights",
     },
     {
       image: img2,
       title: "Motivation Through Rewards & Connectivity",
       description:
         "By gamifying safe driving and enabling family or social connections, GenixDrive not only encourages responsible driving but also makes safety engaging and rewarding.",
-      redirectURL: "features3",
+      redirectURL: "features-rewards",
     },
   ];
 
   return (
     <motion.section
-      className="bg-surface-light text-black font-cairo padding-50 py-[116px] px-[58px] mb-[50px]"
+      className="bg-surface-light text-black font-cairo padding-50 py-[60px] px-[100px] mb-[25px]"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
@@ -90,11 +90,11 @@ const BenefitsSection = () => {
               className="group rounded-xl overflow-hidden flex flex-col h-full cursor-pointer"
               onClick={() => {
                 navigate(`../${item.redirectURL}`);
-                window.scrollTo(0, 0);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
               {/* ✅ Image */}
-              <div className="w-full h-[230px] md:h-[430px] rounded-xl bg-black/5 overflow-hidden">
+              <div className="w-full h-[230px] md:h-[300px] rounded-xl bg-black/5 overflow-hidden">
                 <motion.img
                   src={item.image}
                   alt={item.title}
@@ -105,7 +105,7 @@ const BenefitsSection = () => {
               </div>
 
               {/* ✅ Content */}
-              <div className="p-6 flex flex-col flex-1">
+              <div className="py-4 px-1 flex flex-col flex-1">
                 <SubHeading
                   color="dark"
                   weight="semibold"
@@ -116,23 +116,26 @@ const BenefitsSection = () => {
                 </SubHeading>
 
                 <Paragraph
+                  size="base"
                   color="default"
                   weight="medium"
-                  size="sm"
-                  className="leading-relaxed genixdrivetext"
+                  className="leading-6 keyfeaturetext px-0"
                 >
                   {item.description}
                 </Paragraph>
 
                 {/* ✅ Bottom aligned button */}
-                <Link
-                  to={`../${item.redirectURL}`}
-                  className="mt-auto pt-4 flex gap-1.5 items-center text-sm font-bold text-secondary uppercase underline transition-colors duration-200"
-                  onClick={(e) => e.stopPropagation()}
+                <a
+                  className="mt-auto pt-4 flex gap-1.5 items-center text-sm font-bold text-secondary uppercase underline transition-colors duration-200 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`../${item.redirectURL}`);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   <span>Read More</span>
                   <ArrowRightIcon size={18} />
-                </Link>
+                </a>
               </div>
             </motion.article>
           ))}

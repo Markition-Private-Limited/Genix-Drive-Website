@@ -99,10 +99,10 @@ const Login = () => {
       if (error.response) {
         // Server responded with error
         console.log(data !== "email" ? "Phone Login Error:" : "Email Login Error:");
-        if(data !== "email"){
+        if (data !== "email") {
           setError("Invalid Phone number or password");
         }
-        else{
+        else {
           setError(error.response.data?.msg || "Login failed");
         }
         // setError(error.response.data?.msg || "Login failed");
@@ -192,6 +192,7 @@ const Login = () => {
                 </label>
                 <Link
                   to="/admin/forget-password"
+                  state={{ loginType: data }}
                   className="text-secondary text-sm"
                 >
                   Forgot Password
@@ -241,18 +242,16 @@ const Switch = ({ onClick }: Props) => {
     <div className="flex items-center justify-center mb-5">
       <div className="relative inline-flex items-center w-[420px] h-14 rounded-full border border-black/10 bg-white shadow-sm p-1">
         <div
-          className={`absolute inset-y-1 left-1 w-1/2 rounded-full bg-secondary transition-transform duration-300 ${
-            mode === "with" ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute inset-y-1 left-1 w-1/2 rounded-full bg-secondary transition-transform duration-300 ${mode === "with" ? "translate-x-0" : "translate-x-full"
+            }`}
         />
         <button
           type="button"
           onClick={() => {
             (setMode("with"), onClick("email"));
           }}
-          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${
-            mode === "with" ? "text-white" : "text-black"
-          }`}
+          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "with" ? "text-white" : "text-black"
+            }`}
         >
           Login with email
         </button>
@@ -261,9 +260,8 @@ const Switch = ({ onClick }: Props) => {
           onClick={() => {
             (setMode("without"), onClick("phone"));
           }}
-          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${
-            mode === "without" ? "text-white" : "text-black"
-          }`}
+          className={`relative z-10 w-1/2 text-xs font-bold uppercase tracking-widest ${mode === "without" ? "text-white" : "text-black"
+            }`}
         >
           Login with phone
         </button>

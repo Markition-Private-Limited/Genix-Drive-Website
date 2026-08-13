@@ -1,9 +1,8 @@
 import InfoCard from "../../components/sharedui/InfoCard";
 import Badge from "../../components/sharedui/Badge";
-import AlertBanner from "../../components/sharedui/AlertBanner";
 import SimpleTable from "../../components/sharedui/SimpleTable";
 import Button from "../../components/Button";
-import { Download } from "lucide-react";
+import { Download, User, CreditCard } from "lucide-react";
 import SubHeading from "../../components/sharedui/SubHeading";
 import masterCArd from "../../assets/masterCArd.png";
 import { useState } from "react";
@@ -12,6 +11,24 @@ import Paragraph from "../../components/sharedui/Paragraph";
 const SubscriptionsManagements = () => {
   const [isCancelModal, setIsCancelModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
+
+  // New States for Flow Step 2 & Step 3
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  // Triggered when clicking 'Upgrade Now' in the Upgrade Modal
+  const handleUpgradeNowClick = () => {
+    setIsUpgradeModal(false); // Close original upgrade info modal
+    setShowPaymentModal(true); // Open payment gateway modal
+  };
+
+  // Triggered when completing payment form
+  const handlePaymentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowPaymentModal(false);
+    setShowSuccessModal(true); // Open final setup completed screen
+  };
+
   return (
     <>
       <div className="">
@@ -25,9 +42,9 @@ const SubscriptionsManagements = () => {
               <Badge variant="success">Active</Badge>
             </div>
             <p className="mt-3 text-xs text-gray-600">
-              Next Renewal: 15 March 2026
+              Next Renewal: **********
             </p>
-            <p className="mt-1 text-xs text-gray-600">Price: $24.99/month</p>
+            <p className="mt-1 text-xs text-gray-600">Price: **********</p>
             <div className="mt-4 flex gap-3">
               <Button
                 onClick={() => setIsUpgradeModal(true)}
@@ -55,19 +72,15 @@ const SubscriptionsManagements = () => {
                   className="w-8 h-6 object-contain"
                 />
               </span>
-              <p className="font-medium tracking-wider">**** **** **** 4242</p>
+              <p className="font-medium tracking-wider">**** **** **** ****</p>
             </div>
             <div className="mt-6">
               <div className="rounded-lg ring-1 ring-black/10 bg-gray-50 px-3 py-2 text-sm text-gray-700 block">
-                Expires: 12/28
+                Expires: XX/XX
               </div>
             </div>
             <p className="mt-3 text-xs text-gray-500">Edit/Change Method</p>
           </InfoCard>
-        </div>
-
-        <div className="mt-6">
-          <AlertBanner message="Your last payment failed. Please update your billing info" />
         </div>
 
         <div className="mt-6">
@@ -145,10 +158,11 @@ const SubscriptionsManagements = () => {
           />
         </div>
       </div>
-      {/* cancel modal */}
+
+      {/* CANCEL MODAL */}
       {isCancelModal && (
-        <div className="fixed top-0 left-0 z-10 h-full w-full  bg-gray-900/30 flex items-center justify-center">
-          <div className="bg-white p-10 w-2/5  shadow-lg rounded-lg">
+        <div className="fixed top-0 left-0 z-10 h-full w-full bg-gray-900/30 flex items-center justify-center">
+          <div className="bg-white p-10 w-2/5 shadow-lg rounded-lg">
             <SubHeading className="text-center lato-font text-[24px]" size="lg">
               Are you sure you want to cancel your subscription?
             </SubHeading>
@@ -171,7 +185,7 @@ const SubscriptionsManagements = () => {
               <Button
                 onClick={() => setIsCancelModal(false)}
                 isFullBtn={true}
-                className="w-full !bg-indigo-600 text-white "
+                className="w-full !bg-indigo-600 text-white"
               >
                 Keep Subscription
               </Button>
@@ -186,9 +200,10 @@ const SubscriptionsManagements = () => {
           </div>
         </div>
       )}
-      {/* upgrade modal */}
+
+      {/* UPGRADE MODAL */}
       {isUpgradeModal && (
-        <div className="fixed top-0 left-0 z-10 h-full w-full  bg-gray-900/30 flex items-center justify-center">
+        <div className="fixed top-0 left-0 z-10 h-full w-full bg-gray-900/30 flex items-center justify-center">
           <div className="bg-white p-10 w-2/5 shadow-lg rounded-lg">
             <SubHeading className="text-center lato-font text-[24px]" size="lg">
               Go Premium & Unlock X, Y, Z!
@@ -209,9 +224,9 @@ const SubscriptionsManagements = () => {
 
             <div className="mt-[30px]">
               <Button
-                onClick={() => setIsUpgradeModal(false)}
+                onClick={handleUpgradeNowClick}
                 isFullBtn={true}
-                className="w-full !bg-indigo-600 text-white "
+                className="w-full !bg-indigo-600 text-white"
               >
                 Upgrade Now
               </Button>
@@ -223,6 +238,98 @@ const SubscriptionsManagements = () => {
                 Maybe Later
               </Button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* STEP 2: SECURE PAYMENT MODAL */}
+      {showPaymentModal && (
+        <div className="fixed inset-0 bg-gray-900/30 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl space-y-5 border border-gray-50">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+              <h3 className="text-base font-bold text-gray-900">Secure Payment Details</h3>
+            </div>
+
+            <form onSubmit={handlePaymentSubmit} className="space-y-3">
+              <div className="relative">
+                <input type="text" required placeholder="Name" className="w-full text-xs p-2.5 border border-gray-200 rounded-lg focus:outline-purple-500 pl-8" />
+                <User className="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-3.5" />
+              </div>
+              <div className="relative">
+                <input type="text" required placeholder="Card number" className="w-full text-xs p-2.5 border border-gray-200 rounded-lg focus:outline-purple-500 pl-8" />
+                <CreditCard className="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-3.5" />
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <input type="text" required placeholder="Expiration" className="w-full text-xs p-2.5 border border-gray-200 rounded-lg focus:outline-purple-500" />
+                <input type="text" required placeholder="CVV" className="w-full text-xs p-2.5 border border-gray-200 rounded-lg focus:outline-purple-500" />
+              </div>
+
+              <div className="pt-3 border-t border-gray-100 space-y-1 text-xs text-gray-500">
+                <div className="flex justify-between">
+                  <span>Subtotal (Premium Upgrade):</span>
+                  <span>$24.99</span>
+                </div>
+                <div className="flex justify-between text-gray-900 font-bold pt-1 text-sm">
+                  <span>Total Payable Now:</span>
+                  <span>$24.99</span>
+                </div>
+              </div>
+
+              <div className="space-y-2 pt-3">
+                <Button isFullBtn type="submit" className="w-full bg-purple-50 text-purple-700 font-semibold py-2.5 text-xs rounded-xl hover:bg-purple-100 transition-colors">
+                  Pay Now - $24.99
+                </Button>
+                <button
+                  type="button"
+                  onClick={() => setShowPaymentModal(false)}
+                  className="w-full bg-purple-50 text-purple-700 font-semibold py-2.5 text-xs rounded-xl hover:bg-purple-100 transition-colors"
+                >
+                  Go Back
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* STEP 3: SETUP COMPLETED MODAL */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-gray-900/30 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl text-center space-y-5">
+            <div className="flex items-center gap-3 text-left">
+              <span className="w-8 h-8 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center">3</span>
+              <h3 className="text-base font-bold text-gray-900">Setup Completed</h3>
+            </div>
+
+            <div className="flex flex-col items-center py-2 space-y-3">
+              <div className="w-20 h-36 border-4 border-gray-800 rounded-2xl relative flex items-center justify-center bg-gray-50 shadow-inner">
+                <span className="absolute top-1.5 w-8 h-2 bg-gray-800 rounded-full"></span>
+                <div className="w-7 h-7 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">✓</div>
+                <span className="absolute bottom-1 w-6 h-0.5 bg-gray-300 rounded-full"></span>
+              </div>
+              <h4 className="text-base font-bold text-gray-900">Plan Activated!</h4>
+              <p className="text-xs text-gray-500 leading-relaxed px-4">
+                Congratulations! Your GenixDrive Premium Upgrade is now active. <br />
+                To complete your vehicle's full setup, please download our app from your app store.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 pt-1">
+              <div className="border border-gray-300 rounded px-2.5 py-1 flex items-center gap-1.5 bg-black text-white text-[9px] font-semibold">
+                <span></span> <span className="text-left leading-none">Available on <strong className="block text-[10px]">App Store</strong></span>
+              </div>
+              <div className="border border-gray-300 rounded px-2.5 py-1 flex items-center gap-1.5 bg-black text-white text-[9px] font-semibold">
+                <span>▶</span> <span className="text-left leading-none">Available on <strong className="block text-[10px]">Play Store</strong></span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="w-full bg-[#ccff99] hover:bg-green-300 text-gray-900 font-bold py-2.5 text-xs rounded-xl shadow-xs tracking-wide transition-none"
+            >
+              COMPLETED
+            </button>
           </div>
         </div>
       )}

@@ -32,6 +32,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
 html * {
   font-family: "DM Sans", sans-serif;
 }
@@ -61,12 +62,19 @@ button {
 .main-heading {
   font-family: "Poppins", sans-serif;
 }
+
 .sub-heading,
 .sub-heading * {
   font-family: "Poppins", sans-serif;
 }
+
 .mainheading {
-  font-size: 48px;
+  font-size: clamp(1.5rem, 5vw, 2.7rem);
+  font-weight: 600;
+}
+
+.mainheading2 {
+  font-size: clamp(1.2rem, 5vw, 3rem);
   font-weight: 600;
 }
 
@@ -75,7 +83,7 @@ button {
 }
 
 .build-container .paragrarh {
-  font-size: 20px !important;
+  font-size: clamp(0.875rem, 1.5vw, 1.25rem) !important;
   font-weight: 400 !important;
 }
 
@@ -84,9 +92,11 @@ button {
   height: 29px;
   background-color: #cacaca;
 }
+
 .hero-banner-right {
   font-family: "Inter", sans-serif;
 }
+
 .footer0actions div {
   margin-bottom: 10px;
 }
@@ -102,6 +112,7 @@ button {
   font-size: 36px;
   font-weight: bold;
 }
+
 .step-details .sub-heading.subcalss {
   font-size: 22px;
   font-weight: 500;
@@ -124,10 +135,11 @@ button {
   font-weight: 400;
 }
 
-.blog-deta > strong {
+.blog-deta>strong {
   font-family: "Inter", sans-serif;
 }
-.blogsrecords > strong {
+
+.blogsrecords>strong {
   font-size: 14px;
   font-weight: 600;
 }
@@ -137,8 +149,9 @@ button {
   font-size: 24px !important;
   font-weight: 600 !important;
 }
+
 .strip-text {
-  font-size: 16px !important  ;
+  font-size: 16px !important;
   font-weight: 500 !important;
 }
 
@@ -147,10 +160,12 @@ button {
   font-size: 14px !important;
   font-weight: 500 !important;
 }
+
 .blog-date {
   font-size: 12px !important;
   font-weight: 400 !important;
 }
+
 .blog-category {
   font-size: 11px !important;
   font-weight: 500 !important;
@@ -159,6 +174,7 @@ button {
   padding: 4px 10px;
   border-radius: 6px;
 }
+
 .blogdetailestext {
   font-size: 20px !important;
   font-weight: 400 !important;
@@ -171,6 +187,7 @@ button {
   font-size: 16px;
   font-weight: 400;
 }
+
 .aboutcontainertext {
   color: #585858;
   font-size: 16px;
@@ -198,15 +215,25 @@ button {
   font-weight: 400;
 }
 
+.featuerHerText2 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #4c4c4c;
+  font-weight: 400;
+}
+
 #lato-font * {
   font-family: "Lato", sans-serif !important;
 }
+
 .lato-font {
   font-family: "Lato", sans-serif !important;
 }
+
 .light-purple-color {
   background-color: #7b77ff;
 }
+
 .card-bg {
   background-color: #fcfbff;
 }
@@ -216,30 +243,36 @@ button {
   line-height: 24px;
   font-weight: 600;
 }
+
 .card-bg h3.main {
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
 }
+
 .card-bg p {
   font-size: 13px;
   line-height: 20px;
 }
+
 .check label {
   font-size: 13px;
   line-height: 20px;
 }
+
 .features-head p {
   font-size: 11px;
   line-height: 15px;
   font-weight: 400;
 }
+
 .features-head span {
   font-size: 8px;
   font-weight: 400;
   line-height: 15px;
   color: #b3b3b3;
 }
+
 .pricing strong {
   font-size: 12px;
   font-weight: bold;
@@ -253,18 +286,22 @@ button {
   padding: 10px;
   box-sizing: border-box;
 }
+
 .admininput:focus {
   outline: none;
 }
+
 .admininput::placeholder {
   font-size: 9px;
 }
+
 .form-area {
   z-index: +1;
   height: 35px;
   box-sizing: border-box;
   flex-grow: 1;
 }
+
 .form-area label {
   position: absolute;
   top: 0;
@@ -275,13 +312,15 @@ button {
   z-index: -1;
   font-size: 12px;
 }
+
 .steps {
   /* border: 1px solid;  */
   position: relative;
   z-index: +1;
 }
+
 .steps::after {
-  content: "";
+  /* content: ""; */
   position: absolute;
   top: 33%;
   left: 50%;
@@ -291,9 +330,11 @@ button {
   background-color: #d3d3d3;
   z-index: -1;
 }
+
 .step-container {
   text-align: center;
 }
+
 .step-container span {
   width: 12px;
   height: 12px;
@@ -303,6 +344,7 @@ button {
   position: relative;
   border: 1px solid #7b77ff;
 }
+
 .step-container span::after {
   content: "";
   position: absolute;
@@ -315,64 +357,81 @@ button {
   display: block;
   border-radius: 50%;
 }
+
 .active-step span {
   background-color: #7b77ff;
 }
+
 .featurprime span {
   color: white !important;
 }
+
 .step-container p {
   font-size: 13px;
   line-height: 20px;
   color: #5f5f5f;
   margin-top: 4px;
 }
-.footerdivs{
+
+.footerdivs {
   margin-left: -70px;
 }
+
 @media screen and (max-width: 600px) {
-  .footerdivs{
-  margin-left: 0px;
-}
-  .padding-50 {
-    padding: 100px 50px !important;
+  .footerdivs {
+    margin-left: 0px;
   }
+
+  .padding-50 {
+    padding: 60px 24px !important;
+  }
+
   .blog-banner-details .w-full.p-10 {
     padding: 20px;
   }
+
   .blog-banner-details h3 {
     font-size: 19px;
     font-weight: 600;
   }
+
   .ready-to-driver-cotnainer {
     margin-bottom: 250px;
   }
+
   .blogs .banner img,
   .pricing .banner img {
     height: 240px;
     object-fit: cover;
   }
+
   .sub-heading {
     font-size: 20px;
   }
+
   .footer0actions div {
     margin: auto !important;
     margin-bottom: 10px !important;
   }
+
   .foooter .w-32 {
     margin: auto;
     display: block;
     margin-bottom: 10px;
   }
+
   .foooter p {
     text-align: center !important;
   }
+
   .foooter .flex {
     justify-content: center;
   }
+
   .build-container button {
     margin: auto;
   }
+
   .mobileMenu a {
     display: block;
     padding: 5px 0;
@@ -393,35 +452,44 @@ button {
     transform: translateY(-50%);
     top: 50%;
   }
+
   .signdoodle {
     width: 130px !important;
     height: 60px !important;
     left: 60 !important;
     top: 25px !important;
   }
+
   .blogdoodle {
     width: 90px !important;
     height: 50px !important;
     left: 40px !important;
   }
+
   .step-details .sub-heading.mainclass {
     font-size: 23px;
   }
+
   .step-details .sub-heading.subcalss {
     font-size: 15px;
   }
+
   .step-details p.text {
     font-size: 12px !important;
   }
+
   .mainheading {
     font-size: 24px;
   }
+
   .build-container .paragrarh {
     font-size: 14px !important;
   }
+
   .strip-text {
     font-size: 14px !important;
   }
+
   p.paragrarh {
     font-size: 14px !important;
   }
@@ -434,6 +502,7 @@ button {
     width: 25px;
     top: 10px;
   }
+
   .section-heading img.doodle {
     width: 173px;
     height: 46px;
@@ -444,7 +513,7 @@ button {
     height: 120vh;
   }
 
-  .featureabout > .flex {
+  .featureabout>.flex {
     align-items: start;
   }
 
@@ -453,6 +522,7 @@ button {
     height: 50px;
     max-width: 50px;
   }
+
   .featureabout span.bg-light-green img {
     height: 25px;
     width: auto;
@@ -465,11 +535,13 @@ button {
     text-align: center;
   }
 }
+
 @media screen and (max-width: 450px) {
   .padding-50 {
     padding: 70px 30px !important;
   }
-    .footerdivs{
-  margin-left: 0px;
-}
+
+  .footerdivs {
+    margin-left: 0px;
+  }
 }

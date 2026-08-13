@@ -14,11 +14,11 @@ interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 }
 
 const sizeMap: Record<Size, string> = {
-  xs: "text-xs",
-  sm: "text-sm",
-  base: "text-base",
-  lg: "text-lg",
-  xl: "text-xl",
+  xs: "text-[10px] lg:text-xs",
+  sm: "text-xs lg:text-sm",
+  base: "text-sm lg:text-base",
+  lg: "text-base lg:text-lg",
+  xl: "text-lg lg:text-xl",
 };
 
 const colorMap: Record<Color, string> = {

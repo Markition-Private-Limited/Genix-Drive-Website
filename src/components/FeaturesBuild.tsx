@@ -1,15 +1,16 @@
 import doodle from "../assets/Doodle.png";
-
 import feature1 from "../assets/fs/f11.png";
 import feature2 from "../assets/features/22.png";
-import feature3 from "../assets/fs/3.png";
+import feature3 from "../assets/fs/3a.png";
 import feature4 from "../assets/fs/44.png";
 import feature5 from "../assets/fs/f5.png";
 import feature6 from "../assets/fs/61.png";
-import feature7 from "../assets/fs/77.png";
+import feature7 from "../assets/fs/f9.png";
 import feature8 from "../assets/fs/f8.png";
 import path from "../assets/path.png";
 import grystr from "../assets/grystr.png";
+import grnstr from "../assets/grnstr.png";
+// import bluestr from "../assets/bluestr.png";
 import Button from "./Button";
 import Paragraph from "./sharedui/Paragraph";
 import SubHeading from "./sharedui/SubHeading";
@@ -18,24 +19,24 @@ import { useNavigate } from "react-router-dom";
 const FeaturesBuild = () => {
   const navigate = useNavigate();
   return (
-    <section className="bg-secondary text-white font-cairo padding-50 py-[116px] px-[58px] relative overflow-hidden">
+    <section className="bg-secondary text-white font-cairo padding-50 py-16 px-6 md:py-24 md:px-12 lg:py-24 lg:px-[100px] relative overflow-hidden">
       <img
         src={path}
         className="absolute top-0 right-0 opacity-50 h-[200px]"
         alt=""
       />
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center text-center mb:[50px] md:mb-[150px]">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-[6%]">
+        <div className="flex flex-col items-center text-center mb-12 md:mb-12 lg:mb-20">
           <SubHeading
             color="white"
             weight="bold"
-            size="4xl"
-            className="text-center mainheading"
+            size="3xl"
+            className="text-center mainheading lg:text-4xl xl:text-5xl"
           >
             <div className="relative z-10">
-              <p>Features Build for your</p>
+              <p>Features &nbsp; Build for your</p>
               <img
-                className="absolute doodle -z-10 -top-[20px] left-[130px] w-[252px] h-[99px]"
+                className="hidden lg:block absolute doodle -z-10 -top-[35px] left-[70px] w-[272px] h-[93px] rotate-180"
                 src={doodle}
                 alt=""
               />
@@ -44,7 +45,9 @@ const FeaturesBuild = () => {
           </SubHeading>
         </div>
         {/* Feature1 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
           <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4 ">
             <SubHeading className="mainheading" color="white" weight="semibold">
               Social & Family
@@ -54,16 +57,17 @@ const FeaturesBuild = () => {
             <Paragraph color="white">
               <span className="block">
                 Feel peace of mind, stay protected, and keep your loved ones
-                just a tap away.
-              </span>
-              <span className="block">
-                GenixDrive gives you the confidence of knowing your loved ones
+                just a tap away. GenixDrive gives you the confidence of knowing your loved ones
                 are safe.
               </span>
+              {/* <span className="block">
+                GenixDrive gives you the confidence of knowing your loved ones
+                are safe.
+              </span> */}
             </Paragraph>
             <Button
               onClick={() => {
-                navigate("../features");
+                navigate("../features-social");
                 window.scrollTo(0, 0);
               }}
               size="lg"
@@ -72,27 +76,121 @@ const FeaturesBuild = () => {
             </Button>
           </div>
           <div className="relative order-0 md:order-1   lg:order-none">
-            {/* <img src={grystr} className="absolute -left-20" alt="" /> */}
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature1}
                 alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain object-center lg:object-right rounded-xl"
               />
             </div>
           </div>
         </div>
         {/* Feature2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
+          <div className="relative  lg:order-none">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+              <img
+                src={feature7}
+                alt="Drive & Earn"
+                className="w-full h-full object-contain object-center lg:object-right rounded-xl"
+              />
+            </div>
+          </div>
+          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
+            <SubHeading
+              className="mainheading"
+              color="white"
+              weight="bold"
+              size="3xl"
+            >
+              Driving Insights
+            </SubHeading>
+            <Paragraph size="sm" color="white">
+              Every journey reveals a pattern, GenixDrive turns it into smart,
+              meaningful insights. GenixDrive transforms raw trip data into
+              easy‑to‑understand safety scores and actionable insights. It’s
+              your personal driving coach, helping you drive smarter and safer
+            </Paragraph>
+
+            <Button
+              onClick={() => {
+                (navigate("../features-insights"), window.scrollTo(0, 0));
+              }}
+              size="lg"
+            >
+              Learn More
+            </Button>
+          </div>
+        </div>
+        {/* Feature3 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
+          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
+            <SubHeading
+              className="mainheading"
+              color="white"
+              weight="bold"
+              size="3xl"
+            >
+              Place Notifications
+            </SubHeading>
+            <Paragraph size="sm" color="white">
+              GenixDrive keeps you informed with real-time alerts about the
+              people you monitor, notifying you of their location updates,
+              movements, and important events. This ensures you always know
+              what’s happening with your loved ones, giving you peace of mind
+              while they stay safe and protected.
+            </Paragraph>
+
+            <Button
+              onClick={() => {
+                navigate("../features-safety");
+                setTimeout(() => {
+                  const element = document.getElementById("geofencing");
+                  if (element) {
+                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                      top: elementPosition - 100,
+                      behavior: "smooth"
+                    });
+                  }
+                }, 100);
+              }}
+              size="lg"
+            >
+              Learn More
+            </Button>
+          </div>
+          <div className="relative  lg:order-none">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+              <img
+                src={feature5}
+                alt="Drive & Earn"
+                className="w-full h-full object-contain object-center lg:object-right rounded-xl"
+              />
+            </div>
+            {/* <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: 35, right: 70, width: 42, opacity: 0.7 }} /> */}
+          </div>
+        </div>
+        {/* Feature4 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
           <div className="relative order-0 md:order-1 lg:order-0">
-            <div className=" w-full h-[220px]  md:w-[539px] md:h-[440px] bg-transparent md-bg-white/50 rounded-2xl"></div>
-            <div className="rounded-2xl w-full h-[220px]  absolute top-0 left-0 md:w-[539px] md:h-[440px] overflow-hidden ">
+            <div className=" w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[440px] bg-transparent md-bg-white/50 rounded-2xl"></div>
+            <div className="rounded-2xl w-full h-[220px] absolute top-0 left-0 md:h-[300px] lg:h-[400px] xl:h-[400px] overflow-hidden ">
               <img
                 src={feature2}
                 alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain object-center lg:object-left rounded-xl"
               />
             </div>
+            {/* <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: 15, left: 30, width: 52, opacity: 0.8 }} /> */}
           </div>
           <div className="build-container text-center md:text-left flex flex-col gap-4">
             <SubHeading
@@ -115,7 +213,7 @@ const FeaturesBuild = () => {
             </Paragraph>
             <Button
               onClick={() => {
-                (navigate("../features3"), window.scrollTo(0, 0));
+                (navigate("../features-rewards"), window.scrollTo(0, 0));
               }}
               size="lg"
             >
@@ -123,8 +221,68 @@ const FeaturesBuild = () => {
             </Button>
           </div>
         </div>
-        {/* Feature3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
+        {/* Feature5 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
+          <div className="build-container  text-center md:text-left flex flex-col gap-4">
+            <SubHeading
+              className="mainheading"
+              color="white"
+              weight="bold"
+              size="3xl"
+            >
+              Organize Meetups
+            </SubHeading>
+            <Paragraph size="sm" color="white">
+              Connection, coordination, and adventure—all in one place.
+              Turn plans into experiences with GenixMeet—create a meetup, bring
+              everyone together in one chat, and watch the group’s movement
+              unfold in real time with the race screen.
+            </Paragraph>
+            <Button
+              onClick={() => {
+                navigate("../features-social");
+                setTimeout(() => {
+                  const element = document.getElementById("genixsmart");
+                  if (element) {
+                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                      top: elementPosition - 100,
+                      behavior: "smooth"
+                    });
+                  }
+                }, 100);
+              }}
+              size="lg"
+            >
+              Learn More
+            </Button>
+          </div>
+          <div className="relative order-0 md:order-1 lg:order-none">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+              <img
+                src={feature4}
+                alt="Drive & Earn"
+                className="w-full h-full object-contain object-center lg:object-left rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+        {/* Feature6 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
+          <div className="relative  lg:order-none">
+            {/* <img className="absolute -right-10 -top-10" src={grystr} /> */}
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+              <img
+                src={feature3}
+                alt="Drive & Earn"
+                className="w-full h-full object-contain object-center lg:object-right rounded-xl"
+              />
+            </div>
+          </div>
           <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
             <SubHeading
               className="mainheading"
@@ -146,7 +304,7 @@ const FeaturesBuild = () => {
             </Paragraph>
             <Button
               onClick={() => {
-                navigate("../features2");
+                navigate("../features-safety");
                 setTimeout(() => {
                   const element = document.getElementById("saftyScoring");
                   if (element) {
@@ -163,123 +321,11 @@ const FeaturesBuild = () => {
               Learn More
             </Button >
           </div>
-          <div className="relative  lg:order-none">
-            <img className="absolute -right-10 -top-10" src={grystr} />
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
-              <img
-                src={feature3}
-                alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-          </div>
         </div>
-        {/* Feature4 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
-          <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
-              <img
-                src={feature4}
-                alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-          </div>
-          <div className="build-container  text-center md:text-left flex flex-col gap-4">
-            <SubHeading
-              className="mainheading"
-              color="white"
-              weight="bold"
-              size="3xl"
-            >
-              Organize meetups
-            </SubHeading>
-            <Paragraph size="sm" color="white">
-              It’s connection, coordination, and adventure—all in one place.
-              Turn plans into experiences with GenixMeet—create a meetup, bring
-              everyone together in one chat, and watch the group’s movement
-              unfold in real time with the race screen.
-            </Paragraph>
-            <Button
-              onClick={() => {
-                navigate("../features");
-                setTimeout(() => {
-                  const element = document.getElementById("genixsmart");
-                  if (element) {
-                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-                    window.scrollTo({
-                      top: elementPosition - 100,
-                      behavior: "smooth"
-                    });
-                  }
-                }, 100);
-              }}
-              size="lg"
-            >
-              Learn More
-            </Button>
-          </div>
-        </div>
-        {/* Feature5 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
-            <SubHeading
-              className="mainheading"
-              color="white"
-              weight="bold"
-              size="3xl"
-            >
-              Place notifications
-            </SubHeading>
-            <Paragraph size="sm" color="white">
-              GenixDrive keeps you informed with real-time alerts about the
-              people you monitor, notifying you of their location updates,
-              movements, and important events. This ensures you always know
-              what’s happening with your loved ones, giving you peace of mind
-              while they stay safe and protected.
-            </Paragraph>
-
-            <Button
-              onClick={() => {
-                navigate("../features1");
-                setTimeout(() => {
-                  const element = document.getElementById("geofencing");
-                  if (element) {
-                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-                    window.scrollTo({
-                      top: elementPosition - 100,
-                      behavior: "smooth"
-                    });
-                  }
-                }, 100);
-              }}
-              size="lg"
-            >
-              Learn More
-            </Button>
-          </div>
-          <div className="relative  lg:order-none">
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
-              <img
-                src={feature5}
-                alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Feature6 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
-          <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
-              <img
-                src={feature6}
-                alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-          </div>
+        {/* Feature7 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
+          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
           <div className="build-container text-center md:text-left flex flex-col gap-4">
             <SubHeading
               className="mainheading"
@@ -287,14 +333,13 @@ const FeaturesBuild = () => {
               weight="bold"
               size="3xl"
             >
-              Smart Vehicle Care
+              Smart Vehicle Insights
             </SubHeading>
             <Paragraph size="sm" color="white">
-              GenixDrive keeps you connected to your vehicle through intelligent monitoring and driving insights. It analyzes real-time driving behavior to help you understand vehicle usage and reduce risky driving patterns, improving both safety and performance.
-            </Paragraph>
+              GenixDrive provides real-time insights into your vehicle usage and driving behavior. Monitor driving patterns, track key events, and gain a better understanding of your journeys to support safer driving and improved vehicle performance.            </Paragraph>
             <Button
               onClick={() => {
-                navigate("../features2");
+                navigate("../features-insights");
                 setTimeout(() => {
                   const element = document.getElementById("insightForEvery");
                   if (element) {
@@ -311,54 +356,30 @@ const FeaturesBuild = () => {
               Learn More
             </Button>
           </div>
-        </div>
-        {/* Feature7 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
-            <SubHeading
-              className="mainheading"
-              color="white"
-              weight="bold"
-              size="3xl"
-            >
-              Driving Insights
-            </SubHeading>
-            <Paragraph size="sm" color="white">
-              Every journey reveals a pattern GenixDrive turns it into smart,
-              meaningful insights. GenixDrive transforms raw trip data into
-              easy‑to‑understand safety scores and actionable insights. It’s
-              your personal driving coach, helping you drive smarter and safer
-            </Paragraph>
-
-            <Button
-              onClick={() => {
-                (navigate("../features2"), window.scrollTo(0, 0));
-              }}
-              size="lg"
-            >
-              Learn More
-            </Button>
-          </div>
-          <div className="relative  lg:order-none">
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
+          <div className="relative order-0 md:order-1 lg:order-none">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
-                src={feature7}
+                src={feature6}
                 alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain object-center lg:object-left rounded-xl"
               />
             </div>
           </div>
         </div>
         {/* Feature8 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-0 relative">
+          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+            style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
           <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px]  md:w-[539px] md:h-[440px]  rounded-2xl">
+            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature8}
                 alt="Drive & Earn"
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain object-center lg:object-left rounded-xl"
               />
             </div>
+            {/* <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+              style={{ top: -15, left: -35, width: 38, opacity: 0.8 }} /> */}
           </div>
           <div className="build-container text-center md:text-left flex flex-col gap-4">
             <SubHeading
@@ -378,7 +399,7 @@ const FeaturesBuild = () => {
             </Paragraph>
             <Button
               onClick={() => {
-                navigate("../features");
+                navigate("../features-safety");
                 setTimeout(() => {
                   const element = document.getElementById("deviceMonitoring");
                   if (element) {

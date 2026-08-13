@@ -29,7 +29,7 @@ const FeaturesStrip = () => {
       icon: icon2,
       title: "Seamless Meetups",
       description:
-        "Create Genix meetups, chat instantly with your group, and be informed about everyone in real time using the live race screen.",
+        "Create and manage meetups with ease, know where everyone is along the way, and stay connected with your group. Genix Meet is designed to make every meetup smooth and hassle-free.",
       bgColor: "bg-light-green",
       textColor: "text-black",
       iconColor: "text-black",
@@ -40,7 +40,7 @@ const FeaturesStrip = () => {
       icon: icon3,
       title: "Earn As You Drive",
       description:
-        "Safe driving turns into real rewards — collect points, redeem perks, and enjoy benefits every time you drive.",
+        "Safe driving turns into real rewards — collect points, redeem exciting vouchers, and enjoy benefits every time you drive.",
       bgColor: "bg-white",
       textColor: "text-black",
       iconColor: "text-black",

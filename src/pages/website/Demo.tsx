@@ -4,7 +4,7 @@ import ReadytoDrive from "../../components/web/ReadytoDrive";
 import { useNavigate } from "react-router-dom";
 
 import demoMobile from "../../assets/demoMobile.png";
-import demoDesktop from "../../assets/demoDesktop111.png";
+import demoDesktop from "../../assets/demoDesktop11.png";
 
 import { motion } from "framer-motion";
 
@@ -21,7 +21,7 @@ const Demo = () => {
     <div>
       {/* BANNER */}
       {/* BANNER */}
-      <section className="banner bg-white h-screen overflow-hidden relative">
+      <section className="banner bg-white min-h-screen md:min-h-[calc(100vh-100px)] overflow-hidden relative">
         {/* Desktop Image */}
         <motion.img
           src={frame}
@@ -36,31 +36,33 @@ const Demo = () => {
         <motion.img
           src={frameMobile}
           alt="Features banner"
-          className="block md:hidden absolute top-0 left-0 h-full w-full object-cover"
+          className="block md:hidden absolute top-0px left-0 h-full w-full object-cover"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
-        <motion.div
-          className="content absolute md:w-1/3 top-5 md:top-1/2 p-2 md:p-0 text-center md:text-left md:left-[58px] transform md:-translate-y-1/2  text-white"
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <SubHeading size="4xl" className="mb-5 mainheading">
-            Experience GenixDrive
-            <p className="text-gray-500">in Action</p>
-          </SubHeading>
+        <div className="absolute inset-0 max-w-[1440px] mx-auto w-full pointer-events-none">
+          <motion.div
+            className="content absolute w-full md:w-1/3 top-25 md:top-5/10 p-2 md:p-0 text-center md:text-left left-0 md:left-[100px] transform md:-translate-y-1/2 text-white pointer-events-auto"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <SubHeading size="4xl" className="mb-5 mainheading">
+              Experience GenixDrive
+              <p className="text-gray-500">in Action</p>
+            </SubHeading>
 
-          <Paragraph size="sm">
-            From real-time safety alerts to family location sharing and exciting
-            rewards — GenixDrive is your complete driving companion.
-          </Paragraph>
+            <Paragraph size="sm">
+              From real-time safety alerts to family location sharing and exciting
+              rewards — GenixDrive is your complete driving companion.
+            </Paragraph>
 
-          <Button variant="primary" size="lg" className="mt-8 whitespace-nowrap" onClick={() => navigate("/interactive-demo")}>
-            Experience the Demo
-          </Button>
-        </motion.div>
+            <Button variant="primary" size="lg" className="mt-8 whitespace-nowrap" onClick={() => navigate("/interactive-demo")}>
+              Experience the Demo
+            </Button>
+          </motion.div>
+        </div>
         <motion.div
           className="pointer-events-none absolute inset-0"
           initial={{ opacity: 0 }}
@@ -73,10 +75,10 @@ const Demo = () => {
 
       <div className="relative ">
         <div className="hidden md:block">
-          <img className="w-full" src={demoDesktop} alt="" />
+          <img className="w-full" src={demoDesktop} alt="" loading="lazy" />
         </div>
         <div className="block md:hidden">
-          <img className="w-full" src={demoMobile} alt="" />
+          <img className="w-full" src={demoMobile} alt="" loading="lazy" />
         </div>
       </div>
 

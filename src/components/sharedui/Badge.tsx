@@ -1,6 +1,8 @@
-interface BadgeProps {
+import React from "react";
+
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
-  variant?: "success" | "warning" | "danger" | "default";
+  variant?: "success" | "warning" | "danger" | "default" | "outline";
 }
 
 const styles: Record<NonNullable<BadgeProps["variant"]>, string> = {
@@ -8,12 +10,14 @@ const styles: Record<NonNullable<BadgeProps["variant"]>, string> = {
   warning: "bg-yellow-400 text-white ring-yellow-200",
   danger: "bg-red-400 text-white ring-red-200",
   default: "bg-gray-400 text-white ring-gray-200",
+  outline: "bg-transparent text-gray-600 ring-gray-200 border border-gray-200",
 };
 
-const Badge = ({ children, variant = "default" }: BadgeProps) => {
+const Badge = ({ children, variant = "default", className = "", ...rest }: BadgeProps) => {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ring-1 ${styles[variant]}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ring-1 ${styles[variant]} ${className}`}
+      {...rest}
     >
       {children}
     </span>

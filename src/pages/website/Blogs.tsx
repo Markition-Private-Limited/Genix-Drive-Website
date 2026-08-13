@@ -1,4 +1,4 @@
-import frame from "../../assets/fframe.png";
+// import frame from "../../assets/fframe.png";
 import BlogBanner from "../../assets/blogbaner.jpg";
 import userPlaceHolder from "../../assets/userPlaceHolder.png";
 import user1 from "../../assets/bloguser1.png";
@@ -38,9 +38,9 @@ const BlogsRecords = [
   {
     blogImg: blog2,
     category: "Safety & Protection",
-    title: "what makes Genix Drive Different",
+    title: "What Makes Genix Drive Different",
     description:
-      "At first, it was just an idea of Erşad. Then we combined our skills and shaped AlignUI Design System over approximately 250 days. When I look back, I see nothing but hard work and dedication. That's the main reason why I wanted to write this blog, to inspire and inform.",
+      "What truly sets GenixDrive apart is our relentless commitment to merging cutting-edge AI technology with real-world safety needs. While many apps provide basic tracking, we dive deeper into driver behavior analytics, risk assessment, and proactive protection.",
     user: {
       userName: "Umar Riaz",
       userImg:
@@ -53,7 +53,7 @@ const BlogsRecords = [
     category: "Driving Insights",
     title: "GPS Tracking: Keeping Families & Fleets Safe on Every Journey",
     description:
-      "GPS tracking helps monitor vehicle location and ensures safety for families and fleet managers alike.",
+      "GPS tracking has become an essential tool in modern transportation, offering far more than just location tracking. It provides real-time monitoring, geofencing capabilities, and detailed route history, ensuring maximum safety for families and optimized operations for fleet managers.",
     user: {
       userName: "Saad Rasheed",
       userImg:
@@ -77,7 +77,7 @@ const BlogsRecords = [
   {
     blogImg: blog5,
     category: "Social & Family Connect",
-    title: "Plan Smarter Road Trips with Connected Vehicle Data",
+    title: "Plan Smarter Trips with Connected Vehicle Data",
     description:
       "Use connected apps and vehicle data to plan efficient and enjoyable road trips with your loved ones.",
     user: {
@@ -89,10 +89,10 @@ const BlogsRecords = [
   },
   {
     blogImg: blog6,
-    category: "Gamification & Rewards",
-    title: "Maximizing EV Battery Life with Smart Monitoring Tools",
+    category: "Safety & Technology",
+    title: "GenixDrive and the Future of Vehicle Safety: What Punjab's QR SOS System Gets Right",
     description:
-      "Learn how monitoring tools help optimize battery usage and performance in modern electric vehicles.",
+      "Punjab's QR panic button is making public transport safer with a single scan. GenixDrive brings that same connected-safety mindset to private vehicles, giving owners real visibility into their vehicles and the people who matter to them.",
     user: {
       userName: "Kinza Tariq",
       userImg:
@@ -121,15 +121,16 @@ const Blogs = () => {
       </div> */}
 
       {/* BLOGS SECTION */}
-      <section className="bg-white price-cards px-[56px] padding-50">
-        <div className="col-span-3 p-5  bg-secondary  overflow-hidden z-10 relative h-[490px] mb-10 blog-banner-details">
+      <section className="bg-white price-cards px-[10px] md:px-[100px] padding-20">
+        <div className="max-w-[1240px] mx-auto">
+        <div className="col-span-3 p-5 rounded-2xl bg-secondary overflow-hidden z-10 relative h-[490px] mb-10 blog-banner-details">
           <img
             className="absolute top-0 left-0 w-full h-full object-cover"
             src={BlogBanner}
             alt=""
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-          <div className="absolute bottom-0 left-0 w-full  p-10  z-10">
+          <div className="absolute bottom-0 left-0 w-full p-5 md:p-10 z-10">
             <span className="inline-block bg-blue-500 text-white p-1 rounded-sm text-sm">
               Technology
             </span>
@@ -158,12 +159,12 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {BlogsRecords.map((blog, index) => (
             <div
               onClick={() => navigate(`/blogs/${index}`)}
               key={index}
-              className="blog-card-container cursor-pointer bg-white p-5  shadow-2xl"
+              className="blog-card-container cursor-pointer bg-white p-5  shadow-2xl flex flex-col"
             >
               <div className="blog-img mb-4">
                 <img
@@ -172,14 +173,14 @@ const Blogs = () => {
                   alt=""
                 />
               </div>
-              <div className="blog-deta blogsrecords">
+              <div className="blog-deta blogsrecords flex-grow">
                 {/* <strong className="text-primary leading-5 mb-3 block">
                   {blog.category}
                 </strong> */}
-                <SubHeading className="mb-5" size="2xl">
+                <SubHeading className="mb-5" size="3xl">
                   {blog.title}
                 </SubHeading>
-                <Paragraph color="muted" size="sm" className="text-gray-600">
+                <Paragraph color="muted" size="xs" className="text-gray-600">
                   {blog.description}
                 </Paragraph>
               </div>
@@ -219,6 +220,7 @@ const Blogs = () => {
             Load more
           </span>
         </div> */}
+        </div>
       </section>
 
       {/* READY TO DRIVE */}

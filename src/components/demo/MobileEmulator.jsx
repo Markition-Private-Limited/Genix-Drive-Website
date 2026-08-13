@@ -1,8 +1,8 @@
 import { cloneElement } from 'react'
 import './MobileEmulator.css'
 
-function MobileEmulator({ children, onNext, currentStep }) {
-  const contentWithProps = cloneElement(children, { onNext, currentStep })
+function MobileEmulator({ children, onNext, currentStep, onJumpTo }) {
+  const contentWithProps = cloneElement(children, { onNext, currentStep, onJumpTo })
 
   return (
     <div className="mobile-emulator-wrapper">
