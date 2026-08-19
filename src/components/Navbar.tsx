@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { ShinyButton } from "./ui/shiny-button";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/GenixDrive_Logo/GenixDrive Logo (White) - SVG.svg";
 import logo2 from "../assets/GenixDrive_Logo/GenixDrive Logo (Black) - SVG.svg";
@@ -10,9 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
-  const isSignup = location.pathname === "/admin/signup";
   const [open, setOpen] = useState(false);
-  const isLoggedIn = !!localStorage.getItem("accessToken");
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const getLinkClasses = (active: boolean) =>
     `transition-colors ${isHome
@@ -139,16 +138,12 @@ const Navbar = () => {
 
         {/* Auth Button */}
         <div className="action-butto hidden lg:flex gap-2">
-          <Button
-            // onClick={() => navigate(isLoggedIn ? "/admin/dashboard" : "/admin/login")
+          <ShinyButton
             onClick={() => navigate("interactive-demo")}
-            size="lg"
-            variant={"primary"}
-            className={`!max-w-none whitespace-nowrap ${isHome ? "w-[180px] !px-0" : "!px-4"}`}
+            className="whitespace-nowrap"
           >
-            {isLoggedIn ? "Demo" : isHome ? "Demo" : isSignup ? "Demo" : "Demo"}
-            {/* {isLoggedIn ? "Dashboard" : isHome ? "Sign Up / Login" : isSignup ? "Login" : "Login"} */}
-          </Button>
+            EXPERIENCE A DEMO
+          </ShinyButton>
           {!isHome && (
             <Button size="lg" variant={"secondary"} onClick={() => window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank")}>
               Download Now
@@ -278,14 +273,12 @@ const Navbar = () => {
               </div>
               <div className="mt-8 flex flex-col items-start gap-4">
                 <Button
-                  // onClick={() => navigate(isLoggedIn ? "/admin/dashboard" : "/admin/login")
                   onClick={() => navigate("interactive-demo")}
                   size="lg"
                   variant={"primary"}
                   className="!px-4 !max-w-none whitespace-nowrap"
                 >
-                  {isLoggedIn ? "Demo" : isHome ? "Demo" : isSignup ? "Demo" : "Demo"}
-                  {/* {isLoggedIn ? "Dashboard" : isHome ? "Sign Up / Login" : isSignup ? "Login" : "Login"} */}
+                  Demo
                 </Button>
                 {!isAbout && (
                   <Button
