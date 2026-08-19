@@ -49,7 +49,7 @@ const Feature3 = () => {
   */
   const faqs = [
     {
-      q: "How do I download and set up your account on the Genix Drive application?",
+      q: "How to download and set up your account on the Genix Drive application?",
       a: (
         <>
           <p className="mb-4">Getting started is simple. Download the Genix Drive application from the Google Play Store or Apple App Store and create your account by following the registration process. Once registered, grant the required permissions to enable accurate trip tracking and driving analysis.</p>

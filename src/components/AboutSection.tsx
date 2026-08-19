@@ -1,5 +1,5 @@
 // import centerMobile from "../assets/HomeCenterMobile.png";
-import ill from "../assets/aboutill.png";
+import ill from "../assets/aboutIll.png";
 import ill2 from "../assets/about2nd.png";
 import Paragraph from "./sharedui/Paragraph";
 import SubHeading from "./sharedui/SubHeading";
