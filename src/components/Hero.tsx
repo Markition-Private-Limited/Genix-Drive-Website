@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <motion.section
       /* ─── DESKTOP: exactly as original ─── */
-      className="bg-primary lg:min-h-[calc(100vh-100px)] w-full text-white font-cairo overflow-x-clip relative flex items-center py-0 lg:py-0 -mb-4 lg:mb-0"
+      className="bg-primary lg:min-h-[calc(100vh-100px)] w-full text-white font-cairo overflow-x-clip relative flex items-center py-0 lg:py-0 -mb-2 lg:mb-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -110,16 +110,14 @@ const Hero = () => {
             Bigger (62vh), shifted left so the phone aligns under store buttons,
             negative margin pulls panels up so no gap */}
         <motion.div
-          className="lg:hidden relative order-3 mt-0"
+          className="lg:hidden relative order-3 mt-0 mb-[-3px]"
           variants={item}
         >
           <div className="flex justify-center">
-            <motion.img
+            <img
               src={centerMobile}
               alt="App Mockup"
               className="w-full max-w-[320px] h-auto object-contain drop-shadow-2xl -translate-x-[15%]"
-              animate={{ y: [0, -8, 0], scale: [1, 1.015, 1] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
         </motion.div>
