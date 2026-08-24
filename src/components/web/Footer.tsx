@@ -9,7 +9,7 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer className="font-cairo foooter text-center lg:text-left bg-primary text-white pt-12 pb-5 rounded-t-[50px]">
-      <div className="max-w-[1450px] mx-auto px-[10px] md:px-[100px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 justify-between">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-10 lg:px-[100px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 justify-between">
         <div className="space-y-4 md:col-span-3 lg:col-span-2">
           <div className="rounded flex justify-center lg:justify-start items-center ">
             <img src={logo} alt="Genix Drive Logo" className="md:w-[50%] w-[50%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 hover:drop-shadow-[0_6px_16px_rgba(0,0,0,0.6)]" />

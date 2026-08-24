@@ -209,7 +209,7 @@ const Home = () => {
       <ReadytoDrive />
       {/* FAQs */}
       <motion.section
-        className="faqs bg-surface-light px-[10px] md:px-[100px] pt-[70px] pb-[90px] padding-50"
+        className="faqs bg-surface-light section-px pt-[70px] pb-[90px] padding-50"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}

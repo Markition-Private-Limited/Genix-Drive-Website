@@ -39,7 +39,7 @@ const About = () => {
       <AboutCollageSlider />
 
       {/* SECTION2 */}
-      <section className="bg-surface-light px-[10px] md:px-[100px] py-[70px] pb-[80px] padding-50">
+      <section className="bg-surface-light px-6 md:px-10 lg:px-[100px] py-[70px] pb-[80px] padding-50">
         <div className="max-w-[1240px] mx-auto">
           <SectionHeading
             className="relative paratExt section-heading mb-5 md:mb-2"
@@ -144,7 +144,7 @@ const About = () => {
       </section>
 
       {/* SECTION4 */}
-      <section className="px-[10px] md:px-[100px] py-[80px] pb-[60px] padding-50">
+      <section className="px-6 md:px-10 lg:px-[100px] py-[80px] pb-[60px] padding-50">
         <div className="max-w-[1240px] mx-auto">
           <div className="section-heading text-center mb-[50px]  w-full md:w-1/2 m-auto">
             <SubHeading
@@ -153,7 +153,7 @@ const About = () => {
               className="mb-4 mainheading relative"
             >
               <img
-                className="absolute doodle w-[370px] h-[80px] left-[0px] xl:left-[25px] 2xl:left-[50px] -top-[22px]"
+                className="hidden md:block absolute doodle w-[280px] lg:w-[370px] h-[80px] left-[0px] xl:left-[25px] 2xl:left-[50px] -top-[22px]"
                 src={kfborder}
                 alt=""
               />
@@ -161,9 +161,9 @@ const About = () => {
                 style={{ top: 15, left: -45, width: 38, opacity: 1 }} />
               <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
                 style={{ top: -45, left: -108, width: 58, opacity: 0.8 }} />
-              <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+              <img src={grnstr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
                 style={{ top: 45, left: 575, width: 38, opacity: 1 }} />
-              <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+              <img src={grystr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
                 style={{ top: 85, left: 615, width: 58, opacity: 0.8 }} />
               Key Features &nbsp; &nbsp; That
               <p>Drive the Difference</p>

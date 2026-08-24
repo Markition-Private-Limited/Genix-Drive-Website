@@ -121,9 +121,9 @@ const Blogs = () => {
       </div> */}
 
       {/* BLOGS SECTION */}
-      <section className="bg-white price-cards px-[10px] md:px-[100px] padding-20">
+      <section className="bg-white price-cards section-px padding-20">
         <div className="max-w-[1240px] mx-auto">
-        <div className="col-span-3 p-5 rounded-2xl bg-secondary overflow-hidden z-10 relative h-[490px] mb-10 blog-banner-details">
+        <div className="col-span-3 p-5 rounded-2xl bg-secondary overflow-hidden z-10 relative h-[320px] md:h-[490px] mb-10 blog-banner-details">
           <img
             className="absolute top-0 left-0 w-full h-full object-cover"
             src={BlogBanner}

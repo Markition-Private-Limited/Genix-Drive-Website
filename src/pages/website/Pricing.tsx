@@ -34,7 +34,7 @@ const Pricing = () => {
       </div> */}
 
       {/* PRICE CARDS SECTION */}
-      <section className="bg-white price-cards px-[10px] md:px-[100px] pt-[40px] pb-[80px] padding-40">
+      <section className="bg-white price-cards section-px pt-[40px] pb-[80px] padding-40">
         <div className="max-w-[1240px] mx-auto">
           <SectionHeading
             className="relative paratExt !mb-[40px]"
@@ -192,7 +192,7 @@ const Pricing = () => {
       </section>
 
       {/* SECTION */}
-      <section className="bg-surface-light  px-[10px] md:px-[100px] py-[60px] padding-50">
+      <section className="bg-surface-light  section-px py-[60px] padding-50">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-1 lg:order-none flex items-center">

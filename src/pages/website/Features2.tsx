@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import frame from "../../assets/featursabot/banner2.png";
-import frameMobile from "../../assets/FrameMobile.png";
 
 import SubHeading from "../../components/sharedui/SubHeading";
 import Paragraph from "../../components/sharedui/Paragraph";
@@ -103,9 +102,31 @@ const Features2 = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div>
-      {/* BANNER */}
+      {/* MOBILE BANNER */}
+      <motion.div
+        className="md:hidden font-cairo"
+        style={{ background: 'linear-gradient(to bottom, #D9D5F5 0%, #AE97EE 100%)' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="px-6 pt-10 pb-4 text-center">
+          <SubHeading size="3xl" className="mb-4 mainheading text-black">
+            Driving <span className="text-secondary">Insights</span>
+          </SubHeading>
+          <p className="text-black/80 text-sm leading-relaxed mb-6">
+            Drive smarter and more confidently. Transform your driving data into meaningful insights that help you understand your habits, improve safety, and protect what truly matters.
+          </p>
+          <StoreActionsButtons small />
+        </div>
+        <div className="w-full overflow-hidden" style={{ height: 'clamp(460px, 120vw, 560px)' }}>
+          <img src={frame} alt="Driving Insights" className="w-full h-full object-cover" style={{ objectPosition: '87% 28%' }} />
+        </div>
+      </motion.div>
+
+      {/* BANNER — desktop only */}
       <motion.section
-        className="banner min-h-[calc(100vh-80px)] md:min-h-[calc(90vh-0px)] overflow-hidden relative"
+        className="banner hidden md:block md:min-h-[calc(90vh-0px)] overflow-hidden relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -122,7 +143,7 @@ const Features2 = () => {
 
         {/* Mobile Image */}
         <motion.img
-          src={frameMobile}
+          src={frame}
           alt="Features banner"
           className="block md:hidden absolute top-[-120px] left-0 h-full w-full object-cover featurebanner"
           initial={{ scale: 1.1, opacity: 0 }}
@@ -155,7 +176,7 @@ const Features2 = () => {
 
       {/* FEATURE */}
       <motion.section
-        className="features px-[10px] md:px-[100px] py-[70px] bg-white padding-50"
+        className="features section-px py-[70px] bg-white padding-50"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
@@ -213,7 +234,7 @@ const Features2 = () => {
         </div>
       </motion.section>
 
-      <motion.section className="bg-white  px-[10px] md:px-[100px] py-[25px] pb-[60px] padding-50">
+      <motion.section className="bg-white  section-px py-[25px] pb-[60px] padding-50">
         <div className="relative max-w-[1240px] mx-auto">
           <img src={bluestr} alt="" className="hidden lg:block absolute -top-12 -left-12 w-12 opacity-60 pointer-events-none select-none" />
           <img src={bluestr} alt="" className="hidden lg:block absolute -top-12 left-162 w-12 opacity-60 pointer-events-none select-none" />
@@ -316,7 +337,7 @@ const Features2 = () => {
 
       {/* FAQs */}
       <motion.section
-        className="faqs bg-surface-light px-[10px] md:px-[100px] pt-[70px] pb-[90px] padding-50"
+        className="faqs bg-surface-light section-px pt-[70px] pb-[90px] padding-50"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}

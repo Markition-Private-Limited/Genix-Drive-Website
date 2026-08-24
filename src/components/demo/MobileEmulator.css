@@ -93,8 +93,11 @@
 }
 
 @media (max-width: 480px) {
+  .mobile-emulator-wrapper {
+    padding: 0.25rem;
+  }
   .phone-frame {
-    width: 315px;
+    width: min(315px, calc(100vw - 32px));
     max-width: none;
     padding: 8px;
     border-radius: 40px;

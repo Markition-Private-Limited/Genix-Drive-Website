@@ -15,7 +15,7 @@ const AboutSection = ({ bg }: { bg: string }) => {
   const navigate = useNavigate();
   return (
     <motion.section
-      className={`bg-${bg} text-black font-cairo pt-20 px-6 py-0 lg:py-12 md:px-[100px]`}
+      className={`bg-${bg} text-black font-cairo pt-20 px-6 py-0 lg:py-12 md:px-10 lg:px-[100px]`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

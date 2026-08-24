@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import frame from "../../assets/7thsky.png";
-import frameMobile from "../../assets/FrameMobile.png";
 
 import SubHeading from "../../components/sharedui/SubHeading";
 import Paragraph from "../../components/sharedui/Paragraph";
@@ -103,8 +102,30 @@ const Features = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div>
-      {/* BANNER */}
-      <section className="banner min-h-[calc(100vh-80px)] md:min-h-[calc(90vh-0px)] overflow-hidden relative">
+      {/* MOBILE BANNER */}
+      <motion.div
+        className="md:hidden font-cairo"
+        style={{ background: 'linear-gradient(to bottom, #D9D5F5 0%, #AE97EE 100%)' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="px-6 pt-10 pb-4 text-center">
+          <SubHeading size="3xl" className="mb-4 mainheading text-black">
+            Social & Family <span className="text-secondary block">Connect</span>
+          </SubHeading>
+          <p className="text-black/80 text-sm leading-relaxed mb-6">
+            Stay connected with people who matter the most. Monitor and ensure your family's safety with real-time updates, no matter where life takes you.
+          </p>
+          <StoreActionsButtons small />
+        </div>
+        <div className="w-full overflow-hidden" style={{ height: 'clamp(460px, 120vw, 560px)' }}>
+          <img src={frame} alt="Social & Family Connect" className="w-full h-full object-cover" style={{ objectPosition: '87% 28%' }} />
+        </div>
+      </motion.div>
+
+      {/* BANNER — desktop only */}
+      <section className="banner hidden md:block md:min-h-[calc(90vh-0px)] overflow-hidden relative">
         {/* Desktop Image */}
         <motion.img
           src={frame}
@@ -117,7 +138,7 @@ const Features = () => {
 
         {/* Mobile Image */}
         <motion.img
-          src={frameMobile}
+          src={frame}
           alt="Features banner"
           className="block md:hidden absolute top-[-120px] left-0 h-full w-full object-cover featurebanner"
           initial={{ scale: 1.1, opacity: 0 }}
@@ -155,7 +176,7 @@ const Features = () => {
 
       {/* FEATURE */}
       <motion.section
-        className="features px-[10px] md:px-[100px] py-[70px] bg-white padding-50"
+        className="features section-px py-[70px] bg-white padding-50"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
@@ -360,7 +381,7 @@ const Features = () => {
         </div>
       </motion.section>
 
-      <motion.section className="bg-white px-[10px] md:px-[100px] py-[25px] pb-[60px] padding-50">
+      <motion.section className="bg-white section-px py-[25px] pb-[60px] padding-50">
         <div className="relative max-w-[1240px] mx-auto">
           <img src={bluestr} alt="" className="hidden lg:block absolute -top-12 -left-12 w-12 opacity-60 pointer-events-none select-none" />
           <img src={bluestr} alt="" className="hidden lg:block absolute -top-12 left-162 w-12 opacity-60 pointer-events-none select-none" />
@@ -444,7 +465,7 @@ const Features = () => {
 
       {/* FAQs */}
       <motion.section
-        className="faqs bg-surface-light px-[10px] md:px-[100px] pt-[70px] pb-[90px] padding-50"
+        className="faqs bg-surface-light section-px pt-[70px] pb-[90px] padding-50"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}

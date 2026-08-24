@@ -379,7 +379,7 @@ const BlogDetails = () => {
 
   return (
     <div>
-      <section className="blog-details px-[10px] md:px-[100px] py-[10px]">
+      <section className="blog-details section-px py-[10px]">
         <div className="blog-details-container mt-8 max-w-[1240px] mx-auto">
           <SubHeading size="2xl" color="dark" className="mb-1 mainheading">
             {currentBlog.title}
@@ -411,7 +411,7 @@ const BlogDetails = () => {
       </section>
 
 
-      <section className="px-[10px] md:px-[100px] py-[30px] pb-[80px] padding-50">
+      <section className="section-px py-[30px] pb-[80px] padding-50">
         <div className="max-w-[1240px] mx-auto">
           <SubHeading size="4xl" color="dark" className="mb-5">
             Related Blogs
