@@ -119,8 +119,8 @@ const Features = () => {
           </p>
           <StoreActionsButtons small />
         </div>
-        <div className="w-full overflow-hidden" style={{ height: 'clamp(460px, 120vw, 560px)' }}>
-          <img src={frame} alt="Social & Family Connect" className="w-full h-full object-cover" style={{ objectPosition: '87% 28%' }} />
+        <div className="w-full overflow-hidden relative" style={{ height: 'clamp(460px, 120vw, 560px)' }}>
+          <img src={frame} alt="Social & Family Connect" style={{ position: 'absolute', height: '120%', width: 'auto', maxWidth: 'none', left: '50%', top: '50%', transform: 'translate(-68%, -58%)' }} />
         </div>
       </motion.div>
 

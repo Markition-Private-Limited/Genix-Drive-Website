@@ -22,11 +22,16 @@ const Hero = () => {
   return (
     <motion.section
       /* ─── DESKTOP: exactly as original ─── */
-      className="bg-primary lg:min-h-[calc(100vh-100px)] w-full text-white font-cairo overflow-x-clip relative flex items-center py-0 lg:py-0"
+      className="bg-primary lg:min-h-[calc(100vh-100px)] w-full text-white font-cairo overflow-x-clip relative flex items-center py-0 lg:py-0 -mb-4 lg:mb-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
+      {/* Decorative stars — mobile only */}
+      <img src={grnstr} alt="" className="lg:hidden absolute top-[38%] right-3 w-5 opacity-70 pointer-events-none select-none z-10" />
+      <img src={grystr} alt="" className="lg:hidden absolute bottom-[22%] left-3 w-5 opacity-75 pointer-events-none select-none z-10" />
+      <img src={grnstr} alt="" className="lg:hidden absolute bottom-[3%] right-4 w-5 opacity-80 pointer-events-none select-none z-10" />
+
       {/* Center Image — absolute, desktop only (unchanged) */}
       <div className="absolute -left-[5%] xl:-left-[150px] -bottom-2 sm:-bottom-6 inset-0 z-0 hidden lg:flex items-center justify-center pointer-events-none">
         <motion.img
@@ -58,7 +63,7 @@ const Hero = () => {
             <p className="relative inline-block text-white/60">
               Drive Smart
               <img
-                className="absolute left-[-30px] lg:left-[300px] bottom-[-180px] lg:bottom-[20px] xl:bottom-[20px]"
+                className="absolute -top-4 left-[calc(100%+6px)] lg:top-auto lg:left-[300px] lg:bottom-[20px] xl:bottom-[20px]"
                 src={grnstr}
                 alt=""
               />
