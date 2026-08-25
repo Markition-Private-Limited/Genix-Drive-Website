@@ -11,6 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
+  const isDemo = location.pathname === "/interactive-demo";
   const [open, setOpen] = useState(false);
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const getLinkClasses = (active: boolean) =>
@@ -37,7 +38,7 @@ const Navbar = () => {
       className={`w-full z-40 py-6 transition-colors duration-300 ${isHome ? "bg-primary text-white" : "bg-white text-black shadow-sm"
         }`}
     >
-      <div className="w-full max-w-[1450px] mx-auto px-[10px] md:px-[100px] flex items-center justify-between font-cairo">
+      <div className="w-full max-w-[1450px] mx-auto section-px flex items-center justify-between font-cairo">
         {/* Logo Placeholder */}
         {/* <div className="flex items-center gap-2">
           <div
@@ -138,12 +139,14 @@ const Navbar = () => {
 
         {/* Auth Button */}
         <div className="action-butto hidden lg:flex gap-2">
-          <ShinyButton
-            onClick={() => navigate("interactive-demo")}
-            className="whitespace-nowrap"
-          >
-            EXPERIENCE A DEMO
-          </ShinyButton>
+          {!isDemo && (
+            <ShinyButton
+              onClick={() => navigate("/interactive-demo")}
+              className="whitespace-nowrap"
+            >
+              EXPERIENCE A DEMO
+            </ShinyButton>
+          )}
           {!isHome && (
             <Button size="lg" variant={"secondary"} onClick={() => window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank")}>
               Download Now
@@ -159,7 +162,7 @@ const Navbar = () => {
           <Menu className="w-7 h-7" />
         </button>
         <div
-          className={`fixed inset-0 z-50 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"
+          className={`fixed inset-0 z-[200] transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           onClick={() => setOpen(false)}
         >
@@ -271,21 +274,23 @@ const Navbar = () => {
                   Blogs
                 </NavLink>
               </div>
-              <div className="mt-8 flex flex-col items-start gap-4">
-                <Button
-                  onClick={() => navigate("interactive-demo")}
-                  size="lg"
-                  variant={"primary"}
-                  className="!px-4 !max-w-none whitespace-nowrap"
-                >
-                  Demo
-                </Button>
+              <div className="mt-8 flex flex-col items-stretch gap-4">
+                {!isDemo && (
+                  <Button
+                    onClick={() => { navigate("/interactive-demo"); setOpen(false); }}
+                    size="lg"
+                    variant={"primary"}
+                    className="!px-4 w-full whitespace-nowrap"
+                  >
+                    Experience A Demo
+                  </Button>
+                )}
                 {!isAbout && (
                   <Button
                     size="lg"
                     variant="secondary"
-                    className={isHome ? "!bg-white !text-primary hover:!bg-gray-100" : ""}
-                    onClick={() => window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank")}
+                    className={`w-full ${isHome ? "!bg-white !text-primary hover:!bg-gray-100" : ""}`}
+                    onClick={() => { window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank"); setOpen(false); }}
                   >
                     Download Now
                   </Button>

@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 const FeaturesBuild = () => {
   const navigate = useNavigate();
   return (
-    <section className="bg-secondary text-white font-cairo padding-50 py-16 px-6 md:py-24 md:px-12 lg:py-24 lg:px-[100px] relative overflow-hidden">
+    <section className="bg-secondary text-white font-cairo padding-50 py-16 px-6 md:py-20 md:px-10 lg:py-24 lg:px-[100px] relative overflow-hidden">
       <img
         src={path}
         className="absolute top-0 right-0 opacity-50 h-[200px]"

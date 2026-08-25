@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
   const navigate = useNavigate();
   return (
-    <section className="bg-white text-black font-cairo pt-16 py-0 px-6 md:py-24 md:px-12 lg:py-32 lg:px-[100px] lg:pt-40 padding-50">
+    <section className="bg-white text-black font-cairo pt-16 py-0 px-6 md:py-24 md:px-10 lg:py-32 lg:px-[100px] lg:pt-40 padding-50">
       <div className="bg-secondary mb-[130px] md:mb-0 rounded-2xl relative h-[670px] md:h-[400px] lg:h-[400px] xl:h-[400px] z-10 flex items-start md:items-center ready-to-driver-cotnainer max-w-[1240px] m-auto">
         <img
           src={vector}
