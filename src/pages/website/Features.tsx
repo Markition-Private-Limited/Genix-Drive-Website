@@ -297,7 +297,7 @@ const Features = () => {
           >
             <div className="lg:col-span-3 p-5 min-h-[364px] lg:h-auto  bg-secondary rounded-2xl overflow-hidden z-10 relative order-2 lg:order-1">
               <img
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="absolute top-0 left-0 w-full h-full object-cover max-lg:object-[58%_32%] lg:object-center"
                 src={ab3}
                 alt=""
               />

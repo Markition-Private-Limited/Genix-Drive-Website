@@ -29,7 +29,7 @@ const SignupFlow = () => {
           of mind."
       >
         Sign-up
-        <div className="inline-block relative ml-5 p-2">
+        <div className="inline-block relative ml-1 md:ml-5 p-1 md:p-2">
           <p>Process</p>
           <img
             src={cric}

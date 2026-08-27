@@ -11,7 +11,7 @@ const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
   const navigate = useNavigate();
   return (
     <section className="bg-white text-black font-cairo pt-16 py-0 px-6 md:py-24 md:px-10 lg:py-32 lg:px-[100px] lg:pt-40 padding-50">
-      <div className="bg-secondary mb-[130px] md:mb-0 rounded-2xl relative h-[670px] md:h-[400px] lg:h-[400px] xl:h-[400px] z-10 flex items-start md:items-center ready-to-driver-cotnainer max-w-[1240px] m-auto">
+      <div className="bg-secondary max-lg:mb-[150px] md:mb-0 rounded-2xl relative max-lg:h-[560px] md:h-[400px] lg:h-[400px] xl:h-[400px] z-10 flex items-start md:items-center ready-to-driver-cotnainer max-w-[1240px] m-auto">
         <img
           src={vector}
           alt=""
@@ -27,7 +27,7 @@ const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
           alt=""
           className="hidden md:block absolute right-[15px] bottom-[1px]   "
         />
-        <div className="content w-full md:w-1/2 p-5 z-10 text-center md:text-left md:px-12 lg:px-20 xl:px-[80px] py-[25%] md:py-5">
+        <div className="content w-full md:w-1/2 p-5 z-10 text-center md:text-left md:px-12 lg:px-20 xl:px-[80px] pt-10 pb-5 md:py-5">
           <SubHeading className="mb-4" weight="medium" size="4xl" color="white">
             {isPricingPage ? (
               "Want to order a device?"
@@ -77,9 +77,10 @@ const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
           alt=""
           className="
             absolute
-            top-full
-            left-1/2
+            top-[100%]
+            left-[52%]
             -translate-x-1/2
+            max-lg:-translate-y-[65%]
 
             md:top-1/2
             md:left-auto
@@ -87,9 +88,9 @@ const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
             md:-translate-x-[5%]
             lg:-translate-x-[15%]
             xl:-translate-x-[30%]
-            -translate-y-1/2
+            lg:-translate-y-1/2
 
-            w-[240px]
+            w-[clamp(170px,52vw,240px)]
             md:w-[300px]
             lg:w-[350px]
             xl:w-[350px]

@@ -34,21 +34,36 @@ const FeaturesBuild = () => {
             className="text-center mainheading lg:text-4xl xl:text-5xl"
           >
             <div className="relative z-10">
-              <p>Features &nbsp; Build for your</p>
-              <img
-                className="hidden lg:block absolute doodle -z-10 -top-[35px] left-[70px] w-[272px] h-[93px] rotate-180"
-                src={doodle}
-                alt=""
-              />
+              <p>
+                <span className="relative inline-block">
+                  Features
+                  <img
+                    className="lg:hidden absolute -z-10 w-[135px] h-[56px] -top-[15px] -left-[12px] sm:w-[170px] sm:h-[70px] sm:-top-[18px] sm:-left-[15px] md:w-[210px] md:h-[86px] md:-top-[22px] md:-left-[18px]"
+                    style={{ transform: 'rotate(180deg)' }}
+                    src={doodle}
+                    alt=""
+                  />
+                  <img
+                    className="hidden lg:block absolute doodle -z-10 -top-[35px] -left-[20px] w-[272px] h-[93px] rotate-180"
+                    src={doodle}
+                    alt=""
+                  />
+                </span>
+                <span className="lg:hidden">&nbsp;Build for your</span>
+                <span className="hidden lg:inline">&nbsp;&nbsp; Build for your</span>
+              </p>
             </div>
-            <p>Safety | Connection | Convenience</p>
+            <p className="whitespace-nowrap lg:whitespace-normal max-lg:text-xl">Safety | Connection | Convenience</p>
           </SubHeading>
         </div>
         {/* Feature1 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grnstr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4 ">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grnstr} alt="" className="absolute left-2 w-10 opacity-100" />
+          </div>
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start ">
             <SubHeading className="mainheading" color="white" weight="semibold">
               Social & Family
               <p>Connect</p>
@@ -75,8 +90,8 @@ const FeaturesBuild = () => {
               Learn More
             </Button>
           </div>
-          <div className="relative order-0 md:order-1   lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+          <div className="relative max-lg:order-0 lg:order-none">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature1}
                 alt="Drive & Earn"
@@ -86,11 +101,14 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grystr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grystr} alt="" className="absolute right-2 w-10 opacity-100" />
+          </div>
           <div className="relative  lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature7}
                 alt="Drive & Earn"
@@ -98,7 +116,7 @@ const FeaturesBuild = () => {
               />
             </div>
           </div>
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -125,10 +143,13 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grnstr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grnstr} alt="" className="absolute left-2 w-10 opacity-100" />
+          </div>
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -165,7 +186,7 @@ const FeaturesBuild = () => {
             </Button>
           </div>
           <div className="relative  lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature5}
                 alt="Drive & Earn"
@@ -177,12 +198,15 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature4 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grystr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
-          <div className="relative order-0 md:order-1 lg:order-0">
-            <div className=" w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[440px] bg-transparent md-bg-white/50 rounded-2xl"></div>
-            <div className="rounded-2xl w-full h-[220px] absolute top-0 left-0 md:h-[300px] lg:h-[400px] xl:h-[400px] overflow-hidden ">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grystr} alt="" className="absolute right-2 w-10 opacity-100" />
+          </div>
+          <div className="relative order-0">
+            <div className=" w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[440px] bg-transparent md-bg-white/50 rounded-2xl"></div>
+            <div className="rounded-2xl w-full h-[170px] absolute top-0 left-0 md:h-[300px] lg:h-[400px] xl:h-[400px] overflow-hidden ">
               <img
                 src={feature2}
                 alt="Drive & Earn"
@@ -192,7 +216,7 @@ const FeaturesBuild = () => {
             {/* <img src={bluestr} alt="" className="absolute pointer-events-none select-none"
               style={{ top: 15, left: 30, width: 52, opacity: 0.8 }} /> */}
           </div>
-          <div className="build-container text-center md:text-left flex flex-col gap-4">
+          <div className="build-container text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -222,10 +246,13 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature5 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grnstr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
-          <div className="build-container  text-center md:text-left flex flex-col gap-4">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grnstr} alt="" className="absolute left-2 w-10 opacity-100" />
+          </div>
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -259,8 +286,8 @@ const FeaturesBuild = () => {
               Learn More
             </Button>
           </div>
-          <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+          <div className="relative max-lg:order-0 lg:order-none">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature4}
                 alt="Drive & Earn"
@@ -270,12 +297,15 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature6 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grystr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grystr} alt="" className="absolute right-2 w-10 opacity-100" />
+          </div>
           <div className="relative  lg:order-none">
             {/* <img className="absolute -right-10 -top-10" src={grystr} /> */}
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature3}
                 alt="Drive & Earn"
@@ -283,7 +313,7 @@ const FeaturesBuild = () => {
               />
             </div>
           </div>
-          <div className="build-container order-1 md:order-0 text-center md:text-left flex flex-col gap-4">
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -323,10 +353,13 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature7 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-20 relative">
-          <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-20 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grnstr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, left: -55, width: 48, opacity: 1 }} />
-          <div className="build-container text-center md:text-left flex flex-col gap-4">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grnstr} alt="" className="absolute left-2 w-10 opacity-100" />
+          </div>
+          <div className="build-container max-lg:order-1 text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
@@ -356,8 +389,8 @@ const FeaturesBuild = () => {
               Learn More
             </Button>
           </div>
-          <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+          <div className="relative max-lg:order-0 lg:order-none">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature6}
                 alt="Drive & Earn"
@@ -367,11 +400,14 @@ const FeaturesBuild = () => {
           </div>
         </div>
         {/* Feature8 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center mb-0 relative">
-          <img src={grystr} alt="" className="absolute pointer-events-none select-none"
+        <div className="grid grid-cols-1 lg:grid-cols-2 max-lg:gap-3 lg:gap-12 mt-12 items-center mb-0 relative max-lg:bg-white/10 max-lg:backdrop-blur-md max-lg:border max-lg:border-white/15 max-lg:rounded-2xl max-lg:p-4 max-lg:shadow-lg">
+          <img src={grystr} alt="" className="hidden lg:block absolute pointer-events-none select-none"
             style={{ top: -10, right: -55, width: 48, opacity: 1 }} />
-          <div className="relative order-0 md:order-1 lg:order-none">
-            <div className="w-full h-[220px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
+          <div className="lg:hidden absolute -top-3 left-1/2 w-screen -translate-x-1/2 pointer-events-none z-20">
+            <img src={grystr} alt="" className="absolute right-2 w-10 opacity-100" />
+          </div>
+          <div className="relative max-lg:order-0 lg:order-none">
+            <div className="w-full h-[170px] md:h-[300px] lg:h-[400px] xl:h-[400px] rounded-2xl">
               <img
                 src={feature8}
                 alt="Drive & Earn"
@@ -381,7 +417,7 @@ const FeaturesBuild = () => {
             {/* <img src={grnstr} alt="" className="absolute pointer-events-none select-none"
               style={{ top: -15, left: -35, width: 38, opacity: 0.8 }} /> */}
           </div>
-          <div className="build-container text-center md:text-left flex flex-col gap-4">
+          <div className="build-container text-center lg:text-left flex flex-col gap-4 items-center lg:items-start">
             <SubHeading
               className="mainheading"
               color="white"
