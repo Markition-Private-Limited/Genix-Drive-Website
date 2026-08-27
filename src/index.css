@@ -426,7 +426,7 @@ button {
   }
 
   .ready-to-driver-cotnainer {
-    margin-bottom: 250px;
+    margin-bottom: 150px;
   }
 
   .blogs .banner img,
@@ -440,22 +440,13 @@ button {
   }
 
   .footer0actions div {
-    margin: auto !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 10px;
   }
 
   .foooter .w-32 {
     margin: auto;
     display: block;
     margin-bottom: 10px;
-  }
-
-  .foooter p {
-    text-align: center !important;
-  }
-
-  .foooter .flex {
-    justify-content: center;
   }
 
   .build-container button {
@@ -488,12 +479,6 @@ button {
     height: 60px !important;
     left: 60 !important;
     top: 25px !important;
-  }
-
-  .blogdoodle {
-    width: 90px !important;
-    height: 50px !important;
-    left: 40px !important;
   }
 
   .step-details .sub-heading.mainclass {

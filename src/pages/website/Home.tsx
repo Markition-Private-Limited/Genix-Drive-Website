@@ -129,12 +129,18 @@ const Home = () => {
             paraText="Stay updated with the latest tips, insights, and stories on safe driving, family protection, and smart vehicle care. Our blog is designed to help drivers and families make every journey smarter, safer, and more rewarding."
           >
             From the GenixDrive
-            <div className="inline-block relative ml-5 p-0">
-              <p>Blog</p>
+            <div className="inline-block relative ml-2 md:ml-5 p-0">
+              <p className="max-lg:m-0 max-lg:leading-none">Blog</p>
               <img
                 src={cric}
                 alt="circle"
-                className="absolute left-[50px] md:left-[70px] blogdoodle top-65/100 -translate-1/2 max-w-[173px] h-[112px]"
+                className="lg:hidden absolute pointer-events-none select-none"
+                style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '75px', maxWidth: 'none', height: '46px' }}
+              />
+              <img
+                src={cric}
+                alt="circle"
+                className="hidden lg:block absolute left-[70px] top-65/100 -translate-1/2 max-w-[173px] h-[112px]"
               />
               <img src={grnstr} alt="" className="hidden md:block absolute pointer-events-none select-none"
                 style={{ top: 0, left: 175, width: 48, opacity: 1 }} />

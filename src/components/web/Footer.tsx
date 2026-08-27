@@ -8,22 +8,22 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <footer className="font-cairo foooter text-center lg:text-left bg-primary text-white pt-12 pb-5 rounded-t-[50px]">
-      <div className="max-w-[1450px] mx-auto px-6 md:px-10 lg:px-[100px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 justify-between">
+    <footer className="font-cairo foooter text-left max-lg:text-left lg:text-left bg-primary text-white max-lg:pt-8 lg:pt-12 pb-5 rounded-t-[50px]">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-10 lg:px-[100px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 max-lg:gap-4 lg:gap-10 justify-between">
         <div className="space-y-4 md:col-span-3 lg:col-span-2">
-          <div className="rounded flex justify-center lg:justify-start items-center ">
-            <img src={logo} alt="Genix Drive Logo" className="md:w-[50%] w-[50%] drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 hover:drop-shadow-[0_6px_16px_rgba(0,0,0,0.6)]" />
+          <div className="rounded flex justify-start items-center ">
+            <img src={logo} alt="Genix Drive Logo" className="md:w-[50%] w-[52%] max-lg:mx-0 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 hover:drop-shadow-[0_6px_16px_rgba(0,0,0,0.6)]" />
           </div>
           <Paragraph
             size="base"
             color="white"
-            className="max-w-xs mx-auto lg:mx-0"
+            className="max-w-xs lg:mx-0 max-lg:!mt-2 max-lg:max-w-full"
           >
             GenixDrive is your trusted driving companion — built to keep you,
             your family, and your vehicle safe on every journey. Stay connected,
             drive smarter, and enjoy the peace of mind you deserve.
           </Paragraph>
-          <div className="flex justify-center lg:justify-start items-center gap-4">
+          <div className="flex justify-start items-center gap-4 max-lg:!mt-2">
             <a
               href="https://www.linkedin.com/company/aigenixofficial/posts/?feedView=all"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
@@ -45,15 +45,18 @@ const Footer = () => {
           </div>
         </div>
 
+        <div className="max-lg:border-t max-lg:border-white/10 max-lg:pt-3 md:hidden"></div>
+
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:contents">
         <div className="footerdivs md:pl-16 lg:px-[15px]">
           <SubHeading
             color="white"
             weight="medium"
-            className="mb-4 text-[28px]"
+            className="mb-4 text-[28px] max-lg:!text-[15px] sm:max-lg:!text-[15px] max-lg:font-semibold max-lg:tracking-wide max-lg:whitespace-nowrap max-lg:text-white/85"
           >
             Quick Access
           </SubHeading>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 max-lg:space-y-3 text-sm max-lg:text-[11px] max-lg:text-white/65 max-lg:font-light">
             <li>
               <a
                 onClick={() => { navigate(""); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -97,15 +100,15 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footerdivs md:pl-6 lg:px-[15px]">
+        <div className="footerdivs max-lg:border-l max-lg:border-white/10 max-lg:pl-4 md:pl-6 lg:px-[15px]">
           <SubHeading
             color="white"
             weight="medium"
-            className="mb-4 text-[28px]"
+            className="mb-4 text-[28px] max-lg:!text-[15px] sm:max-lg:!text-[15px] max-lg:font-semibold max-lg:tracking-wide max-lg:whitespace-nowrap max-lg:text-white/85"
           >
             Features
           </SubHeading>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 max-lg:space-y-3 text-sm max-lg:text-[11px] max-lg:text-white/65 max-lg:font-light">
             <li>
               <a
                 className="hover:opacity-90 cursor-pointer"
@@ -140,23 +143,26 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        </div>
+
+        <div className="max-lg:border-t max-lg:border-white/10 max-lg:pt-3 md:hidden"></div>
 
         <div className="footerdivs md:pl-6 lg:px-[15px]">
           <SubHeading
             color="white"
             weight="medium"
-            className="mb-0 text-[28px]"
+            className="mb-0 text-[28px] max-lg:!text-[15px] sm:max-lg:!text-[15px] max-lg:font-semibold max-lg:tracking-wide max-lg:text-white/85"
           >
             Download Now
           </SubHeading>
-          <StoreActionsButtons className="!block footer0actions" />
+          <StoreActionsButtons className="!block footer0actions max-lg:!flex max-lg:!justify-start" />
         </div>
       </div>
       <div className="pt-7"></div>
 
       {/* FOOTER BOTTOM */}
-      <div className="max-w-[1450px] mx-auto border-t border-white/10 pt-5 text-center">
-        <Paragraph size="sm" color="white" className="opacity-80">
+      <div className="max-w-[1450px] mx-auto px-6 md:px-10 lg:px-[100px] border-t border-white/10 pt-5 text-center">
+        <Paragraph size="sm" color="white" className="opacity-80 max-lg:text-center">
           © 2026 Genix Drive. All Rights Reserved. Powered by AiGenix.
         </Paragraph>
         <Paragraph size="sm" color="white" className="mt-2 opacity-80">

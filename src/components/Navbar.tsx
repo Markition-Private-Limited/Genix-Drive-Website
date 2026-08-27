@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full z-40 py-6 transition-colors duration-300 ${isHome ? "bg-primary text-white" : "bg-white text-black shadow-sm"
+      className={`w-full z-40 py-6 transition-colors duration-300 max-lg:border-b-0 max-lg:[box-shadow:none] ${isHome ? "bg-primary text-white max-lg:mb-[-1px]" : "bg-white text-black shadow-sm"
         }`}
     >
       <div className="w-full max-w-[1450px] mx-auto section-px flex items-center justify-between font-cairo">
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <div onClick={() => navigate("/")} className="rounded flex items-center justify-center text-sm font-bold tracking-wider cursor-pointer">
             <img
-              className={`max-w-[118px] md:max-w-[208px] transition-all duration-300 ${isHome ? "drop-shadow-[0_8px_16px_rgba(0,0,0,0.7)] hover:drop-shadow-[0_10px_24px_rgba(0,0,0,0.8)]" : ""}`}
+              className={`max-w-[110px] sm:max-w-[130px] md:max-w-[150px] lg:max-w-[175px] transition-all duration-300 ${isHome ? "drop-shadow-[0_8px_16px_rgba(0,0,0,0.7)] hover:drop-shadow-[0_10px_24px_rgba(0,0,0,0.8)]" : ""}`}
               src={isHome ? logo : logo2}
               alt="Genix Drive Logo"
             />
@@ -153,14 +153,23 @@ const Navbar = () => {
             </Button>
           )}
         </div>
-        <button
-          aria-label="Open menu"
-          className={`lg:hidden inline-flex items-center justify-center rounded-lg p-2 ${isHome ? "text-white" : "text-black"
-            }`}
-          onClick={() => setOpen(true)}
-        >
-          <Menu className="w-7 h-7" />
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          {!isDemo && (
+            <ShinyButton
+              onClick={() => navigate("/interactive-demo")}
+              className="size-xs"
+            >
+              Get Started
+            </ShinyButton>
+          )}
+          <button
+            aria-label="Open menu"
+            className={`inline-flex items-center justify-center rounded-lg p-2 ${isHome ? "text-white" : "text-black"}`}
+            onClick={() => setOpen(true)}
+          >
+            <Menu className="w-7 h-7" />
+          </button>
+        </div>
         <div
           className={`fixed inset-0 z-[200] transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
@@ -274,22 +283,20 @@ const Navbar = () => {
                   Blogs
                 </NavLink>
               </div>
-              <div className="mt-8 flex flex-col items-stretch gap-4">
+              <div className="mt-8 flex flex-col items-start gap-4">
                 {!isDemo && (
-                  <Button
+                  <ShinyButton
                     onClick={() => { navigate("/interactive-demo"); setOpen(false); }}
-                    size="lg"
-                    variant={"primary"}
-                    className="!px-4 w-full whitespace-nowrap"
+                    className="size-lg"
                   >
                     Experience A Demo
-                  </Button>
+                  </ShinyButton>
                 )}
                 {!isAbout && (
                   <Button
                     size="lg"
                     variant="secondary"
-                    className={`w-full ${isHome ? "!bg-white !text-primary hover:!bg-gray-100" : ""}`}
+                    className={`self-stretch ${isHome ? "!bg-white !text-primary hover:!bg-gray-100" : ""}`}
                     onClick={() => { window.open("https://play.google.com/store/apps/details?id=com.GenixDrive&hl=en", "_blank"); setOpen(false); }}
                   >
                     Download Now
