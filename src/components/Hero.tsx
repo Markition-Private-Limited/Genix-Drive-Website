@@ -3,7 +3,6 @@ import grnstr from "../assets/grnstr.png";
 import grystr from "../assets/grystr.png";
 
 import Button from "./Button";
-import { ShinyButton } from "./ui/shiny-button";
 import StoreActionsButtons from "./web/StoreActionsButtons";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
