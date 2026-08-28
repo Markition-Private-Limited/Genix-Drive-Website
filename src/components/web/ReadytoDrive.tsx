@@ -77,7 +77,7 @@ const ReadytoDrive = ({ isPricingPage }: { isPricingPage?: boolean }) => {
           alt=""
           className="
             absolute
-            top-[100%]
+            top-[calc(100%+21px)]
             left-[52%]
             -translate-x-1/2
             max-lg:-translate-y-[65%]
