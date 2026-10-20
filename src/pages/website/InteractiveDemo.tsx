@@ -149,7 +149,7 @@ function InteractiveDemo() {
       <main className="interactive-demo-main">
         <div className="interactive-demo-content">
           <section className="interactive-emulator-section">
-            <DemoContext.Provider value={{ onFlowChange: handleFlowChange }}>
+            <DemoContext.Provider value={{ onFlowChange: handleFlowChange, currentFlowName: currentScreen.flowName }}>
               <MobileEmulator onNext={handleNext} currentStep={currentStep} onJumpTo={handleJumpTo}>
                 <EmulatorContent />
               </MobileEmulator>
