@@ -39,8 +39,7 @@ import flow5Screen9Img from './flow5Screen9Image'
 import flow5Screen10Img from './flow5Screen10Image'
 import flow5Screen11Img from './flow5Screen11Image'
 import flow5Screen12Img from './flow5Screen12Image'
-import flow6Screen1Img from './flow6Screen1Image'
-import flow6Screen2Img from './flow6Screen2Image'
+import { RewardsAvailableScreen, RewardsRedeemedScreen, RewardsVoucherInfoScreen, RewardsPointsInfoScreen } from './RewardsScreen'
 import flow1aScreen1Img from './flow1aScreen1Image'
 import flow1aScreen2Img from './flow1aScreen2Image'
 import flow1aScreen3Img from './flow1aScreen3Image'
@@ -580,25 +579,51 @@ export const screens = [
         <br />
         <p>Swipe or scroll through the list to see the variety of rewards you can earn.</p>
         <br />
-        <p>Next, tap on the <strong>Purchased Rewards</strong> tab.</p>
+        <p>Next, tap on the <strong>Redeemed</strong> tab.</p>
       </>
     ),
-    EmulatorContent: flow6Screen1Img,
+    EmulatorContent: RewardsAvailableScreen,
   },
   {
     id: 43,
+    flowName: 'Rewards',
+    title: 'Rewards',
+    instruction: (
+      <>
+        <p>This screen shows all the <strong>rewards you have already claimed or redeemed</strong>, so you can keep track of your collection.</p>
+      </>
+    ),
+    EmulatorContent: RewardsRedeemedScreen,
+  },
+  {
+    id: 44,
+    flowName: 'Rewards',
+    title: 'Rewards',
+    instruction: (
+      <>
+        <p>Tap the <strong>info icon</strong> on any reward card to see how to redeem it.</p>
+        <br />
+        <p>Here, you can see that this voucher costs <strong>500 points</strong>. If you don't have enough points yet, you can complete challenges and safe trips to earn more before the voucher expires.</p>
+      </>
+    ),
+    EmulatorContent: RewardsVoucherInfoScreen,
+  },
+  {
+    id: 45,
     flowName: 'Rewards',
     isFlowEnd: true,
     title: 'Rewards',
     instruction: (
       <>
-        <p>This screen shows all the <strong>rewards you have already claimed or purchased</strong>, so you can keep track of your collection.</p>
+        <p>Tap the <strong>info icon</strong> next to "Drive smart, earn points!" to learn how points work.</p>
+        <br />
+        <p>You earn points by completing trips with a good driving score and participating in challenges. Every trip and every challenge adds points to your wallet, which you can use to redeem exciting vouchers and rewards.</p>
       </>
     ),
-    EmulatorContent: flow6Screen2Img,
+    EmulatorContent: RewardsPointsInfoScreen,
   },
   {
-    id: 44,
+    id: 46,
     flowName: 'Finish',
     title: 'Demo Completed',
     instruction: (
@@ -612,7 +637,7 @@ export const screens = [
     EmulatorContent: FinishScreen,
   },
   {
-    id: 45,
+    id: 47,
     flowName: 'Mark Trips',
     title: 'Mark Trips',
     instruction: (
@@ -625,7 +650,7 @@ export const screens = [
     customPrev: 0,
   },
   {
-    id: 46,
+    id: 48,
     flowName: 'Mark Trips',
     title: 'Mark Trips',
     instruction: (
@@ -636,7 +661,7 @@ export const screens = [
     EmulatorContent: flow1aScreen2Img,
   },
   {
-    id: 47,
+    id: 49,
     flowName: 'Mark Trips',
     title: 'Mark Trips',
     instruction: (
