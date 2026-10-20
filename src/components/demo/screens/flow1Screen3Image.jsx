@@ -1,20 +1,16 @@
-import flow1screen3Img from '../../../assets/demo/flow1screen3.webp';
+import flow1screen3Img from '../../../assets/demo/flow1screen3.png';
 import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
-function flow1Screen3Image({ onNext, currentStep }) {
-  const isThirdScreen = currentStep === 2;
-
+function flow1Screen3Image({ onNext }) {
   return (
     <BaseScreenImage src={flow1screen3Img} scrollTop={0}>
-      {isThirdScreen && (
-        <button
-          type="button"
-          className={baseStyles.hotspotBase}
-          style={{ top: '37%', left: '26%', width: '48.5%', height: '23%', borderRadius: '50%' }}
-          onClick={onNext}
-        />
-      )}
+      <button
+        type="button"
+        className={baseStyles.hotspotBase}
+        style={{ top: '20.4%', left: '21%', width: '57.7%', height: '21.1%', borderRadius: '50%' }}
+        onClick={onNext}
+      />
     </BaseScreenImage>
   );
 }

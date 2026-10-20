@@ -88,14 +88,15 @@ const BaseScreenImage = forwardRef(({ src, alt = "Screen", children, className =
         alt="Header"
       />
 
-      <img
-        src={src}
-        alt={alt}
-        className={`${styles.screenImage} ${isLoaded ? styles.imageVisible : ''}`}
-        onLoad={() => setIsLoaded(true)}
-      />
-
-      {isLoaded && children}
+      <div className={styles.imageHotspotWrapper}>
+        <img
+          src={src}
+          alt={alt}
+          className={`${styles.screenImage} ${isLoaded ? styles.imageVisible : ''}`}
+          onLoad={() => setIsLoaded(true)}
+        />
+        {isLoaded && children}
+      </div>
 
       <div className={`${styles.navbarContainer} ${isLoaded ? styles.elementsVisible : ''}`}>
         <div className={styles.codedNavbar}>

@@ -19,6 +19,7 @@ import Feature3 from "../pages/website/Feature3";
 import Demo from "../pages/website/Demo";
 import DemoWalkthrough from "../pages/website/DemoWalkthrough";
 import InteractiveDemo from "../pages/website/InteractiveDemo";
+import HotspotTool from "../pages/website/HotspotTool";
 import DrivingScore from "../pages/admin/DrivingScore";
 import SubscriptionsManagements from "../pages/admin/SubscriptionsManagements";
 import GenerateUsername from "../pages/admin/GenerateUsername";
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "/demo", element: <Demo /> },
       { path: "/demo-walkthrough", element: <DemoWalkthrough /> },
       { path: "/interactive-demo", element: <InteractiveDemo /> },
+      { path: "/hotspot-tool", element: <HotspotTool /> },
       { path: "/blogs", element: <Blogs /> },
       { path: "/blogs/:id", element: <BlogDetails /> },
       { path: "/features-social", element: <Features /> },

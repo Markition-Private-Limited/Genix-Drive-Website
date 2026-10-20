@@ -1,7 +1,7 @@
 // OWNER: Ali Jawad
 // Flow: Dashboard (screens 1–10) + Mark Trips sub-flow (screens 45–47)
 
-import flow1Screen1Img from '../flow1Screen1Image'
+import flow1Screen1Img from '../flow1Screen1Image' // image: flow1screen1.jpg
 import flow1Screen2Img from '../flow1Screen2Image'
 import flow1Screen3Img from '../flow1Screen3Image'
 import flow1Screen4Img from '../flow1Screen4Image'
@@ -10,7 +10,6 @@ import flow1Screen8Img from '../flow1Screen8Image'
 import flow1Screen10Img from '../flow1Screen10Image'
 import flow1aScreen1Img from '../flow1aScreen1Image'
 import flow1aScreen2Img from '../flow1aScreen2Image'
-import flow1aScreen3Img from '../flow1aScreen3Image'
 
 export const dashboardScreens = [
   {
@@ -57,7 +56,7 @@ export const dashboardScreens = [
     instruction: (
       <>
         <p>Here, you can also use the filter at the top to select <strong>7 days</strong>, <strong>30 days</strong>, or <strong>365 days</strong>.</p>
-        <p>Look at the graph — it shows your score over the selected period compared to the <strong>average score of other users</strong>.</p>
+        <p>Look at the graph — it shows your driving score over the selected period.</p>
       </>
     ),
     EmulatorContent: flow1Screen4Img,
@@ -68,7 +67,8 @@ export const dashboardScreens = [
     title: 'Driving insights',
     instruction: (
       <>
-        <p>Now click on the <strong>first pie chart</strong> on your dashboard</p>
+        <p>Here, you can also use the filter at the top to select <strong>7 days</strong>, <strong>30 days</strong>, or <strong>365 days</strong>.</p>
+        <p>Look at the graph — it shows your driving score over the selected period.</p>
       </>
     ),
     EmulatorContent: flow1Screen4Img,
@@ -79,11 +79,7 @@ export const dashboardScreens = [
     title: 'Driving insights',
     instruction: (
       <>
-        <p>Great! The next screen has appeared.</p>
-        <p>Now, look at the chart — it shows your driving hours divided into <strong>peak</strong>, <strong>off-peak</strong>, and <strong>night hours</strong>.</p>
-        <p>You can select different range of days from the ribbon on top.</p>
-        <br />
-        <p>Now, go back to the previous screen.</p>
+        <p>Now, tap on the <strong>first insight</strong> on your dashboard</p>
       </>
     ),
     EmulatorContent: flow1Screen6Img,
@@ -168,22 +164,10 @@ export const markTripsScreens = [
     title: 'Mark Trips',
     instruction: (
       <>
-        <p>If you select <strong>Not Driven by me</strong></p>
+        <p>Now tap <strong>Not Driven by me</strong> if this trip wasn't driven by you.</p>
       </>
     ),
     EmulatorContent: flow1aScreen2Img,
-  },
-  {
-    id: 47,
-    flowName: 'Mark Trips',
-    isHiddenFlow: true,
-    title: 'Mark Trips',
-    instruction: (
-      <>
-        <p>The trip will be removed from your trip list.</p>
-      </>
-    ),
-    EmulatorContent: flow1aScreen3Img,
     customNext: 0,
   },
 ]

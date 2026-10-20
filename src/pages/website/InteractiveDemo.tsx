@@ -5,11 +5,12 @@ import { screens } from '../../components/demo/screens/screensData';
 import { DemoContext } from '../../components/demo/DemoContext';
 
 // Preload all demo assets
-import flow1screen1Img from '../../assets/demo/flow1screen1.webp';
-import flow1screen2Img from '../../assets/demo/flow1screen2.webp';
-import flow1screen3Img from '../../assets/demo/flow1screen3.webp';
-import flow1screen4Img from '../../assets/demo/flow1screen4.webp';
-import flow1screen6Img from '../../assets/demo/flow1screen6.webp';
+import flow1screen1Img from '../../assets/demo/flow1screen1.png';
+import flow1screen2Img from '../../assets/demo/flow1screen2.png';
+import flow1screen3Img from '../../assets/demo/flow1screen3.png';
+import flow1screen4Img from '../../assets/demo/flow1screen4.png';
+import flow1screen5NewImg from '../../assets/demo/flow1screen5.png';
+import flow1screen6Img from '../../assets/demo/flow1screen6.png';
 import flow1screen8Img from '../../assets/demo/flow1screen8.webp';
 import flow1screen10Img from '../../assets/demo/flow1screen10.webp';
 import flow2screen1Img from '../../assets/demo/flow2screen1.webp';
@@ -45,10 +46,14 @@ import flow6screen2Img from '../../assets/demo/flow6screen2.webp';
 import headerImg from '../../assets/demo/top-header.webp';
 import navbarImg from '../../assets/demo/bottom-navbar.webp';
 
+import HotspotPicker from '../../components/demo/HotspotPicker';
 import './InteractiveDemo.css';
+
+const DEV_HOTSPOT_PICKER = true; // set to false before shipping
 
 function InteractiveDemo() {
   const [currentStep, setCurrentStep] = useState(0);
+  const emulatorRef = React.useRef<HTMLDivElement>(null);
   const currentScreen: any = screens[currentStep];
   const EmulatorContent = currentScreen.EmulatorContent as React.ComponentType<any>;
 
@@ -59,7 +64,7 @@ function InteractiveDemo() {
   useEffect(() => {
     const imagesToPreload = [
       flow1screen1Img, flow1screen2Img, flow1screen3Img, flow1screen4Img,
-      flow1screen6Img, flow1screen8Img, flow1screen10Img,
+      flow1screen5NewImg, flow1screen6Img, flow1screen8Img, flow1screen10Img,
       flow2screen1Img, flow2screen2Img, flow2screen3Img, flow2screen4Img,
       flow2screen5Img, flow2screen6Img,
       flow3screen1Img, flow3screen2Img, flow3screen3Img, flow3screen4Img,
@@ -150,9 +155,11 @@ function InteractiveDemo() {
         <div className="interactive-demo-content">
           <section className="interactive-emulator-section">
             <DemoContext.Provider value={{ onFlowChange: handleFlowChange, currentFlowName: currentScreen.flowName }}>
-              <MobileEmulator onNext={handleNext} currentStep={currentStep} onJumpTo={handleJumpTo}>
-                <EmulatorContent />
-              </MobileEmulator>
+              <div ref={emulatorRef}>
+                <MobileEmulator onNext={handleNext} currentStep={currentStep} onJumpTo={handleJumpTo}>
+                  <EmulatorContent />
+                </MobileEmulator>
+              </div>
             </DemoContext.Provider>
           </section>
 
@@ -177,7 +184,7 @@ function InteractiveDemo() {
         </div>
       </main>
 
-
+      {DEV_HOTSPOT_PICKER && <HotspotPicker containerRef={emulatorRef} />}
     </div>
   );
 }

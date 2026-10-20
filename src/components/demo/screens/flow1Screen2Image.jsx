@@ -1,20 +1,22 @@
-import flow1screen2Img from '../../../assets/demo/flow1screen2.webp';
+import flow1screen2Img from '../../../assets/demo/flow1screen2.png';
 import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
-function flow1Screen2Image({ onNext, currentStep }) {
-  const isSecondScreen = currentStep === 1;
-
+function flow1Screen2Image({ onNext, onJumpTo }) {
   return (
     <BaseScreenImage src={flow1screen2Img} scrollTop={0}>
-      {isSecondScreen && (
-        <button
-          type="button"
-          className={baseStyles.hotspotBase}
-          style={{ top: '17%', left: '63%', width: '31.6%', height: '5%', borderRadius: '8px' }}
-          onClick={onNext}
-        />
-      )}
+      <button
+        type="button"
+        className={baseStyles.hotspotBase}
+        style={{ top: '1.8%', left: '62.2%', width: '32.3%', height: '3%', borderRadius: '8px' }}
+        onClick={onNext}
+      />
+      <button
+        type="button"
+        className={baseStyles.hotspotBase}
+        style={{ top: '5.8%', left: '4.8%', width: '18.9%', height: '5.7%', borderRadius: '8px' }}
+        onClick={() => onJumpTo && onJumpTo(44)}
+      />
     </BaseScreenImage>
   );
 }
