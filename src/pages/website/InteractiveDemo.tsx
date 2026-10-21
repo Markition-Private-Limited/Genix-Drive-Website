@@ -11,6 +11,9 @@ import flow1screen3Img from '../../assets/demo/flow1screen3.png';
 import flow1screen4Img from '../../assets/demo/flow1screen4.png';
 import flow1screen5NewImg from '../../assets/demo/flow1screen5.png';
 import flow1screen6Img from '../../assets/demo/flow1screen6.png';
+import flow1screen6bImg from '../../assets/demo/flow1screen6b.png';
+import flow1screen6cImg from '../../assets/demo/flow1screen6c.png';
+import flow1screen6eImg from '../../assets/demo/flow1screen6e.png';
 import flow1screen8Img from '../../assets/demo/flow1screen8.webp';
 import flow1screen10Img from '../../assets/demo/flow1screen10.webp';
 import flow2screen1Img from '../../assets/demo/flow2screen1.webp';
@@ -64,7 +67,7 @@ function InteractiveDemo() {
   useEffect(() => {
     const imagesToPreload = [
       flow1screen1Img, flow1screen2Img, flow1screen3Img, flow1screen4Img,
-      flow1screen5NewImg, flow1screen6Img, flow1screen8Img, flow1screen10Img,
+      flow1screen5NewImg, flow1screen6Img, flow1screen6bImg, flow1screen6cImg, flow1screen6eImg, flow1screen8Img, flow1screen10Img,
       flow2screen1Img, flow2screen2Img, flow2screen3Img, flow2screen4Img,
       flow2screen5Img, flow2screen6Img,
       flow3screen1Img, flow3screen2Img, flow3screen3Img, flow3screen4Img,

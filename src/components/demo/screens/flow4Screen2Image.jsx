@@ -3,7 +3,7 @@ import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
 function flow4Screen2Image({ onNext, currentStep }) {
-    const isStep2 = currentStep === 25; // First occurrence in Flow 4 (id 26)
+    const isStep2 = currentStep === 26; // First occurrence in Flow 4 (id 26)
 
     return (
         <BaseScreenImage src={flow4screen2Img} scrollTop={0}>

@@ -15,7 +15,7 @@ function flow1Screen2Image({ onNext, onJumpTo }) {
         type="button"
         className={baseStyles.hotspotBase}
         style={{ top: '5.8%', left: '4.8%', width: '18.9%', height: '5.7%', borderRadius: '8px' }}
-        onClick={() => onJumpTo && onJumpTo(44)}
+        onClick={() => onJumpTo && onJumpTo(45)}
       />
     </BaseScreenImage>
   );
