@@ -6,6 +6,7 @@ import flow1Screen2Img from '../flow1Screen2Image'
 import flow1Screen3Img from '../flow1Screen3Image'
 import flow1Screen4Img from '../flow1Screen4Image'
 import flow1Screen6Img from '../flow1Screen6Image'
+import flow1Screen6aImg from '../flow1Screen6aImage'
 import flow1aScreen1Img from '../flow1aScreen1Image'
 import flow1aScreen2Img from '../flow1aScreen2Image'
 import flow1Screen6bImg from '../flow1Screen6bImage'
@@ -82,10 +83,22 @@ export const dashboardScreens = [
     title: 'Driving insights',
     instruction: (
       <>
-        <p>Now, tap on the <strong>first insight</strong> on your dashboard.</p>
+        <p>Great! You can now view your driving score for the selected period right here.</p>
+        <p>Now, tap on the next insight from the main insights screen.</p>
       </>
     ),
     EmulatorContent: flow1Screen6Img,
+  },
+  {
+    id: 6.1,
+    flowName: 'Dashboard',
+    title: 'Driving insights',
+    instruction: (
+      <>
+        <p>Now, tap on <strong>Distance Driven</strong> to view the total distance you've covered.</p>
+      </>
+    ),
+    EmulatorContent: flow1Screen6aImg,
   },
   {
     id: 6.5,
@@ -93,7 +106,8 @@ export const dashboardScreens = [
     title: 'Drive Distance',
     instruction: (
       <>
-        <p>Great! The next screen has appeared. It shows your driving score and rating for the selected period.</p>
+        <p>Great! The next screen has appeared.</p>
+        <p>Here, you can see how your driving distance compares to other drivers.</p>
         <p>Now, go back to the previous screen and click on the next pie chart. The Driving Time screen will appear.</p>
       </>
     ),
@@ -105,7 +119,7 @@ export const dashboardScreens = [
     title: 'Driving insights',
     instruction: (
       <>
-        <p>Tap on the next pie chart to open the <strong>Driving Time</strong> screen.</p>
+        <p>Tap on this pie chart to open the <strong>Driving Time</strong> screen.</p>
       </>
     ),
     EmulatorContent: flow1Screen6fImg,
@@ -116,8 +130,8 @@ export const dashboardScreens = [
     title: 'Drive Time',
     instruction: (
       <>
-        <p>Look at the charts — they show your driving time compared with the average driving time of all Genix Drive users, along with your driving time by hour.</p>
-        <p>Next, return to the main insights screen and scroll to the <strong>Driving Events</strong> section. The Driving Events section will appear.</p>
+        <p>Look at the chart - they compare your driving time with the average driving time of all Genix Drive users and show your driving time by hour.</p>
+        <p>Next, return to the main insights screen and scroll to the Driving Events section.</p>
       </>
     ),
     EmulatorContent: flow1Screen6cImg,
@@ -128,8 +142,7 @@ export const dashboardScreens = [
     title: 'Driving insights',
     instruction: (
       <>
-        <p>Next, return to the main insights screen and scroll to the <strong>Driving Events</strong> section.</p>
-        <p>The Driving Events section will appear.</p>
+        <p>Tap on the Driving Events pie chart to explore the breakdown of your driving events.</p>
       </>
     ),
     EmulatorContent: flow1Screen6dImg,

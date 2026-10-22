@@ -3,7 +3,7 @@ import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
 function flow2Screen1Image({ onNext, currentStep }) {
-  const isFirstStep = currentStep === 11; // id 11 is now at index 11
+  const isFirstStep = currentStep === 12; // id 11 is now at index 12
 
   return (
     <BaseScreenImage src={flow2screen1Img} scrollTop={0}>
