@@ -3,7 +3,7 @@ import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
 function flow1Screen6Image({ onNext, currentStep }) {
-  const isStep6 = currentStep === 5;
+  const isStep6 = currentStep === 5 || currentStep === 6;
 
   return (
     <BaseScreenImage src={flow1screen6Img} scrollTop={0}>

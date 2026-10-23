@@ -46,13 +46,18 @@ import flow5screen11Img from '../../assets/demo/flow5screen11.webp';
 import flow5screen12Img from '../../assets/demo/flow5screen12.webp';
 import flow6screen1Img from '../../assets/demo/flow6screen1.webp';
 import flow6screen2Img from '../../assets/demo/flow6screen2.webp';
+import flow7screen1Img from '../../assets/demo/flow7screen1.png';
+import flow7screen2Img from '../../assets/demo/flow7screen2.png';
+import flow7screen3Img from '../../assets/demo/flow7screen3.png';
+import flow7popup1Img from '../../assets/demo/flow7popup1.png';
+import flow7popup2Img from '../../assets/demo/flow7popup2.png';
 import headerImg from '../../assets/demo/top-header.webp';
 import navbarImg from '../../assets/demo/bottom-navbar.webp';
 
 import HotspotPicker from '../../components/demo/HotspotPicker';
 import './InteractiveDemo.css';
 
-const DEV_HOTSPOT_PICKER = true; // set to false before shipping
+const DEV_HOTSPOT_PICKER = false; // set to false before shipping
 
 function InteractiveDemo() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -77,6 +82,7 @@ function InteractiveDemo() {
       flow5screen5Img, flow5screen6Img, flow5screen7Img, flow5screen8Img,
       flow5screen9Img, flow5screen10Img, flow5screen11Img, flow5screen12Img,
       flow6screen1Img, flow6screen2Img,
+      flow7screen1Img, flow7screen2Img, flow7screen3Img, flow7popup1Img, flow7popup2Img,
       headerImg, navbarImg,
     ];
 
@@ -95,7 +101,14 @@ function InteractiveDemo() {
       setCurrentStep(currentScreen.customNext);
       return;
     }
-    setCurrentStep((prev) => Math.min(prev + 1, lastIndexInFlow));
+    if (currentStep >= lastIndexInFlow) {
+      const nextFlowIndex = screens.findIndex(
+        (s: any) => s.flowName !== currentScreen.flowName && screens.indexOf(s) > currentStep
+      );
+      setCurrentStep(nextFlowIndex !== -1 ? nextFlowIndex : 0);
+      return;
+    }
+    setCurrentStep((prev) => prev + 1);
   };
 
   const handleJumpTo = (stepIndex: number) => {

@@ -8,7 +8,7 @@ function flow1Screen6aImage({ onNext }) {
       <button
         type="button"
         className={baseStyles.hotspotBase}
-        style={{ top: '38.5%', left: '3.5%', width: '92.4%', height: '15.3%', borderRadius: '8px' }}
+        style={{ top: '38.5%', left: '3.5%', width: '92.4%', height: '13.8%', borderRadius: '8px' }}
         onClick={onNext}
       />
     </BaseScreenImage>

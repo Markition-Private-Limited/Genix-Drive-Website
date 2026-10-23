@@ -60,7 +60,6 @@ export const dashboardScreens = [
     instruction: (
       <>
         <p>Here, you can also use the filter at the top to select <strong>7 days</strong>, <strong>30 days</strong>, or <strong>365 days</strong>.</p>
-        <p>Look at the graph — it shows your driving score over the selected period.</p>
       </>
     ),
     EmulatorContent: flow1Screen4Img,
@@ -72,10 +71,20 @@ export const dashboardScreens = [
     instruction: (
       <>
         <p>Here, you can also use the filter at the top to select <strong>7 days</strong>, <strong>30 days</strong>, or <strong>365 days</strong>.</p>
-        <p>Look at the graph — it shows your driving score over the selected period.</p>
       </>
     ),
     EmulatorContent: flow1Screen4Img,
+  },
+  {
+    id: 5.9,
+    flowName: 'Dashboard',
+    title: 'Driving insights',
+    instruction: (
+      <>
+        <p>Let's explore the first insight on your dashboard. Tap on it to get started.</p>
+      </>
+    ),
+    EmulatorContent: flow1Screen6Img,
   },
   {
     id: 6,
@@ -130,7 +139,7 @@ export const dashboardScreens = [
     title: 'Drive Time',
     instruction: (
       <>
-        <p>Look at the chart - they compare your driving time with the average driving time of all Genix Drive users and show your driving time by hour.</p>
+        <p>Look at the chart - they compare your driving time with the average driving time of all GenixDrive users and show your driving time by hour.</p>
         <p>Next, return to the main insights screen and scroll to the Driving Events section.</p>
       </>
     ),
