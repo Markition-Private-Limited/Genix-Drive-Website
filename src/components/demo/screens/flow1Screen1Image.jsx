@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import flow1screen1Img from '../../../assets/demo/flow1screen1.png';
 import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
+import { DemoContext } from '../DemoContext';
 
-function flow1Screen1Image({ onNext, onJumpTo }) {
+function flow1Screen1Image({ onNext }) {
+  const { onFlowChange } = useContext(DemoContext);
   return (
     <BaseScreenImage src={flow1screen1Img} scrollTop={0}>
       <button
@@ -15,7 +18,7 @@ function flow1Screen1Image({ onNext, onJumpTo }) {
         type="button"
         className={baseStyles.hotspotBase}
         style={{ top: '6.5%', left: '5.2%', width: '17.2%', height: '5.8%', borderRadius: '8px' }}
-        onClick={() => onJumpTo && onJumpTo(45)}
+        onClick={() => onFlowChange('Mark Trips')}
       />
     </BaseScreenImage>
   );

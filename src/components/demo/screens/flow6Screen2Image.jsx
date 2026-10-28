@@ -1,4 +1,4 @@
-import flow6screen2Img from '../../../assets/demo/flow6screen2.webp';
+import flow6screen2Img from '../../../assets/demo/flow6screen2new.png';
 import BaseScreenImage from './BaseScreenImage';
 
 function flow6Screen2Image({ onNext, currentStep }) {

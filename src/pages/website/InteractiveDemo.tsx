@@ -29,9 +29,10 @@ import flow3screen4Img from '../../assets/demo/flow3screen4.webp';
 import flow3screen5Img from '../../assets/demo/flow3screen5.webp';
 import flow3screen6Img from '../../assets/demo/flow3screen6.webp';
 import flow3screen7Img from '../../assets/demo/flow3screen7.webp';
-import flow4screen1Img from '../../assets/demo/flow4screen1.webp';
-import flow4screen2Img from '../../assets/demo/flow4screen2.webp';
-import flow4screen4Img from '../../assets/demo/flow4screen4.webp';
+import flow4screendashImg from '../../assets/demo/flow4screendash.png';
+import flow4screentripdetails1Img from '../../assets/demo/flow4screentripdetails1.png';
+import flow4screentriplogImg from '../../assets/demo/flow4screentriplog.png';
+import flow4screentripdetails2Img from '../../assets/demo/flow4screentripdetails2.png';
 import flow5screen1Img from '../../assets/demo/flow5screen1.webp';
 import flow5screen2Img from '../../assets/demo/flow5screen2.webp';
 import flow5screen3Img from '../../assets/demo/flow5screen3.webp';
@@ -44,8 +45,8 @@ import flow5screen9Img from '../../assets/demo/flow5screen9.webp';
 import flow5screen10Img from '../../assets/demo/flow5screen10.webp';
 import flow5screen11Img from '../../assets/demo/flow5screen11.webp';
 import flow5screen12Img from '../../assets/demo/flow5screen12.webp';
-import flow6screen1Img from '../../assets/demo/flow6screen1.webp';
-import flow6screen2Img from '../../assets/demo/flow6screen2.webp';
+import flow6screen1Img from '../../assets/demo/flow6screen1new.png';
+import flow6screen2Img from '../../assets/demo/flow6screen2new.png';
 import flow7screen1Img from '../../assets/demo/flow7screen1.png';
 import flow7screen2Img from '../../assets/demo/flow7screen2.png';
 import flow7screen3Img from '../../assets/demo/flow7screen3.png';
@@ -81,7 +82,7 @@ function InteractiveDemo() {
       flow2screen5Img, flow2screen6Img,
       flow3screen1Img, flow3screen2Img, flow3screen3Img, flow3screen4Img,
       flow3screen5Img, flow3screen6Img, flow3screen7Img,
-      flow4screen1Img, flow4screen2Img, flow4screen4Img,
+      flow4screendashImg, flow4screentripdetails1Img, flow4screentriplogImg, flow4screentripdetails2Img,
       flow5screen1Img, flow5screen2Img, flow5screen3Img, flow5screen4Img,
       flow5screen5Img, flow5screen6Img, flow5screen7Img, flow5screen8Img,
       flow5screen9Img, flow5screen10Img, flow5screen11Img, flow5screen12Img,

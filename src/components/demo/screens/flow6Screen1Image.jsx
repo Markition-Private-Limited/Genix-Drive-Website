@@ -1,4 +1,4 @@
-import flow6screen1Img from '../../../assets/demo/flow6screen1.webp';
+import flow6screen1Img from '../../../assets/demo/flow6screen1new.png';
 import BaseScreenImage from './BaseScreenImage';
 import baseStyles from './BaseScreenImage.module.css';
 
@@ -8,7 +8,7 @@ function flow6Screen1Image({ onNext, currentStep }) {
             <button
                 type="button"
                 className={baseStyles.hotspotBase}
-                style={{ top: '35.1%', left: '49%', width: '45%', height: '5.1%', borderRadius: '8px' }}
+                style={{ top: '27.2%', left: '49.2%', width: '45.7%', height: '4.6%', borderRadius: '8px' }}
                 onClick={onNext}
             />
         </BaseScreenImage>

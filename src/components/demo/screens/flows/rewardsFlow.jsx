@@ -14,7 +14,7 @@ export const rewardsScreens = [
         <br />
         <p>Swipe or scroll through the list to see the variety of rewards you can earn.</p>
         <br />
-        <p>Next, tap on the <strong>Purchased Rewards</strong> tab.</p>
+        <p>Next, tap on the <strong>Redeemed Rewards</strong> tab.</p>
       </>
     ),
     EmulatorContent: flow6Screen1Img,
