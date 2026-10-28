@@ -15,9 +15,9 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>The user clicks on the Connections tab to manage connections and guests.</p>
+        <p>Great! You're on the Connections screen, where you can see the people you're already connected with and manage your connections.</p>
         <br />
-        <p>Now, tap on the <strong>Connections</strong> tab to view your existing connections.</p>
+        <p>To connect with someone new, tap the <strong>Add Connections</strong> button.</p>
       </>
     ),
     EmulatorContent: flow7Screen1Img,
@@ -28,7 +28,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>A new screen will appear where you can search for people to connect with.</p>
+        <p>A new screen has appeared where you can search for people to connect with.</p>
         <br />
         <p>Use the search bar to find people already on Genix Drive, or look through your phone contacts to invite friends who haven't joined yet.</p>
       </>
@@ -43,7 +43,7 @@ export const connectionsScreens = [
       <>
         <p>Once selected, a confirmation screen will appear.</p>
         <br />
-        <p>Choose the permissions you'd like to share, then tap <strong>Send Request</strong> to send your connection request.</p>
+        <p>Choose what information you'd like this person to share with you, then tap <strong>Send Request</strong> to send your connection request.</p>
       </>
     ),
     EmulatorContent: flow7Screen3Img,
@@ -54,7 +54,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Now, go back to the previous screen and tap on the <strong>Guests</strong> tab.</p>
+        <p>Now, go back to the previous screen and tap on <strong>Add Guest</strong>.</p>
       </>
     ),
     EmulatorContent: flow7Screen4Img,
@@ -65,9 +65,9 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>A new screen will appear where you can search for people to add as guests.</p>
+        <p>A new screen has appeared where you can search for people to connect with.</p>
         <br />
-        <p>Use the search bar to find existing Genix Drive users, or browse your phone contacts to invite people who haven't joined yet.</p>
+        <p>Use the search bar to find people already on Genix Drive, or look through your phone contacts to invite friends who haven't joined yet.</p>
       </>
     ),
     EmulatorContent: flow7Screen5Img,
@@ -86,17 +86,26 @@ export const connectionsScreens = [
   {
     id: 17,
     flowName: 'Add a Connection',
-    isFlowEnd: true,
     title: 'Connections',
     instruction: (
       <>
         <p>Finally, a confirmation screen will appear.</p>
         <br />
         <p>Tap to send the request, and your guest request will be sent successfully.</p>
-        <br />
-        <p>Once your connection or guest accepts the request, they will appear on the <strong>Map screen</strong>. You will be able to view their live location directly on the map.</p>
       </>
     ),
     EmulatorContent: flow7Screen7Img,
+  },
+  {
+    id: 18,
+    flowName: 'Add a Connection',
+    isFlowEnd: true,
+    title: 'Connections',
+    instruction: (
+      <>
+        <p>Once your connection or guest accepts the request, they will appear on the <strong>Map screen</strong>. You will be able to view their live location directly on the map.</p>
+      </>
+    ),
+    EmulatorContent: flow7Screen4Img,
   },
 ]

@@ -51,6 +51,10 @@ import flow7screen2Img from '../../assets/demo/flow7screen2.png';
 import flow7screen3Img from '../../assets/demo/flow7screen3.png';
 import flow7popup1Img from '../../assets/demo/flow7popup1.png';
 import flow7popup2Img from '../../assets/demo/flow7popup2.png';
+import flow8screen1Img from '../../assets/demo/flow8screen1.png';
+import flow8screen2Img from '../../assets/demo/flow8screen2.png';
+import flow8screen3Img from '../../assets/demo/flow8screen3.png';
+import flow8screen4Img from '../../assets/demo/flow8screen4.png';
 import headerImg from '../../assets/demo/top-header.webp';
 import navbarImg from '../../assets/demo/bottom-navbar.webp';
 
@@ -83,6 +87,7 @@ function InteractiveDemo() {
       flow5screen9Img, flow5screen10Img, flow5screen11Img, flow5screen12Img,
       flow6screen1Img, flow6screen2Img,
       flow7screen1Img, flow7screen2Img, flow7screen3Img, flow7popup1Img, flow7popup2Img,
+      flow8screen1Img, flow8screen2Img, flow8screen3Img, flow8screen4Img,
       headerImg, navbarImg,
     ];
 

@@ -12,7 +12,7 @@
 
 import { dashboardScreens, markTripsScreens } from './flows/dashboardFlow'
 import { connectionsScreens } from './flows/connectionsFlow'
-import { addPoiScreens } from './flows/addPoiFlow'
+import { addAPlaceScreens } from './flows/addAPlaceFlow'
 import { tripsScreens } from './flows/tripsFlow'
 import { genixMeetScreens } from './flows/genixMeetFlow'
 import { rewardsScreens } from './flows/rewardsFlow'
@@ -21,7 +21,7 @@ import { finishScreens } from './flows/finishFlow'
 export const screens = [
   ...dashboardScreens,
   ...connectionsScreens,
-  ...addPoiScreens,
+  ...addAPlaceScreens,
   ...tripsScreens,
   ...genixMeetScreens,
   ...rewardsScreens,

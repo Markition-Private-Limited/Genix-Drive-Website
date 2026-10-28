@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LoadingSpinner from '../LoadingSpinner';
 
-function PopupScreenImage({ bgSrc, popupSrc, children }) {
+function PopupScreenImage({ bgSrc, popupSrc, children, position = 'bottom' }) {
   const [bgLoaded, setBgLoaded] = useState(false);
   const [popupLoaded, setPopupLoaded] = useState(false);
 
@@ -34,9 +34,12 @@ function PopupScreenImage({ bgSrc, popupSrc, children }) {
         opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s',
       }} />
 
-      {/* Popup anchored to the bottom — fills almost the full phone height naturally */}
+      {/* Popup — bottom-anchored or vertically centered */}
       <div style={{
-        position: 'absolute', bottom: 0, left: 0, right: 0,
+        position: 'absolute',
+        ...(position === 'center'
+          ? { top: '50%', left: 0, right: 0, transform: 'translateY(-50%)' }
+          : { bottom: 0, left: 0, right: 0 }),
         zIndex: 10,
         opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s',
       }}>
