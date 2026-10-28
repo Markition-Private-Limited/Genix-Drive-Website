@@ -33,18 +33,15 @@ import flow4screendashImg from '../../assets/demo/flow4screendash.png';
 import flow4screentripdetails1Img from '../../assets/demo/flow4screentripdetails1.png';
 import flow4screentriplogImg from '../../assets/demo/flow4screentriplog.png';
 import flow4screentripdetails2Img from '../../assets/demo/flow4screentripdetails2.png';
-import flow5screen1Img from '../../assets/demo/flow5screen1.webp';
-import flow5screen2Img from '../../assets/demo/flow5screen2.webp';
-import flow5screen3Img from '../../assets/demo/flow5screen3.webp';
-import flow5screen4Img from '../../assets/demo/flow5screen4.webp';
-import flow5screen5Img from '../../assets/demo/flow5screen5.webp';
-import flow5screen6Img from '../../assets/demo/flow5screen6.webp';
-import flow5screen7Img from '../../assets/demo/flow5screen7.webp';
-import flow5screen8Img from '../../assets/demo/flow5screen8.webp';
-import flow5screen9Img from '../../assets/demo/flow5screen9.webp';
-import flow5screen10Img from '../../assets/demo/flow5screen10.webp';
-import flow5screen11Img from '../../assets/demo/flow5screen11.webp';
-import flow5screen12Img from '../../assets/demo/flow5screen12.webp';
+import flow5screenupcomingImg from '../../assets/demo/flow5screenupcoming.png';
+import flow5screeniinprogressImg from '../../assets/demo/flow5screeniinprogress.png';
+import flow5screencompletedImg from '../../assets/demo/flow5screencompleted.png';
+import flow5screenmeetupdetailsImg from '../../assets/demo/flow5screenmeetupdetails.png';
+import flow5screenparticipantsImg from '../../assets/demo/flow5screenparticipants.png';
+import flow5screenpopupImg from '../../assets/demo/flow5screenpopup.png';
+import flow5screenchatImg from '../../assets/demo/flow5screenchat.png';
+import flow5screenmapImg from '../../assets/demo/flow5screenmap.png';
+import flow5screenraceImg from '../../assets/demo/flow5screenrace.png';
 import flow6screen1Img from '../../assets/demo/flow6screen1new.png';
 import flow6screen2Img from '../../assets/demo/flow6screen2new.png';
 import flow7screen1Img from '../../assets/demo/flow7screen1.png';
@@ -83,9 +80,9 @@ function InteractiveDemo() {
       flow3screen1Img, flow3screen2Img, flow3screen3Img, flow3screen4Img,
       flow3screen5Img, flow3screen6Img, flow3screen7Img,
       flow4screendashImg, flow4screentripdetails1Img, flow4screentriplogImg, flow4screentripdetails2Img,
-      flow5screen1Img, flow5screen2Img, flow5screen3Img, flow5screen4Img,
-      flow5screen5Img, flow5screen6Img, flow5screen7Img, flow5screen8Img,
-      flow5screen9Img, flow5screen10Img, flow5screen11Img, flow5screen12Img,
+      flow5screenupcomingImg, flow5screeniinprogressImg, flow5screencompletedImg,
+      flow5screenmeetupdetailsImg, flow5screenparticipantsImg, flow5screenpopupImg,
+      flow5screenchatImg, flow5screenmapImg, flow5screenraceImg,
       flow6screen1Img, flow6screen2Img,
       flow7screen1Img, flow7screen2Img, flow7screen3Img, flow7popup1Img, flow7popup2Img,
       flow8screen1Img, flow8screen2Img, flow8screen3Img, flow8screen4Img,

@@ -1,18 +1,16 @@
-// OWNER: Intern
-// Flow: Genix Meet (screens 30–41)
+// Flow: Genix Meet (screens 30–40)
 
-import flow5Screen1Img from '../flow5Screen1Image'
-import flow5Screen2Img from '../flow5Screen2Image'
-import flow5Screen3Img from '../flow5Screen3Image'
-import flow5Screen4Img from '../flow5Screen4Image'
-import flow5Screen5Img from '../flow5Screen5Image'
-import flow5Screen6Img from '../flow5Screen6Image'
-import flow5Screen7Img from '../flow5Screen7Image'
-import flow5Screen8Img from '../flow5Screen8Image'
-import flow5Screen9Img from '../flow5Screen9Image'
-import flow5Screen10Img from '../flow5Screen10Image'
-import flow5Screen11Img from '../flow5Screen11Image'
-import flow5Screen12Img from '../flow5Screen12Image'
+import flow5ScreenMeetNav from '../flow5ScreenMeetNav'
+import flow5ScreenUpcoming from '../flow5ScreenUpcoming'
+import flow5ScreenInProgress from '../flow5ScreenInProgress'
+import flow5ScreenCompleted from '../flow5ScreenCompleted'
+import flow5ScreenMeetupDetails from '../flow5ScreenMeetupDetails'
+import flow5ScreenParticipants from '../flow5ScreenParticipants'
+import flow5ScreenPopup from '../flow5ScreenPopup'
+import flow5ScreenInProgressB from '../flow5ScreenInProgressB'
+import flow5ScreenChat from '../flow5ScreenChat'
+import flow5ScreenMap from '../flow5ScreenMap'
+import flow5ScreenRace from '../flow5ScreenRace'
 
 export const genixMeetScreens = [
   {
@@ -21,24 +19,13 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>Now click on <strong>top left icon</strong> on your screen to open <strong>Menu</strong></p>
+        <p>Now click on the <strong>Meet</strong> option from the navigation bar at the bottom.</p>
       </>
     ),
-    EmulatorContent: flow5Screen1Img,
+    EmulatorContent: flow5ScreenMeetNav,
   },
   {
     id: 31,
-    flowName: 'Genix Meet',
-    title: 'Genix Meet',
-    instruction: (
-      <>
-        <p>Now, open the <strong>Meets</strong> section from your menu.</p>
-      </>
-    ),
-    EmulatorContent: flow5Screen2Img,
-  },
-  {
-    id: 32,
     flowName: 'Genix Meet',
     title: 'Genix Meet',
     instruction: (
@@ -48,7 +35,20 @@ export const genixMeetScreens = [
         <p>Next, tap on the <strong>"In Progress"</strong> tab at the top.</p>
       </>
     ),
-    EmulatorContent: flow5Screen3Img,
+    EmulatorContent: flow5ScreenUpcoming,
+  },
+  {
+    id: 32,
+    flowName: 'Genix Meet',
+    title: 'Genix Meet',
+    instruction: (
+      <>
+        <p>A new screen will appear, showing the list of meets that are currently <strong>in progress</strong>.</p>
+        <p>You can scroll through and check which meets are active at the moment.</p>
+        <p>Then, tap on the <strong>"Completed"</strong> tab.</p>
+      </>
+    ),
+    EmulatorContent: flow5ScreenInProgress,
   },
   {
     id: 33,
@@ -56,14 +56,13 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>A new screen will appear, showing the list of meets that are currently <strong>in progress</strong>.</p>
-        <ul>
-          <li>You can scroll through and check which meets are active at the moment.</li>
-        </ul>
-        <p>Then, tap on the <strong>"Completed"</strong> tab.</p>
+        <p>The screen will now display all the meets that have been <strong>completed</strong>.</p>
+        <p>You can review the details of past meets from this list.</p>
+        <p>This way, you can easily navigate between <strong>Upcoming</strong>, <strong>In Progress</strong>, and <strong>Completed</strong> meets to stay on top of all your activities.</p>
+        <p>Now, tap on <strong>"Create New Meetup."</strong></p>
       </>
     ),
-    EmulatorContent: flow5Screen4Img,
+    EmulatorContent: flow5ScreenCompleted,
   },
   {
     id: 34,
@@ -71,16 +70,11 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>The screen will now display all the meets that have been <strong>completed</strong>.</p>
-        <ul>
-          <li>You can review the details of past meets from this list.</li>
-        </ul>
-        <p>This way, you can easily navigate between <strong>Upcoming</strong>, <strong>In Progress</strong>, and <strong>Completed meets</strong> to stay on top of all your activities.</p>
-        <br />
-        <p>Now, tap on <strong>"Create New Meetup."</strong></p>
+        <p>You're now on the <strong>Meetup Details</strong> screen! Here, you can enter everything you need to plan your meetup.</p>
+        <p>Start by choosing your location, date, and time. Then, add the friends or family members you'd like to invite.</p>
       </>
     ),
-    EmulatorContent: flow5Screen5Img,
+    EmulatorContent: flow5ScreenMeetupDetails,
   },
   {
     id: 35,
@@ -88,12 +82,11 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>A new screen will appear with a list of <strong>details required</strong> to set up your meetup.</p>
-        <br />
-        <p>Next, tap on <strong>"Select Location"</strong>.</p>
+        <p>Here's a list of people you can invite to your meetup.</p>
+        <p>Select your participants and tap <strong>Request</strong> to send out your invitations.</p>
       </>
     ),
-    EmulatorContent: flow5Screen6Img,
+    EmulatorContent: flow5ScreenParticipants,
   },
   {
     id: 36,
@@ -101,11 +94,10 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>You'll be taken to a screen where you can <strong>choose the meetup location</strong> by dragging on the map to your desired spot.</p>
-        <p>After selecting the location, tap on <strong>"Select Participants"</strong>.</p>
+        <p>A toaster will appear confirming that the invitations have been sent, and the participants will be notified on their end.</p>
       </>
     ),
-    EmulatorContent: flow5Screen7Img,
+    EmulatorContent: flow5ScreenPopup,
   },
   {
     id: 37,
@@ -113,11 +105,10 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>A new screen will appear, showing a <strong>list of potential participants</strong> you can invite to the meetup.</p>
-        <p>Once you've selected the participants, tap <strong>"Send Invite"</strong>.</p>
+        <p>Now, tap on a meetup to open the <strong>Chat Screen</strong>.</p>
       </>
     ),
-    EmulatorContent: flow5Screen8Img,
+    EmulatorContent: flow5ScreenInProgressB,
   },
   {
     id: 38,
@@ -125,10 +116,11 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>A popup will appear confirming that the <strong>invitations have been sent</strong>, and the participants will be notified on their end</p>
+        <p>Here, you can message participants, share updates, or coordinate during the meetup.</p>
+        <p>Next, tap on the <strong>Map</strong> icon.</p>
       </>
     ),
-    EmulatorContent: flow5Screen9Img,
+    EmulatorContent: flow5ScreenChat,
   },
   {
     id: 39,
@@ -136,37 +128,24 @@ export const genixMeetScreens = [
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>Now, from Step 4 (In-Progress Meets), tap on a meetup to open the <strong>Chat Screen</strong>.</p>
-        <p>Here, you can message participants, share updates, or coordinate during the meetup.</p>
-        <br />
-        <p>Next, tap on the <strong>Map</strong> icon.</p>
-      </>
-    ),
-    EmulatorContent: flow5Screen10Img,
-  },
-  {
-    id: 40,
-    flowName: 'Genix Meet',
-    title: 'Genix Meet',
-    instruction: (
-      <>
-        <p>A new screen will appear showing the real-time locations of all participants on the map. This helps you track everyone's position during the meetup.</p>
-        <br />
+        <p>A new screen will appear showing the <strong>real-time locations</strong> of all participants on the map.</p>
+        <p>This helps you track everyone's position during the meetup.</p>
         <p>Finally, tap on the <strong>Race</strong> option.</p>
       </>
     ),
-    EmulatorContent: flow5Screen11Img,
+    EmulatorContent: flow5ScreenMap,
   },
   {
-    id: 41,
+    id: 40,
     flowName: 'Genix Meet',
     isFlowEnd: true,
     title: 'Genix Meet',
     instruction: (
       <>
-        <p>The <strong>Race Screen</strong> will open, displaying the positions of participants in the race or activity. You can see who is leading and monitor progress in real-time.</p>
+        <p>The <strong>Race Screen</strong> will open, displaying the positions of participants in the race or activity.</p>
+        <p>You can see who is leading and monitor progress in real-time.</p>
       </>
     ),
-    EmulatorContent: flow5Screen12Img,
+    EmulatorContent: flow5ScreenRace,
   },
 ]
