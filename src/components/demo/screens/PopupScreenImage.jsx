@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LoadingSpinner from '../LoadingSpinner';
 
-function PopupScreenImage({ bgSrc, popupSrc, children, position = 'bottom' }) {
+function PopupScreenImage({ bgSrc, popupSrc, children, position = 'bottom', popupPadding = '0px' }) {
   const [bgLoaded, setBgLoaded] = useState(false);
   const [popupLoaded, setPopupLoaded] = useState(false);
 
@@ -38,8 +38,8 @@ function PopupScreenImage({ bgSrc, popupSrc, children, position = 'bottom' }) {
       <div style={{
         position: 'absolute',
         ...(position === 'center'
-          ? { top: '50%', left: 0, right: 0, transform: 'translateY(-50%)' }
-          : { bottom: 0, left: 0, right: 0 }),
+          ? { top: '50%', left: popupPadding, right: popupPadding, transform: 'translateY(-50%)' }
+          : { bottom: 0, left: popupPadding, right: popupPadding }),
         zIndex: 10,
         opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s',
       }}>

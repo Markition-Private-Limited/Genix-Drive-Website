@@ -1,9 +1,7 @@
 // Flow: Add a Place (screens 25–30)
 
 import flow8Screen1Img from '../flow8Screen1Image';
-import flow8Screen2Img from '../flow8Screen2Image';
-import flow8Screen3Img from '../flow8Screen3Image';
-import flow8Screen4Img from '../flow8Screen4Image';
+import flow8Screen1ScrolledImg from '../flow8Screen1ScrolledImage';
 import flow8Screen5Img from '../flow8Screen5Image';
 import flow8Screen6Img from '../flow8Screen6Image';
 
@@ -14,7 +12,9 @@ export const addAPlaceScreens = [
     title: 'Places',
     instruction: (
       <>
-        <p>Tap <strong>Add a Place</strong> at the bottom of the screen to get started.</p>
+        <p>With Places, you can save and keep track of locations that matter to you, like home, school, or work.</p>
+        <br />
+        <p>To get started, tap <strong>Places</strong> at the bottom of the screen.</p>
       </>
     ),
     EmulatorContent: flow8Screen1Img,
@@ -25,10 +25,10 @@ export const addAPlaceScreens = [
     title: 'Places',
     instruction: (
       <>
-        <p>After tapping Add Place from the connection screen, a popup will appear asking for the details needed to create a place.</p>
+        <p>Now, let's add your first place! Tap <strong>Add a New Place</strong> to get started.</p>
       </>
     ),
-    EmulatorContent: flow8Screen2Img,
+    EmulatorContent: flow8Screen1ScrolledImg,
   },
   {
     id: 27,
@@ -36,33 +36,7 @@ export const addAPlaceScreens = [
     title: 'Places',
     instruction: (
       <>
-        <p>Search for your desired location and set the radius to define the area.</p>
-      </>
-    ),
-    EmulatorContent: flow8Screen3Img,
-  },
-  {
-    id: 28,
-    flowName: 'Add a Place',
-    title: 'Places',
-    instruction: (
-      <>
-        <p>Next, enter the name of the place and select an icon to represent it on the map.</p>
-      </>
-    ),
-    EmulatorContent: flow8Screen4Img,
-  },
-  {
-    id: 29,
-    flowName: 'Add a Place',
-    title: 'Places',
-    instruction: (
-      <>
-        <p>Then, choose when you'd like to be notified — Enter, Exit, or Both — whenever your connection visits or leaves the place.</p>
-        <br />
-        <p>Under Alert Preferences, select <strong>Anytime</strong> to receive alerts whenever the activity occurs, or choose specific days and times to receive notifications only during your preferred hours.</p>
-        <br />
-        <p>Once you're done, tap <strong>Save</strong>.</p>
+        <p>Here, you can select your location, set a radius, name your place, and customize when you'd like to receive alerts. Once you're happy with your settings, tap <strong>Save</strong> at the bottom to add your place!</p>
       </>
     ),
     EmulatorContent: flow8Screen5Img,

@@ -7,6 +7,7 @@ import flow7Screen4Img from '../flow7Screen4Image';
 import flow7Screen5Img from '../flow7Screen5Image';
 import flow7Screen6Img from '../flow7Screen6Image';
 import flow7Screen7Img from '../flow7Screen7Image';
+import flow7Screen1StaticImg from '../flow7Screen1StaticImage';
 
 export const connectionsScreens = [
   {
@@ -15,9 +16,9 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Great! You're on the Connections screen, where you can see the people you're already connected with and manage your connections.</p>
+        <p>Great! You're on the Connections screen now. You can view and manage all your existing connection here</p>
         <br />
-        <p>To connect with someone new, tap the <strong>Add Connections</strong> button.</p>
+        <p>To connect with someone new, tap on the <strong>Add Connections</strong> button</p>
       </>
     ),
     EmulatorContent: flow7Screen1Img,
@@ -44,9 +45,12 @@ export const connectionsScreens = [
         <p>Once selected, a confirmation screen will appear.</p>
         <br />
         <p>Choose what information you'd like this person to share with you, then tap <strong>Send Request</strong> to send your connection request.</p>
+        <br />
+        <p>Now, tap <strong>Add Guest</strong> to temporarily connect with someone for a duration of your choice.</p>
       </>
     ),
     EmulatorContent: flow7Screen3Img,
+    customNext: 17,
   },
   {
     id: 14,
@@ -89,9 +93,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Finally, a confirmation screen will appear.</p>
-        <br />
-        <p>Tap to send the request, and your guest request will be sent successfully.</p>
+        <p>Choose how long you'd like to stay connected with your guest, then tap <strong>Send Request</strong> to send your invitation.</p>
       </>
     ),
     EmulatorContent: flow7Screen7Img,
@@ -106,6 +108,6 @@ export const connectionsScreens = [
         <p>Once your connection or guest accepts the request, they will appear on the <strong>Map screen</strong>. You will be able to view their live location directly on the map.</p>
       </>
     ),
-    EmulatorContent: flow7Screen4Img,
+    EmulatorContent: flow7Screen1StaticImg,
   },
 ]

@@ -5,7 +5,7 @@ import baseStyles from './BaseScreenImage.module.css';
 
 function flow7Screen3Image({ onNext }) {
   return (
-    <PopupScreenImage bgSrc={flow7screen2Img} popupSrc={flow7popup1Img} position="center">
+    <PopupScreenImage bgSrc={flow7screen2Img} popupSrc={flow7popup1Img} position="center" popupPadding="16px">
       <button
         type="button"
         className={baseStyles.hotspotBase}

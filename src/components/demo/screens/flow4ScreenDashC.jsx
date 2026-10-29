@@ -4,7 +4,7 @@ import baseStyles from './BaseScreenImage.module.css';
 
 function flow4ScreenDashC({ onNext }) {
   return (
-    <BaseScreenImage src={flow4screendashImg} scrollTop={0}>
+    <BaseScreenImage src={flow4screendashImg} scrollTop="30%">
       <button
         type="button"
         className={baseStyles.hotspotBase}

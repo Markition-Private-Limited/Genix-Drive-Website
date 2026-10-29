@@ -10,11 +10,11 @@ export const rewardsScreens = [
     title: 'Rewards',
     instruction: (
       <>
-        <p>On opening the <strong>Rewards</strong> section, the first screen displays all the <strong>Available Rewards</strong> that you can claim.</p>
+        <p>Welcome to Rewards! Explore exciting offers and discounts available to claim with the points you earned.</p>
         <br />
-        <p>Swipe or scroll through the list to see the variety of rewards you can earn.</p>
+        <p>Scroll through to discover the available rewards.</p>
         <br />
-        <p>Next, tap on the <strong>Redeemed Rewards</strong> tab.</p>
+        <p>Next, tap the <strong>Redeemed</strong> tab to view previously redeemed rewards.</p>
       </>
     ),
     EmulatorContent: flow6Screen1Img,

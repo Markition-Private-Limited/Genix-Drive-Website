@@ -4,7 +4,7 @@ import baseStyles from './BaseScreenImage.module.css';
 
 function flow1Screen6fImage({ onNext }) {
   return (
-    <BaseScreenImage src={flow1screen6Img} scrollTop={520}>
+    <BaseScreenImage src={flow1screen6Img} scrollTop={650}>
       <button
         type="button"
         className={baseStyles.hotspotBase}

@@ -3,7 +3,7 @@ import BaseScreenImage from './BaseScreenImage';
 
 function flow8Screen6Image({ onNext }) {
   return (
-    <BaseScreenImage src={flow8screen1Img} />
+    <BaseScreenImage src={flow8screen1Img} scrollTop="20%" />
   );
 }
 

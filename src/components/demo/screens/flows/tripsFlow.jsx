@@ -14,22 +14,12 @@ export const tripsScreens = [
     title: 'Trips',
     instruction: (
       <>
-        <p>Now return to the <strong>Dashboard</strong> and scroll down, you can view your <strong>Recent Trips</strong> section.</p>
-        <p>Swipe right to browse through up to five recent trips.</p>
+        <p>Here's your <strong>Recent Trips</strong> section, where you can view your latest journeys at a glance.</p>
+        <br />
+        <p>Tap on the highlighted trip to explore its details.</p>
       </>
     ),
     EmulatorContent: flow4ScreenDashA,
-  },
-  {
-    id: 26,
-    flowName: 'Trips',
-    title: 'Trips',
-    instruction: (
-      <>
-        <p>Tap on any trip to view its details.</p>
-      </>
-    ),
-    EmulatorContent: flow4ScreenDashB,
   },
   {
     id: 27,
@@ -37,7 +27,9 @@ export const tripsScreens = [
     title: 'Trips',
     instruction: (
       <>
-        <p>Now go back.</p>
+        <p>Here, you can view the trip map, total distance covered, driving score, and all events that occurred during the trip.</p>
+        <br />
+        <p>You can also tap on the event icons shown on the map to see the exact location where each event occurred. Tap on the back button to return to the dashboard.</p>
       </>
     ),
     EmulatorContent: flow4ScreenTripDetails1,
@@ -72,8 +64,9 @@ export const tripsScreens = [
     title: 'Trips',
     instruction: (
       <>
-        <p>Here, you can view the trip map, total distance covered, driving score, and all events that occurred during the trip.</p>
-        <p>You can also tap on the event icons shown on the map to see the exact location where each event occurred.</p>
+        <p>You're back on the Trip Details screen! Here, you can review your route, driving score, distance, average speed, and driving events recorded throughout your journey.</p>
+        <br />
+        <p>Now, tap the <strong>Back</strong> arrow to return to your Dashboard.</p>
       </>
     ),
     EmulatorContent: flow4ScreenTripDetails2,

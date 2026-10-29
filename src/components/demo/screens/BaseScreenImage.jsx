@@ -76,6 +76,9 @@ const BaseScreenImage = forwardRef(({ src, alt = "Screen", children, className =
         el.scrollTop = scrollTop;
       } else if (scrollTop === 'bottom') {
         el.scrollTop = el.scrollHeight;
+      } else if (typeof scrollTop === 'string' && scrollTop.endsWith('%')) {
+        const pct = parseFloat(scrollTop) / 100;
+        el.scrollTop = el.scrollHeight * pct;
       }
     };
     // Two rAF frames: first lets the browser paint the image, second lets it update layout
