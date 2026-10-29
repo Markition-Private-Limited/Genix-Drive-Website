@@ -29,9 +29,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>A new screen has appeared where you can search for people to connect with.</p>
-        <br />
-        <p>Use the search bar to find people already on Genix Drive, or look through your phone contacts to invite friends who haven't joined yet.</p>
+        <p>Now, tap <strong>Add Guest</strong> to temporarily connect with someone for a duration of your choice.</p>
       </>
     ),
     EmulatorContent: flow7Screen2Img,
@@ -45,8 +43,6 @@ export const connectionsScreens = [
         <p>Once selected, a confirmation screen will appear.</p>
         <br />
         <p>Choose what information you'd like this person to share with you, then tap <strong>Send Request</strong> to send your connection request.</p>
-        <br />
-        <p>Now, tap <strong>Add Guest</strong> to temporarily connect with someone for a duration of your choice.</p>
       </>
     ),
     EmulatorContent: flow7Screen3Img,
@@ -69,9 +65,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>A new screen has appeared where you can search for people to connect with.</p>
-        <br />
-        <p>Use the search bar to find people already on Genix Drive, or look through your phone contacts to invite friends who haven't joined yet.</p>
+        <p>Now, tap <strong>Add Guest</strong> to temporarily connect with someone for a duration of your choice.</p>
       </>
     ),
     EmulatorContent: flow7Screen5Img,

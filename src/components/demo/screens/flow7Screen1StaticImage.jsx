@@ -3,7 +3,7 @@ import BaseScreenImage from './BaseScreenImage';
 
 function flow7Screen1StaticImage() {
   return (
-    <BaseScreenImage src={flow7screen1Img} scrollTop={0} />
+    <BaseScreenImage src={flow7screen1Img} scrollTop="bottom" />
   );
 }
 
