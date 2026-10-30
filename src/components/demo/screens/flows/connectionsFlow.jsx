@@ -29,7 +29,9 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Now, tap <strong>Add Guest</strong> to temporarily connect with someone for a duration of your choice.</p>
+        <p>Once selected, a confirmation screen will appear.</p>
+        <br />
+        <p>Choose what information you'd like this person to share with you, then tap <strong>Send Request</strong> to send your connection request.</p>
       </>
     ),
     EmulatorContent: flow7Screen2Img,
