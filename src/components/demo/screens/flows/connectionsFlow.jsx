@@ -31,7 +31,7 @@ export const connectionsScreens = [
       <>
         <p>A new screen has appeared where you can search for people to connect with.</p>
         <br />
-        <p>Use the search bar to find existing Genix Drive users, or browse your phone contacts to invite people who haven't joined yet.</p>
+        <p>Use the search bar to find existing GenixDrive users, or browse your phone contacts to invite people who haven't joined yet.</p>
       </>
     ),
     EmulatorContent: flow7Screen2Img,
@@ -78,7 +78,7 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Use the search bar to find existing Genix Drive users, or browse your phone contacts to invite people who haven't joined yet.</p>
+        <p>Use the search bar to find existing GenixDrive users, or browse your phone contacts to invite people who haven't joined yet.</p>
       </>
     ),
     EmulatorContent: flow7Screen6Img,
