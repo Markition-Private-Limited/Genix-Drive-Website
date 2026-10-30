@@ -26,7 +26,7 @@ function flow5ScreenPopup({ onNext }) {
           onClick={onNext}
           style={{
             position: 'absolute',
-            top: '67.6%',
+            top: '68.1%',
             left: '3.1%',
             width: '93.8%',
             height: '10.1%',

@@ -8,7 +8,7 @@ function flow4ScreenTripDetails1({ onNext }) {
       <button
         type="button"
         className={baseStyles.hotspotBase}
-        style={{ top: '0.5%', left: '4.5%', width: '12.4%', height: '3.5%', borderRadius: '8px' }}
+        style={{ top: '0.5%', left: '5.1%', width: '11.2%', height: '3.9%', borderRadius: '8px' }}
         onClick={onNext}
       />
     </BaseScreenImage>

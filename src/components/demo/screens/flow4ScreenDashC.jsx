@@ -8,7 +8,7 @@ function flow4ScreenDashC({ onNext }) {
       <button
         type="button"
         className={baseStyles.hotspotBase}
-        style={{ top: '60.3%', left: '66.7%', width: '27.5%', height: '3.1%', borderRadius: '8px' }}
+        style={{ top: '60.5%', left: '66.7%', width: '27.5%', height: '3.1%', borderRadius: '8px' }}
         onClick={onNext}
       />
     </BaseScreenImage>

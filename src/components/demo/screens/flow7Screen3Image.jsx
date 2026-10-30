@@ -9,7 +9,7 @@ function flow7Screen3Image({ onNext }) {
       <button
         type="button"
         className={baseStyles.hotspotBase}
-        style={{ top: '69.2%', left: '3.5%', width: '92.8%', height: '13.8%', borderRadius: '8px', zIndex: 20 }}
+        style={{ top: '69.6%', left: '3.5%', width: '92.8%', height: '13.8%', borderRadius: '8px', zIndex: 20 }}
         onClick={onNext}
       />
     </PopupScreenImage>
