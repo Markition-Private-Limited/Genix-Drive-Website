@@ -5,11 +5,11 @@ import baseStyles from './BaseScreenImage.module.css';
 
 function flow7Screen7Image({ onNext }) {
   return (
-    <PopupScreenImage bgSrc={flow7screen3Img} popupSrc={flow7popup2Img} position="center" popupPadding="16px">
+    <PopupScreenImage bgSrc={flow7screen3Img} popupSrc={flow7popup2Img} position="center" popupPadding="16px" popupRadius="10px">
       <button
         type="button"
         className={baseStyles.hotspotBase}
-        style={{ top: '64%', left: '4.8%', width: '90.7%', height: '7.7%', borderRadius: '8px', zIndex: 20 }}
+        style={{ top: '76%', left: '3.8%', width: '92.1%', height: '10%', borderRadius: '8px', zIndex: 20 }}
         onClick={onNext}
       />
     </PopupScreenImage>

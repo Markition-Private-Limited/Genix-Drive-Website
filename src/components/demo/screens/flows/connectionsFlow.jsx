@@ -29,9 +29,9 @@ export const connectionsScreens = [
     title: 'Connections',
     instruction: (
       <>
-        <p>Once selected, a confirmation screen will appear.</p>
+        <p>A new screen has appeared where you can search for people to connect with.</p>
         <br />
-        <p>Choose what information you'd like this person to share with you, then tap <strong>Send Request</strong> to send your connection request.</p>
+        <p>Use the search bar to find existing Genix Drive users, or browse your phone contacts to invite people who haven't joined yet.</p>
       </>
     ),
     EmulatorContent: flow7Screen2Img,
